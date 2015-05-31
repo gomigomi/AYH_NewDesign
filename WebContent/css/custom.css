@@ -180,12 +180,11 @@ body{
 }
 .my-history i{
     padding-left: 1em;
-    padding-right: 1em;
 }
 
 .posts {
 	position : relative;
-	left : 2.3%;
+	left : 2.5%;
 }
 
 section {
@@ -210,4 +209,17 @@ section {
 .post-header {
 	margin-top : 2%;
 }
+
+
     
+#search_wrapper{
+    width: 95%;
+	
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 10px;
+}
+
+#search_wrapper input{
+	
+}
