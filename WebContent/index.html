@@ -10,6 +10,7 @@
 
 <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
 <script src="js/flat-ui.min.js"></script>
+<script src="js/mainViewController.js"></script>
 
 <title>Insert title here</title>
 </head>
@@ -28,26 +29,64 @@
 		</div>
 		<div id="main_view">
 			<div class="write-rec-bar" id="write_rec_bar"><i class="fa fa-pencil"></i>추천하고싶은 음식점이 있나요?<i id="more" class="fa fa-sort-desc"></i></div>
-			<div id="write_bar">	
-				<select name=taste id="tasteSel">
-					<option value=none selected>지역선택</option>
-					<option value=Seoul>서울</option>
-				</select>
-				<select name=f_type id="f_typeSel">
-					<option value=none selected>지역선택</option>
-					<option value=Seoul>서울</option>
-				</select>
-				<select name=time id="timeSel">
-					<option value=none selected>지역선택</option>
-					<option value=Seoul>서울</option>
-				</select>
-				<select name=location id="locationSel">
-					<option value=none selected>지역선택</option>
-					<option value=Seoul>서울</option>
-				</select>
+			<div id="write_bar" style="display:none">	
+				<form action ="" id="content_info" method="POST">
+					<select name=taste id="tasteSel">
+						<option value="none" selected>맛 분류</option>
+						<option value="hot">매운맛</option>
+						<option value="swe">단맛</option>
+						<option value="soa">신맛</option>
+						<option value="sal">짠맛</option>
+						<option value="bit">쓴맛</option>
+					</select>
+					<select name="f_type" id="f_typeSel">
+						<option value="none" selected>음식 분류</option>
+						<option value="korean">한식</option>
+						<option value="chines">중식</option>
+						<option value="japanes">일식</option>
+						<option value="european">양식</option>
+					</select>
+					<select name=time id="timeSel">
+						<option value=none selected>시간대</option>
+						<option value=bf>아침</option>
+						<option value=lc>점심</option>
+						<option value=dn>저녁</option>
+					</select>
+					<select name=location id="locationSel">
+						<option value=none selected>지역선택</option>
+						<option value=Seoul>서울</option>
+						<option value=KK>경기</option>
+						<option value=KW>강원</option>
+						<option value=KS>경상</option>
+						<option value=CC>충청</option>
+						<option value=JR>전라</option>
+						<option value=JJ>제주</option>
+					</select>
+				</form>
+				
 				<textarea id="post_txt_box" rows="" cols=""></textarea>
 				<input id="post_img" type="file">
 				<button id="post_btn">올리기</button> 
+			</div>
+			
+			<div id="search_wrapper">	
+				<input type="checkbox" class="property" name="taste" value="hot">매운맛 
+				<input type="checkbox" class="property" name="taste" value="sou">신맛 
+				<input type="checkbox" class="property" name="taste" value="bit">쓴맛 
+				<input type="checkbox" class="property" name="taste" value="swe">단맛 
+				<input type="checkbox" class="property" name="taste" value="sal">짠맛
+				<input type="checkbox" class="property" name="taste" value="all">모두  
+				<br>
+				<input type="checkbox" class="property" name="type" value="kr">한식 
+				<input type="checkbox" class="property" name="type" value="ch">중식 
+				<input type="checkbox" class="property" name="type" value="ja">일식 
+				<input type="checkbox" class="property" name="type" value="eu">양식  
+				<input type="checkbox" class="property" name="taste" value="all">모두 
+				<br>
+				<input type="checkbox" class="property" name="time" value="bf">아침 
+				<input type="checkbox" class="property" name="time" value="lc">점심 
+				<input type="checkbox" class="property" name="time" value="dn">저녁  
+				<input type="checkbox" class="property" name="taste" value="all">모두 
 			</div>
 		</div>
 	</div>

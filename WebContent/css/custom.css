@@ -141,3 +141,15 @@ body{
 .my-history i{
     padding-left: 1em;
     padding-right: 1em;}
+    
+#search_wrapper{
+    width: 95%;
+	
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 10px;
+}
+
+#search_wrapper input{
+	
+}
