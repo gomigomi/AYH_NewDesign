@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/flat-ui.css" rel="stylesheet">
+<link href="css/custom.css" rel="stylesheet">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="js/flat-ui.min.js"></script>
+
+<title>Insert title here</title>
+</head>
+<body>
+	<div id="top_bar">탑 </div>
+	<div id="wrapper">
+		<div id="left_sidebar">
+			<div class="profile-left" id="profile_left">프로필 </div>
+			<div class="profile-edit" id="profile_edit"><i class="fa fa-cog"></i>프로필 편집 </div>
+			<div class="recent-post" id="recent_post"><i class="fa fa-clock-o"></i> 최근 게시물 </div>
+			<div class="popular-post" id="popular_post"><i class="fa fa-sort-amount-desc"></i>인기 게시물 </div>
+			<div class="recommand-post" id="recommand_post"><i class="fa fa-ellipsis-h"></i>음식점 추천 </div>
+			<div class="search-post" id="search_post"><i class="fa fa-search"></i>음식점 검색 </div>
+			<div class="favorite-post" id="favorite_post"><i class="fa fa-heart"></i>관심 음식점 </div>
+			<div class="my-history" id="my_history"><i class="fa fa-tasks"></i>내 활동내역 </div>
+		</div>
+		<div id="main_view">
+			<div class="write-rec-bar" id="write_rec_bar"><i class="fa fa-pencil"></i>추천하고싶은 음식점이 있나요?<i id="more" class="fa fa-sort-desc"></i></div>
+			<div id="write_bar">	
+				<select name=taste id="tasteSel">
+					<option value=none selected>지역선택</option>
+					<option value=Seoul>서울</option>
+				</select>
+				<select name=f_type id="f_typeSel">
+					<option value=none selected>지역선택</option>
+					<option value=Seoul>서울</option>
+				</select>
+				<select name=time id="timeSel">
+					<option value=none selected>지역선택</option>
+					<option value=Seoul>서울</option>
+				</select>
+				<select name=location id="locationSel">
+					<option value=none selected>지역선택</option>
+					<option value=Seoul>서울</option>
+				</select>
+				<textarea id="post_txt_box" rows="" cols=""></textarea>
+				<input id="post_img" type="file">
+				<button id="post_btn">올리기</button> 
+			</div>
+		</div>
+	</div>
+</body>
+</html>

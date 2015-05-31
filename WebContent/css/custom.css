@@ -1,0 +1,143 @@
+body{
+	background-color:#ECF0F1;
+}
+#left_sidebar{   
+	height: 90%;
+	background-color:#ECF0F1;
+	float: left;
+	width: 30%;
+}
+#main_view{
+	height: 90%;
+	background-color:#ECF0F1;
+	width: 70%;
+	float: right;
+}
+#top_bar{
+	float: left;
+	width: 100%;
+	height: 10%;
+	background-color:#F15A24;
+	
+}
+#write_rec_bar{
+    border-radius: 5px;
+
+    background-color: white;
+    width: 90%;
+    margin: 0 auto;
+    padding: 0.25em;
+}
+#write_bar{
+    background-color: white;
+	
+    border-radius: 5px;
+    margin: 0 auto;
+    width: 90%;
+    padding: 0.5em;
+}
+.write-rec-bar i{
+    margin: 0px 1em;
+}
+#more{
+    float: right;
+	
+}
+#post_txt_box{
+    margin-top: 1em;
+    border-radius: 5px;
+    border-color: #ECF0F1;
+    width: 90%;
+    margin-bottom: 0.5em;
+}
+#tasteSel{
+    background-color: #F15A24;
+    border: 0px;
+    color: white;
+    width: 20%;
+    height: 30px;
+    font-size: smaller;
+    margin-right: 0.3em;
+}
+#f_typeSel{
+	background-color: #F15A24;
+    border: 0px;
+    color: white;
+    margin-right: 0.3em;
+	width: 20%;
+    height: 30px;
+    font-size: smaller;
+}
+#timeSel{
+	background-color: #F15A24;
+    border: 0px;
+    color: white;
+    margin-right: 0.3em;
+	width: 20%;
+	height: 30px;
+    font-size: smaller;
+}
+#locationSel{
+	background-color: #F15A24;
+    border: 0px;
+    color: white;
+	width: 20%;
+    height: 30px;
+    font-size: smaller;}
+#post_img{
+    float: left;
+    color: #F15A24;
+}
+#post_btn{
+	
+}
+#profile_left{
+    padding: 0.3em;
+}
+
+#profile_edit{
+    padding: 0.3em;
+}
+.profile-edit i{
+    padding-left: 1em;
+    padding-right: 1em;
+}
+#recent_post{
+    padding: 0.3em;
+}
+.recent-post i{
+
+    padding-left: 1em;
+    padding-right: 1em;
+}
+#popular_post{
+	   padding: 0.3em;
+}
+.popular-post i{
+    padding-left: 1em;
+    padding-right: 1em;}
+#recommand_post{
+	   padding: 0.3em;
+}
+.recommand-post i{
+    padding-left: 1em;
+    padding-right: 1em;}
+#search_post{
+	   padding: 0.3em;
+}
+.search-post i{
+    padding-left: 1em;
+    padding-right: 1em;}
+#favorite_post{
+	   padding: 0.3em;
+}
+.favorite-post i{
+    padding-left: 1em;
+    padding-right: 1em;
+    }
+#my_history{
+	   padding: 0.3em;
+}
+.my-history i{
+    padding-left: 1em;
+    padding-right: 1em;}
