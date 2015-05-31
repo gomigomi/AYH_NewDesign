@@ -6,6 +6,7 @@ body{
 	background-color:#ECF0F1;
 	float: left;
 	width: 30%;
+	padding-left: 2em;
 }
 #main_view{
 	height: 90%;
@@ -19,22 +20,59 @@ body{
 	height: 10%;
 	background-color:#F15A24;
 	
+	padding: 0.5em 0em;
+}
+#top_logo{
+    float: left;
+	
+    margin: 0em 1em;
+}
+#top_logon{
+	
+}
+#top_thumb{
+    background-color: white;
+	
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    float: right;
+    margin: 0em 0.1em;
+}
+#top_id_name{
+    width: inherit;
+	
+    height: 40px;
+    margin: 0em 0.5em;
+    float: right;
+    color: white;
+    line-height: 40px;
+}
+#logout_btn{
+    float: right;
+	
+    margin: 0em 1em;
+    color: white;
+    line-height: 40px;
 }
 #write_rec_bar{
     border-radius: 5px;
 
     background-color: white;
-    width: 90%;
+    width: 95%;
     margin: 0 auto;
     padding: 0.25em;
+    margin-top: 1em;
 }
 #write_bar{
     background-color: white;
 	
     border-radius: 5px;
     margin: 0 auto;
-    width: 90%;
+    width: 95%;
     padding: 0.5em;
+    margin-top: 1em;
+    height: 100%;
 }
 .write-rec-bar i{
     margin: 0px 1em;
@@ -47,7 +85,7 @@ body{
     margin-top: 1em;
     border-radius: 5px;
     border-color: #ECF0F1;
-    width: 90%;
+    width: 100%;
     margin-bottom: 0.5em;
 }
 #tasteSel{
@@ -87,8 +125,10 @@ body{
 #post_img{
     float: left;
     color: #F15A24;
+    width: 60%;
 }
 #post_btn{
+    float: right;
 	
 }
 #profile_left{
@@ -140,4 +180,34 @@ body{
 }
 .my-history i{
     padding-left: 1em;
-    padding-right: 1em;}
+    padding-right: 1em;
+}
+
+.posts {
+	position : relative;
+	left : 2.3%;
+}
+
+section {
+	display : inline-block;
+	background-color: white;
+	border-bottom: 1px solid #e1e1e1;
+	margin-bottom: 15px;
+	border-radius: 5px 5px 5px 5px;
+	width : 95%;
+	margin : 0 auto;
+}
+    
+.post-avatar {
+	height: 48px;
+	width: 48px;
+	border-radius: 50px;
+	float: left;
+	position: relative;
+	left: 2%;
+}
+    
+.post-header {
+	margin-top : 2%;
+}
+    
