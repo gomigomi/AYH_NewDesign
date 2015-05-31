@@ -6,6 +6,7 @@
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/flat-ui.css" rel="stylesheet">
 <link href="css/custom.css" rel="stylesheet">
+<link href="css/custom1.css" rel="stylesheet">
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
 <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
@@ -15,7 +16,14 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<div id="top_bar">탑 </div>
+	<div id="top_bar">
+		<div id="top_logo"><img src="topbar_logo.png"></div>
+		<div id="top_logon">
+			<div id="logout_btn"><i class="fa fa-power-off"></i></div>
+			<div id="top_id_name">아이디(닉네임)</div>
+			<div id="top_thumb"></div>
+		</div>
+	</div>
 	<div id="wrapper">
 		<div id="left_sidebar">
 			<div class="profile-left" id="profile_left">프로필 </div>
@@ -68,7 +76,63 @@
 				<input id="post_img" type="file">
 				<button id="post_btn">올리기</button> 
 			</div>
-			
+			<div class="posts">
+				<section class="post 1" id="posting_1">
+					<scIdx id="1"/>
+					<div class="post-header post-top">
+						<span class="post-avatar post-img">
+							<img src="/img/common/'+postingDatas.thumb+'"/>
+						</span>
+						<span class="post-meta bacpost-meta"> 
+							<span class="post-writer">
+								<a class="post-author" href="#">강라</a>
+							</span>
+							<span class="posting-buttons" style="display:'+display+'">
+								<a href="#post_edit" rel="modal:open">
+									<button class="post-edit">
+										<i class="fa fa-pencil-square-o"></i>
+									</button>
+								</a>
+								<button class="post-delete">
+									<i class="fa fa-times"></i>
+								</button>
+							</span>
+							<span id=mainView_favorite>
+								<button id="heart-o" class="fa fa-heart-o favorite-btn" style="display:none"></button>
+								<button id="heart" class="fa fa-heart favorite-btn" style="display:block"></button>
+							</span>
+							<div class = "comment-form">
+								<span class="bac-point" id="'+postingDatas.avg+'">Point 5.0</span>
+								<span class="comment-raty-form">
+									<span class="ex">내가 준 점수&nbsp;&nbsp;&nbsp;&nbsp;</span>
+									<span class="raty" data-score="5.0" style="cursor:pointer;"></span>
+									<span class = "pure-button add-commentRaty-btn">평가</span>
+								</span>
+								<span class="post-regdate">2015.06.09</span>
+							</div>
+						</span>
+					</div>
+					<div class="post-description bac-content">
+						<span id = "postingImg_view">
+						<a href="#more_content" rel="modal:open"><button class="more-content"><img width="200px" height="200px" src="img/chocogirl_jewel_tshirt_detail1.JPG"/></button></a>
+						</span>
+						<span id = "postingContent_div">
+							<span id = "postingClassifyImg"><img id = "'+postingDatas.type+'" class ="type postingCI" src="/img/icon/posting-nationality/nationality-korean.jpg"/></span>
+							<span id = "postingClassifyImg"><img id = "'+postingDatas.location+'" class ="location postingCI" src="/img/icon/posting-location/location-Seoul.jpg"/></span>
+							<span id = "postingClassifyImg"><img id = "'+postingDatas.taste+'" class ="taste postingCI" src="/img/icon/posting-taste/taste-hot.jpg"/></span>
+							<span id = "postingClassifyImg"><img id = "'+postingDatas.time+'" class ="time postingCI" src="/img/icon/posting-time/time-lc.jpg"/></span>
+							<div id = "postingContent_view"> 디자인을 합시다 뀨르르르르르르르 히히히히힣 ㅣ큐큐큐큐큐 이ㅣ 이 나움 ㅣ낭 윈듀우고</div>
+						</span>
+					</div>
+					<div class="comment-cnt">
+						<div class="comment-text-form">
+							<input type="text" name="comment" class="comment" />
+							<div class="pure-button add-comment-btn">Add</div>
+						</div>
+						<div class = "comment-list">						
+						</div>
+					</div>
+				</section>
 			<div id="search_wrapper">	
 				<input type="checkbox" class="property" name="taste" value="hot">매운맛 
 				<input type="checkbox" class="property" name="taste" value="sou">신맛 
