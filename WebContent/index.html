@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 
-<link href="css/bootstrap.min.css" rel="stylesheet">
-<link href="css/flat-ui.css" rel="stylesheet">
+<link href="Flat-UI-master/dist/css/vendor/bootstrap.min.css" rel="stylesheet">
+<link href="Flat-UI-master/dist/css/flat-ui.min.css" rel="stylesheet">
 <link href="css/custom.css" rel="stylesheet">
 <link href="css/custom1.css" rel="stylesheet">
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
 <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
-<script src="js/flat-ui.min.js"></script>
+<script src="Flat-UI-master/dist/js/flat-ui.min.js"></script>
 <script src="js/mainViewController.js"></script>
 
 <title>Insert title here</title>
@@ -133,25 +133,151 @@
 						</div>
 					</div>
 				</section>
-			<div id="search_wrapper">	
-				<input type="checkbox" class="property" name="taste" value="hot">매운맛 
-				<input type="checkbox" class="property" name="taste" value="sou">신맛 
-				<input type="checkbox" class="property" name="taste" value="bit">쓴맛 
-				<input type="checkbox" class="property" name="taste" value="swe">단맛 
-				<input type="checkbox" class="property" name="taste" value="sal">짠맛
-				<input type="checkbox" class="property" name="taste" value="all">모두  
-				<br>
-				<input type="checkbox" class="property" name="type" value="kr">한식 
-				<input type="checkbox" class="property" name="type" value="ch">중식 
-				<input type="checkbox" class="property" name="type" value="ja">일식 
-				<input type="checkbox" class="property" name="type" value="eu">양식  
-				<input type="checkbox" class="property" name="taste" value="all">모두 
-				<br>
-				<input type="checkbox" class="property" name="time" value="bf">아침 
-				<input type="checkbox" class="property" name="time" value="lc">점심 
-				<input type="checkbox" class="property" name="time" value="dn">저녁  
-				<input type="checkbox" class="property" name="taste" value="all">모두 
 			</div>
+			<div id="search_wrapper">
+				<h3>찾고 싶은 맛을 골라주세요</h3>
+				<div id="taste_wrapper">
+	          		<label class="checkbox" for="hot">
+	            		<input type="checkbox"  name="taste" value="hot" id="hot" data-toggle="checkbox" class="custom-checkbox">
+	            			<span class="icons">
+	            				<span class="icon-unchecked"></span>
+	            				<span class="icon-checked"></span>
+	            			</span>
+	            		매운맛 
+	          		</label>				
+	          		<label class="checkbox" for="sou">
+	            		<input type="checkbox"  name="taste" value="sou" id="sou" data-toggle="checkbox" class="custom-checkbox">
+	            			<span class="icons">
+	            				<span class="icon-unchecked"></span>
+	            				<span class="icon-checked"></span>
+	            			</span>
+	            		신맛 
+	          		</label>				
+	          		<label class="checkbox" for="bit">
+	            		<input type="checkbox"  name="taste" value="bit" id="bit" data-toggle="checkbox" class="custom-checkbox">
+	            			<span class="icons">
+	            				<span class="icon-unchecked"></span>
+	            				<span class="icon-checked"></span>
+	            			</span>
+	            		쓴맛 
+	          		</label>				
+	          		<label class="checkbox" for="swe">
+	            		<input type="checkbox"  name="taste" value="swe" id="swe" data-toggle="checkbox" class="custom-checkbox">
+	            			<span class="icons">
+	            				<span class="icon-unchecked"></span>
+	            				<span class="icon-checked"></span>
+	            			</span>
+	            		단맛 
+	          		</label>				
+	          		<label class="checkbox" for="sal">
+	            		<input type="checkbox"  name="taste" value="sal" id="sal" data-toggle="checkbox" class="custom-checkbox">
+	            			<span class="icons">
+	            				<span class="icon-unchecked"></span>
+	            				<span class="icon-checked"></span>
+	            			</span>
+	            		짠맛 
+	          		</label>				
+	          		<label class="checkbox" for="ta-all">
+	            		<input type="checkbox"  name="taste" value="ta-all" id="ta-all" data-toggle="checkbox" class="custom-checkbox">
+	            			<span class="icons">
+	            				<span class="icon-unchecked"></span>
+	            				<span class="icon-checked"></span>
+	            			</span>
+	            		모두 
+	          		</label>       		
+				</div>
+				<br>
+				<h3>찾고 싶은 음식 종류를 골라주세요</h3>
+				<div id="type_wrapper">
+	          		<label class="checkbox" for="korean">
+	            		<input type="checkbox"  name="type" value="korean" id="korean" data-toggle="checkbox" class="custom-checkbox">
+	            			<span class="icons">
+	            				<span class="icon-unchecked"></span>
+	            				<span class="icon-checked"></span>
+	            			</span>
+	            		한식 
+	          		</label>
+	           		<label class="checkbox" for="european">
+	            		<input type="checkbox"  name="type" value="european" id="european" data-toggle="checkbox" class="custom-checkbox">
+	            			<span class="icons">
+	            				<span class="icon-unchecked"></span>
+	            				<span class="icon-checked"></span>
+	            			</span>
+	            		양식 
+	          		</label>
+	          		<label class="checkbox" for="china">
+	            		<input type="checkbox"  name="type" value="chinese" id="china" data-toggle="checkbox" class="custom-checkbox">
+	            			<span class="icons">
+	            				<span class="icon-unchecked"></span>
+	            				<span class="icon-checked"></span>
+	            			</span>
+	            		중식 
+	          		</label>
+	          		<label class="checkbox" for="japan">
+	            		<input type="checkbox"  name="type" value="japanes" id="japan" data-toggle="checkbox" class="custom-checkbox">
+	            			<span class="icons">
+	            				<span class="icon-unchecked"></span>
+	            				<span class="icon-checked"></span>
+	            			</span>
+	            		일식 
+	          		</label>
+	          		<label class="checkbox" for="ty-all">
+	            		<input type="checkbox"  name="type" value="ty-all" id="ty-all" data-toggle="checkbox" class="custom-checkbox">
+	            			<span class="icons">
+	            				<span class="icon-unchecked"></span>
+	            				<span class="icon-checked"></span>
+	            			</span>
+	            		모두  
+	          		</label>
+				</div>
+				<br>
+				<h3>먹을 시간대를 골라주세요</h3>
+				<div id="time_wrapper">
+	          		<label class="checkbox" for="bf">
+	            		<input type="checkbox" name="time" value="bf" id="bf" data-toggle="checkbox" class="custom-checkbox">
+	            			<span class="icons">
+	            				<span class="icon-unchecked"></span>
+	            				<span class="icon-checked"></span>
+	            			</span>
+	            		아침  
+	          		</label>
+					<label class="checkbox" for="lc">
+	            		<input type="checkbox" name="time" value="lc" id="lc" data-toggle="checkbox" class="custom-checkbox">
+	            			<span class="icons">
+	            				<span class="icon-unchecked"></span>
+	            				<span class="icon-checked"></span>
+	            			</span>
+	            		점심  
+	          		</label>
+					<label class="checkbox" for="dn">
+	            		<input type="checkbox" name="time" value="dn" id="dn" data-toggle="checkbox" class="custom-checkbox">
+	            			<span class="icons">
+	            				<span class="icon-unchecked"></span>
+	            				<span class="icon-checked"></span>
+	            			</span>
+	            		저녁  
+	          		</label>
+					<label class="checkbox" for="ti-all">
+	            		<input type="checkbox" name="time" value="ti-all" id="ti-all" data-toggle="checkbox" class="custom-checkbox">
+	            			<span class="icons">
+	            				<span class="icon-unchecked"></span>
+	            				<span class="icon-checked"></span>
+	            			</span>
+	            		저녁  
+	          		</label>
+				</div>
+				<br>
+				<h3>어디에 음식점이 있으면 하나요?</h3>
+				<div id="location_wrapper">
+	          		<label class="checkbox" for="seoul">
+	            		<input type="checkbox" name="location" value="seoul" id="seoul" data-toggle="checkbox" class="custom-checkbox">
+	            			<span class="icons">
+	            				<span class="icon-unchecked"></span>
+	            				<span class="icon-checked"></span>
+	            			</span>
+	            		서울 
+	          		</label>
+				</div>
 		</div>
 	</div>
 </body>
