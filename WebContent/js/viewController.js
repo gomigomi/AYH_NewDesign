@@ -41,7 +41,8 @@ $(function() {
 	})
 	
 	/*favorite*/
-	$('#favorite-button').click(function() {
+	$('#favorite_post').click(function() {
+		alert("hi");
 		$('#favorite').show();
 		$('#howAbout').hide();
 		$('#search').hide();
