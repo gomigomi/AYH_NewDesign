@@ -3,17 +3,9 @@
   <display-name>Study</display-name>
   <welcome-file-list>
     <welcome-file>NewFront.jsp</welcome-file>
-<!--     <welcome-file>index.html</welcome-file>
-    <welcome-file>index.htm</welcome-file>
-    <welcome-file>index.jsp</welcome-file>
-    <welcome-file>default.html</welcome-file>
-    <welcome-file>default.htm</welcome-file>
-    <welcome-file>default.jsp</welcome-file> -->
   </welcome-file-list>
-  
- <!-- User -->
   <servlet>
-    <servlet-name>getUser</servlet-name>            
+    <servlet-name>getUser</servlet-name>
     <servlet-class>com.hungry.user.UserServlet</servlet-class>
   </servlet>
   <servlet-mapping>
@@ -21,7 +13,7 @@
     <url-pattern>/getUser</url-pattern>
   </servlet-mapping>
   <servlet>
-    <servlet-name>postUser</servlet-name>            
+    <servlet-name>postUser</servlet-name>
     <servlet-class>com.hungry.user.UserServlet</servlet-class>
   </servlet>
   <servlet-mapping>
@@ -29,17 +21,15 @@
     <url-pattern>/postUser</url-pattern>
   </servlet-mapping>
   <servlet>
-    <servlet-name>deleteUser</servlet-name>            
+    <servlet-name>deleteUser</servlet-name>
     <servlet-class>com.hungry.user.UserServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>deleteUser</servlet-name>
     <url-pattern>/deleteUser</url-pattern>
   </servlet-mapping>
-  
-  <!-- Posting -->
   <servlet>
-    <servlet-name>getPosting</servlet-name>            
+    <servlet-name>getPosting</servlet-name>
     <servlet-class>com.hungry.posting.PostingServlet</servlet-class>
   </servlet>
   <servlet-mapping>
@@ -47,25 +37,23 @@
     <url-pattern>/getPosting</url-pattern>
   </servlet-mapping>
   <servlet>
-    <servlet-name>postPosting</servlet-name>            
+    <servlet-name>postPosting</servlet-name>
     <servlet-class>com.hungry.posting.PostingServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>postPosting</servlet-name>
     <url-pattern>/postPosting</url-pattern>
   </servlet-mapping>
-    <servlet>
-    <servlet-name>deletePosting</servlet-name>            
+  <servlet>
+    <servlet-name>deletePosting</servlet-name>
     <servlet-class>com.hungry.posting.PostingServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>deletePosting</servlet-name>
     <url-pattern>/deletePosting</url-pattern>
-  </servlet-mapping> 
-  
-  <!-- Comment -->
+  </servlet-mapping>
   <servlet>
-    <servlet-name>getComment</servlet-name>            
+    <servlet-name>getComment</servlet-name>
     <servlet-class>com.hungry.comment.CommentServlet</servlet-class>
   </servlet>
   <servlet-mapping>
@@ -73,7 +61,7 @@
     <url-pattern>/getComment</url-pattern>
   </servlet-mapping>
   <servlet>
-    <servlet-name>postComment</servlet-name>            
+    <servlet-name>postComment</servlet-name>
     <servlet-class>com.hungry.comment.CommentServlet</servlet-class>
   </servlet>
   <servlet-mapping>
@@ -81,16 +69,13 @@
     <url-pattern>/postComment</url-pattern>
   </servlet-mapping>
   <servlet>
-    <servlet-name>deleteComment</servlet-name>            
+    <servlet-name>deleteComment</servlet-name>
     <servlet-class>com.hungry.comment.CommentServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>deleteComment</servlet-name>
     <url-pattern>/deleteComment</url-pattern>
-  </servlet-mapping>   	
-  
-  
-  <!-- favorite -->
+  </servlet-mapping>
   <servlet>
     <servlet-name>getFavorite</servlet-name>
     <servlet-class>com.hungry.favorite.FavoriteServlet</servlet-class>
@@ -115,10 +100,8 @@
     <servlet-name>deleteFavorite</servlet-name>
     <url-pattern>/deleteFavorite</url-pattern>
   </servlet-mapping>
-  
-  <!-- img upload -->
   <servlet>
-    <servlet-name>postImg</servlet-name>            
+    <servlet-name>postImg</servlet-name>
     <servlet-class>com.hungry.img.imgServlet</servlet-class>
   </servlet>
   <servlet-mapping>
@@ -126,40 +109,35 @@
     <url-pattern>/postImg</url-pattern>
   </servlet-mapping>
   <servlet>
-    <servlet-name>getImg</servlet-name>            
+    <servlet-name>getImg</servlet-name>
     <servlet-class>com.hungry.img.imgServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>getImg</servlet-name>
     <url-pattern>/getImg</url-pattern>
   </servlet-mapping>
-  
-  <!--  score -->
   <servlet>
-  	<servlet-name>postScore</servlet-name>
-  	<servlet-class>com.hungry.score.ScoreServlet</servlet-class>
+    <servlet-name>postScore</servlet-name>
+    <servlet-class>com.hungry.score.ScoreServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-  	<servlet-name>postScore</servlet-name>
-  	<url-pattern>/postScore</url-pattern>
+    <servlet-name>postScore</servlet-name>
+    <url-pattern>/postScore</url-pattern>
   </servlet-mapping>
   <servlet>
-  	<servlet-name>getScore</servlet-name>
-  	<servlet-class>com.hungry.score.ScoreServlet</servlet-class>
+    <servlet-name>getScore</servlet-name>
+    <servlet-class>com.hungry.score.ScoreServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-  	<servlet-name>getScore</servlet-name>
-  	<url-pattern>/getScore</url-pattern>
+    <servlet-name>getScore</servlet-name>
+    <url-pattern>/getScore</url-pattern>
   </servlet-mapping>
-  
-  <!-- search -->
   <servlet>
-  	<servlet-name>doSearch</servlet-name>
-  	<servlet-class>com.hungry.search.SearchServlet</servlet-class>
+    <servlet-name>doSearch</servlet-name>
+    <servlet-class>com.hungry.search.SearchServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-  	<servlet-name>doSearch</servlet-name>
-  	<url-pattern>/doSearch</url-pattern>
+    <servlet-name>doSearch</servlet-name>
+    <url-pattern>/doSearch</url-pattern>
   </servlet-mapping>
-  
 </web-app>
