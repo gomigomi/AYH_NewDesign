@@ -8,6 +8,10 @@ body{
 	width: 30%;
 	padding-left: 2em;
 }
+#left_sidebar button {
+	background : transparent;
+	border : 0;
+}
 #main_view{
 	height: 90%;
 	background-color:#ECF0F1;
