@@ -66,15 +66,16 @@
 }
 
 .post-img{
-	height:48px;
-    width:48px;
-    border-radius:50px;
+    
     float: left;
+    width: 10%;
 }
 .post-img img{
-	height:48px;
-    width:48px;
+	height: 40px;
+    
+	width: 40px;
     border-radius:50px;
+	background-color: orange;
 }
 .post-writer{
     margin-left: 10px;
@@ -93,7 +94,8 @@
     margin-left: 10px;
     font-size: 14px;
 }
-.post-top{}
+.post-top{
+}
 #profile_cog{}
 .profile-cog{
     float: right;
@@ -122,9 +124,11 @@
 	margin-right: 23px;
 }
 .posting-buttons{
-	float:right;
+	float: left;;
+	/* background-color: transparent; */
+	/* color: black; */
 }
-.post-edit{
+/* .post-edit{
     background: transparent;
     border: 0;
     margin-right: 10px;
@@ -133,10 +137,8 @@
     background: transparent;
     border: 0;
     margin-right: 10px;
-}
+} */
 .favorite-btn{
-    float: right;
-    margin-right : 1.3%;
 	
 }
 
@@ -157,8 +159,14 @@
 }
 
 section{
+    margin: 0 auto;
     border-bottom: 1px solid #e1e1e1;
     margin-bottom: 15px;
+    padding: 0.7em;
+    display: inline-block;
+    background-color: white;
+    border-radius: 10px;
+    width: 95%;
 }
 
 /*Comment Declare*/
@@ -282,12 +290,12 @@ section{
     border: 0px;
     height: 60px;
 }
-
+/* 
 #heart-o, #heart {
 	background-color : white;
 	border : none;
 }
-
+ */
 <!-- posting -->
 .post-author {
 	
@@ -371,7 +379,7 @@ comment-list-sub {
 }
 
 .bac-point {
-	font-size : 1.5em;
+	font-size: 1em;
 }
 
 .comment-raty-form {
@@ -432,5 +440,30 @@ comment-list-sub {
 }
 #search_wrapper h3{
     font-size: medium;
+	
+}
+.btn-wrapper{
+    float: right;
+	
+}
+.btn-wrapper button{
+    width: 40px;
+	
+    height: 40px;
+    background-color: transparent;
+    border-color: transparent;
+}
+.top-top{
+    width: 90%;
+	
+    float: right;
+}
+.top-bottom{
+    width: 90%;
+	
+    float: right;
+}
+#mainView_favorite{
+    float: right;
 	
 }
