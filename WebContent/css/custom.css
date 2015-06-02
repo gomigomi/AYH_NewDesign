@@ -187,32 +187,7 @@ body{
 	position : relative;
 	left : 2.5%;
 }
-
-section {
-	display : inline-block;
-	background-color: white;
-	border-bottom: 1px solid #e1e1e1;
-	margin-bottom: 15px;
-	border-radius: 10px;
-	width : 95%;
-	margin : 0 auto;
-}
-    
-.post-avatar {
-	height: 48px;
-	width: 48px;
-	border-radius: 50px;
-	float: left;
-	position: relative;
-	left: 2%;
-}
-    
-.post-header {
-	margin-top : 2%;
-}
-
-
-    
+  
 #search_wrapper{
     width: 95%;
 	
