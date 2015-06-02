@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
+<html><head>
 <meta charset="UTF-8">
 
 <link href="Flat-UI-master/dist/css/vendor/bootstrap.min.css" rel="stylesheet">
@@ -15,7 +13,7 @@
 <script src="Flat-UI-master/dist/js/flat-ui.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/json2/20140204/json2.js"></script>
-<script src="js/slidr.js"></script>
+<script src="js/slidr.js"></script><style type="text/css"></style>
 <script src="js/jquery.raty.js"></script>
 <script src="js/jquery.modal.js"></script>
 
@@ -58,9 +56,9 @@
 		<div id="main_view">
 			<div class="write-rec-bar" id="write_rec_bar"><i class="fa fa-pencil"></i>추천하고싶은 음식점이 있나요?<i id="more" class="fa fa-sort-desc"></i></div>
 			<div id="write_bar" style="display:none">
-				<form action ="" id="content_info" method="POST">
-					<select name=taste id="tasteSel">
-						<option value="none" selected>맛 분류</option>
+				<form action="" id="content_info" method="POST">
+					<select name="taste" id="tasteSel">
+						<option value="none" selected="">맛 분류</option>
 						<option value="hot">매운맛</option>
 						<option value="swe">단맛</option>
 						<option value="soa">신맛</option>
@@ -68,27 +66,27 @@
 						<option value="bit">쓴맛</option>
 					</select>
 					<select name="f_type" id="f_typeSel">
-						<option value="none" selected>음식 분류</option>
+						<option value="none" selected="">음식 분류</option>
 						<option value="korean">한식</option>
 						<option value="chines">중식</option>
 						<option value="japanes">일식</option>
 						<option value="european">양식</option>
 					</select>
-					<select name=time id="timeSel">
-						<option value=none selected>시간대</option>
-						<option value=bf>아침</option>
-						<option value=lc>점심</option>
-						<option value=dn>저녁</option>
+					<select name="time" id="timeSel">
+						<option value="none" selected="">시간대</option>
+						<option value="bf">아침</option>
+						<option value="lc">점심</option>
+						<option value="dn">저녁</option>
 					</select>
-					<select name=location id="locationSel">
-						<option value=none selected>지역선택</option>
-						<option value=Seoul>서울</option>
-						<option value=KK>경기</option>
-						<option value=KW>강원</option>
-						<option value=KS>경상</option>
-						<option value=CC>충청</option>
-						<option value=JR>전라</option>
-						<option value=JJ>제주</option>
+					<select name="location" id="locationSel">
+						<option value="none" selected="">지역선택</option>
+						<option value="Seoul">서울</option>
+						<option value="KK">경기</option>
+						<option value="KW">강원</option>
+						<option value="KS">경상</option>
+						<option value="CC">충청</option>
+						<option value="JR">전라</option>
+						<option value="JJ">제주</option>
 					</select>
 				</form>
 				
@@ -98,10 +96,10 @@
 			</div>
 			<div class="posts">
 				<section class="post 1" id="posting_1">
-					<scIdx id="1"/>
-					<div class="post-header post-top">
+					<scidx id="1">
+					<div class="post-top">
 						<div class="post-img">
-							<img src="#"/ alt="썸네일">
+							<img src="#" alt="썸네일">
 						</div>
 							<div class="top-top">
 								<div class="post-writer">강라겸</div>
@@ -116,42 +114,42 @@
 											<i class="fa fa-times"></i>
 										</button>
 									</span>
-									<span id=mainView_favorite>
+									<span id="mainView_favorite">
 										<button id="heart-o" class="fa fa-heart-o favorite-btn" style="display:none"></button>
 										<button id="heart" class="fa fa-heart favorite-btn" style="display:block"></button>
 									</span>
 								</div>
 							</div>
-							<div class = "top-bottom comment-form">
-								<span class="bac-point" id="'+postingDatas.avg+'">Point 5.0</span>
+							<div class="top-bottom comment-form">
+								<span class="bac-point" id="'+postingDatas.avg+'">평균평점 5.0</span>
 								<span class="comment-raty-form">
-									<span class="ex">내가 준 점수&nbsp;&nbsp;&nbsp;&nbsp;</span>
+									
 									<span class="raty" data-score="5.0" style="cursor:pointer;"></span>
-									<span class = "add-commentRaty-btn">평가</span>
+									<button class="add-commentRaty-btn">평가</button>
 								</span>
 								<span class="post-regdate">2015.06.09</span>
 							</div>
 						</div>
 					<div class="post-description bac-content">
-						<span id = "postingImg_view">
-						<a href="#more_content" rel="modal:open"><button class="more-content"><img width="200px" height="200px" src="img/chocogirl_jewel_tshirt_detail1.JPG"/></button></a>
+						<span id="postingImg_view">
+						<a href="#more_content" rel="modal:open"><button class="more-content"><img width="200px" height="200px" src="img/chocogirl_jewel_tshirt_detail1.JPG"></button></a>
 						</span>
-						<span id = "postingContent_div">
-							<span id = "postingClassifyImg"><img id = "'+postingDatas.type+'" class ="type postingCI" src="img/icon/posting-nationality/nationality-korean.png"/></span>
-							<span id = "postingClassifyImg"><img id = "'+postingDatas.location+'" class ="location postingCI" src="img/icon/posting-location/location-Seoul.png"/></span>
-							<span id = "postingClassifyImg"><img id = "'+postingDatas.taste+'" class ="taste postingCI" src="img/icon/posting-taste/taste-hot.png"/></span>
-							<span id = "postingClassifyImg"><img id = "'+postingDatas.time+'" class ="time postingCI" src="img/icon/posting-time/time-lc.png"/></span>
-							<div id = "postingContent_view"> 디자인을 합시다 뀨르르르르르르르 히히히히힣 ㅣ큐큐큐큐큐 이ㅣ 이 나움 ㅣ낭 윈듀우고</div>
+						<span id="postingContent_div">
+							<span id="postingClassifyImg"><img id="'+postingDatas.type+'" class="type postingCI" src="img/icon/posting-nationality/nationality-korean.png"></span>
+							<span id="postingClassifyImg"><img id="'+postingDatas.location+'" class="location postingCI" src="img/icon/posting-location/location-Seoul.png"></span>
+							<span id="postingClassifyImg"><img id="'+postingDatas.taste+'" class="taste postingCI" src="img/icon/posting-taste/taste-hot.png"></span>
+							<span id="postingClassifyImg"><img id="'+postingDatas.time+'" class="time postingCI" src="img/icon/posting-time/time-lc.png"></span>
+							<div id="postingContent_view"> 디자인을 합시다 뀨르르르르르르르 히히히히힣 ㅣ큐큐큐큐큐 이ㅣ 이 나움 ㅣ낭 윈듀우고</div>
 						</span>
 					</div>
 					<div class="comment-cnt">
 						<div class="comment-text-form">
-							<input type="text" name="comment" class="comment" />
+							<input type="text" name="comment" class="comment">
 							<div class="add-comment-btn">Add</div>
 						</div>
-						<div class = "comment-list">
+						<div class="comment-list">
 							<div class="comment-wrap">
-								<li class = "comment-list-sub" id="1">
+								<li class="comment-list-sub" id="1">
 									<span class="user" id="commentView-user"> 강라겸 </span>
 									<span class="regdate view" id="commentView-regdate"> 2015.06.19
 										<button class="comment-delete">
@@ -163,13 +161,13 @@
 							</div>						
 						</div>
 					</div>
-				</section>
+				</scidx></section>
 			</div>
 			<div id="search_wrapper">
 				<h3>찾고 싶은 맛을 골라주세요</h3>
 				<div id="taste_wrapper">
 	          		<label class="checkbox" for="hot">
-	            		<input type="checkbox"  name="taste" value="hot" id="hot" data-toggle="checkbox" class="custom-checkbox">
+	            		<input type="checkbox" name="taste" value="hot" id="hot" data-toggle="checkbox" class="custom-checkbox">
 	            			<span class="icons">
 	            				<span class="icon-unchecked"></span>
 	            				<span class="icon-checked"></span>
@@ -177,7 +175,7 @@
 	            		매운맛 
 	          		</label>				
 	          		<label class="checkbox" for="sou">
-	            		<input type="checkbox"  name="taste" value="sou" id="sou" data-toggle="checkbox" class="custom-checkbox">
+	            		<input type="checkbox" name="taste" value="sou" id="sou" data-toggle="checkbox" class="custom-checkbox">
 	            			<span class="icons">
 	            				<span class="icon-unchecked"></span>
 	            				<span class="icon-checked"></span>
@@ -185,7 +183,7 @@
 	            		신맛 
 	          		</label>				
 	          		<label class="checkbox" for="bit">
-	            		<input type="checkbox"  name="taste" value="bit" id="bit" data-toggle="checkbox" class="custom-checkbox">
+	            		<input type="checkbox" name="taste" value="bit" id="bit" data-toggle="checkbox" class="custom-checkbox">
 	            			<span class="icons">
 	            				<span class="icon-unchecked"></span>
 	            				<span class="icon-checked"></span>
@@ -193,7 +191,7 @@
 	            		쓴맛 
 	          		</label>				
 	          		<label class="checkbox" for="swe">
-	            		<input type="checkbox"  name="taste" value="swe" id="swe" data-toggle="checkbox" class="custom-checkbox">
+	            		<input type="checkbox" name="taste" value="swe" id="swe" data-toggle="checkbox" class="custom-checkbox">
 	            			<span class="icons">
 	            				<span class="icon-unchecked"></span>
 	            				<span class="icon-checked"></span>
@@ -201,7 +199,7 @@
 	            		단맛 
 	          		</label>				
 	          		<label class="checkbox" for="sal">
-	            		<input type="checkbox"  name="taste" value="sal" id="sal" data-toggle="checkbox" class="custom-checkbox">
+	            		<input type="checkbox" name="taste" value="sal" id="sal" data-toggle="checkbox" class="custom-checkbox">
 	            			<span class="icons">
 	            				<span class="icon-unchecked"></span>
 	            				<span class="icon-checked"></span>
@@ -209,7 +207,7 @@
 	            		짠맛 
 	          		</label>				
 	          		<label class="checkbox" for="ta-all">
-	            		<input type="checkbox"  name="taste" value="ta-all" id="ta-all" data-toggle="checkbox" class="custom-checkbox">
+	            		<input type="checkbox" name="taste" value="ta-all" id="ta-all" data-toggle="checkbox" class="custom-checkbox">
 	            			<span class="icons">
 	            				<span class="icon-unchecked"></span>
 	            				<span class="icon-checked"></span>
@@ -221,7 +219,7 @@
 				<h3>찾고 싶은 음식 종류를 골라주세요</h3>
 				<div id="type_wrapper">
 	          		<label class="checkbox" for="korean">
-	            		<input type="checkbox"  name="type" value="korean" id="korean" data-toggle="checkbox" class="custom-checkbox">
+	            		<input type="checkbox" name="type" value="korean" id="korean" data-toggle="checkbox" class="custom-checkbox">
 	            			<span class="icons">
 	            				<span class="icon-unchecked"></span>
 	            				<span class="icon-checked"></span>
@@ -229,7 +227,7 @@
 	            		한식 
 	          		</label>
 	           		<label class="checkbox" for="european">
-	            		<input type="checkbox"  name="type" value="european" id="european" data-toggle="checkbox" class="custom-checkbox">
+	            		<input type="checkbox" name="type" value="european" id="european" data-toggle="checkbox" class="custom-checkbox">
 	            			<span class="icons">
 	            				<span class="icon-unchecked"></span>
 	            				<span class="icon-checked"></span>
@@ -237,7 +235,7 @@
 	            		양식 
 	          		</label>
 	          		<label class="checkbox" for="china">
-	            		<input type="checkbox"  name="type" value="chinese" id="china" data-toggle="checkbox" class="custom-checkbox">
+	            		<input type="checkbox" name="type" value="chinese" id="china" data-toggle="checkbox" class="custom-checkbox">
 	            			<span class="icons">
 	            				<span class="icon-unchecked"></span>
 	            				<span class="icon-checked"></span>
@@ -245,7 +243,7 @@
 	            		중식 
 	          		</label>
 	          		<label class="checkbox" for="japan">
-	            		<input type="checkbox"  name="type" value="japanes" id="japan" data-toggle="checkbox" class="custom-checkbox">
+	            		<input type="checkbox" name="type" value="japanes" id="japan" data-toggle="checkbox" class="custom-checkbox">
 	            			<span class="icons">
 	            				<span class="icon-unchecked"></span>
 	            				<span class="icon-checked"></span>
@@ -253,7 +251,7 @@
 	            		일식 
 	          		</label>
 	          		<label class="checkbox" for="ty-all">
-	            		<input type="checkbox"  name="type" value="ty-all" id="ty-all" data-toggle="checkbox" class="custom-checkbox">
+	            		<input type="checkbox" name="type" value="ty-all" id="ty-all" data-toggle="checkbox" class="custom-checkbox">
 	            			<span class="icons">
 	            				<span class="icon-unchecked"></span>
 	            				<span class="icon-checked"></span>
@@ -311,5 +309,5 @@
 				</div>
 		</div>
 	</div>
-</body>
-</html>
+
+</div></body></html>
