@@ -28,12 +28,12 @@ $(function() {
 	
 	
 	/*search*/
-	$('#search-button').click(function() {
-		$('#search').show();
-		$('#howAbout').hide();
-		$('#favorite').hide();
+	$('#search_post').click(function() {
+		$('#search_wrapper').show();
+		$('#search').hide();
+		$('#write_bar').hide();
 		$('#history').hide();
-		$('.top_explain').hide();
+		$('.posts').hide();
 	});
 	
 	$('#search-clear-button').click(function(){
