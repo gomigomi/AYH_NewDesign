@@ -45,6 +45,10 @@ function getSectionItem(postingDatas, isHide){
 			'<div class="top-top">'+ 
 				'<div class="post-writer">'+postingDatas.writer+
 					'<div class="btn-wrapper">'+
+						'<span id=mainView_favorite>'+
+							'<button id="heart-o" class="fa fa-heart-o favorite-btn" style="display:'+favoriteDisplaySub+'"></button>'+
+							'<button id="heart" class="fa fa-heart favorite-btn" style="display:'+favoriteDisplay+'"></button>'+
+						'</span>'+
 						'<span class="posting-buttons" style="display:'+display+'"> '+
 							'<a href="#post_edit" rel="modal:open">'+
 								'<button class="post-edit">'+
@@ -54,10 +58,6 @@ function getSectionItem(postingDatas, isHide){
 							'<button class="post-delete">'+
 								'<i class="fa fa-times"></i>'+
 							'</button>'+
-						'</span>'+
-						'<span id=mainView_favorite>'+
-							'<button id="heart-o" class="fa fa-heart-o favorite-btn" style="display:'+favoriteDisplaySub+'"></button>'+
-							'<button id="heart" class="fa fa-heart favorite-btn" style="display:'+favoriteDisplay+'"></button>'+
 						'</span>'+
 					'</div>'+
 				'</div>'+

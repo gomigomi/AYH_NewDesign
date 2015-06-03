@@ -308,6 +308,7 @@ body button {
 .post-writer{
     float: left;
     font-size: x-large;
+    width: 100%;
 }
 .post-author{
     color: rgb(61, 79, 93);
@@ -328,9 +329,6 @@ body button {
     color: cadetblue;
     background-color: transparent;
 }
-span#postingImg_view{
-    margin-right: 3%;
-}
 .bacpost-meta p{
     margin-top: 0;
     margin-bottom: 0;
@@ -343,7 +341,7 @@ span#postingImg_view{
 	margin-right: 23px;
 }
 .posting-buttons{
-	float: left;;
+	float: right;;
 	/* background-color: transparent; */
 	/* color: black; */
 }
@@ -530,6 +528,7 @@ section{
 	display : inline;
 	
 	
+	margin-right: 3%;
 }
 
 .comment-text-form {
@@ -550,8 +549,8 @@ input.comment {
 
 #postingContent_div {
 	display : inline;
-	width: 65%;
 	overflow : scroll;
+	width: 60%;
 }
 
 #postingClassifyImg {
@@ -591,18 +590,22 @@ comment-list-sub {
 
 .comment-raty-form {
 	position : relative;
-	left : 23%;
+	left: 10%;
 }
-
+.comment-raty-form img{
+    height: 1em;
+	
+}
 .add-commentRaty-btn {
     border-radius: 5px;
     border: 0;
-    height: 1.3em;
-    width: 3em;
+    font-size: small;
     background-color: #F15A24;
     color: white;
     line-height: 1.3em;
     text-align: center;
+    margin-left: 2%;
+    padding: 0.5% 1%;
 }
 .more-content{
     background-color: transparent;
@@ -657,31 +660,33 @@ comment-list-sub {
 }
 .btn-wrapper{
     float: right;
-	
 }
 .btn-wrapper button{
     width: 40px;	
 	color: #34495e;	
     height: 40px;
 
+    font-size: initial;
 }
 .top-top{
     width: 90%;
 	
     float: right;
     padding-left: 2%;
+    position: relative;
+    top: -0.5em;
 }
 .top-bottom{
-    width: 90%;
+    width: 97%;
 	
-    float: right;
+    float: left;
     position: relative;
     top: -0.5em;
     color: gray;
-    padding-left: 2%;
+    font-size: medium;
 }
 #mainView_favorite{
-    float: right;
+    float: left;
 	
 }
 .add-comment-btn{
