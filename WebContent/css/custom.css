@@ -16,6 +16,10 @@ body button {
 #left_sidebar button {
 
 }
+
+#left_sidebar button:hover {
+	background-color:#cfd3d4;
+}
 #main_view{
 	height: 90%;
 	background-color:#ECF0F1;
@@ -619,12 +623,15 @@ comment-list-sub {
     border-radius: 5px;
     border: 0;
     font-size: small;
-    background-color: #F15A24;
+    background-color: #cfd3d4;
     color: white;
     line-height: 1.3em;
     text-align: center;
     margin-left: 2%;
     padding: 0.5% 1%;
+}
+.add-commentRaty-btn:hover {
+    background-color: #F15A24;
 }
 .more-content{
     background-color: transparent;
@@ -684,6 +691,12 @@ comment-list-sub {
     width: 40px;	
 	color: #34495e;	
     height: 40px;
+    font-size: initial;
+}
+.btn-wrapper button:hover{
+    width: 40px;	
+	color: #F15A24;	
+    height: 40px;
 
     font-size: initial;
 }
@@ -709,14 +722,16 @@ comment-list-sub {
 	
 }
 .add-comment-btn{
-    float: right;
-	
+    float: right;	
     height: 1.5em;
     border-radius: 5px;
     border: 0;
     width: 14%;
-    background-color: #F15A24;
+    background-color: #cfd3d4;
     color: white;
     line-height: 1.5em;
     text-align: center;
+}
+.add-comment-btn:hover{
+    background-color: #F15A24;
 }
