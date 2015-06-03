@@ -7,7 +7,6 @@
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="css/jquery.modal.css">
 <link rel="stylesheet" href="css/jquery.raty.css">
-
 <link rel="stylesheet" href="css/searchButton.css">
 
 <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
@@ -18,10 +17,29 @@
 <script src="js/jquery.raty.js"></script>
 <script src="js/jquery.modal.js"></script>
 
+<<<<<<< HEAD
+=======
+<script src="js/customFunction.js"></script>
+<script src="js/custom.js"></script>
+<script src="js/dataStorage.js"></script>
+
+<script src="js/addPosting.js"></script>
+<script src="js/addComment.js"></script>
+
+<script src="js/viewController.js"></script>
+<script src="js/userController.js"></script>
+>>>>>>> 3bbf615969a750a29cc207dc89a3c4b850208223
 <script src="js/searchButton.js"></script>
+<script src="js/historyController.js"></script>
+
+<script src="js/imgUpload.js"></script>
+<script src="js/imgslide.js"></script>
+<script src="js/slideView/js"></script>
+
+<script src="js/favoriteController.js"></script>
 
 <!-- <script src="js/loginCheck.js"></script>
-=======
+
 
 <script src="js/userController.js"></script>
 <script src="js/mainViewController.js"></script>
@@ -70,7 +88,7 @@
 			<div id="write_bar" style="display:none">
 				<form action="" id="content_info" method="POST">
 					<select name="taste" id="tasteSel">
-						<option value="none" selected="">맛 분류</option>
+						<option value="none" selected>맛</option>
 						<option value="hot">매운맛</option>
 						<option value="swe">단맛</option>
 						<option value="soa">신맛</option>
@@ -78,20 +96,20 @@
 						<option value="bit">쓴맛</option>
 					</select>
 					<select name="f_type" id="f_typeSel">
-						<option value="none" selected="">음식 분류</option>
+						<option value="none" selected>국가</option>
 						<option value="korean">한식</option>
 						<option value="chines">중식</option>
 						<option value="japanes">일식</option>
 						<option value="european">양식</option>
 					</select>
 					<select name="time" id="timeSel">
-						<option value="none" selected="">시간대</option>
+						<option value="none" selected>시간대</option>
 						<option value="bf">아침</option>
 						<option value="lc">점심</option>
 						<option value="dn">저녁</option>
 					</select>
 					<select name="location" id="locationSel">
-						<option value="none" selected="">지역선택</option>
+						<option value="none" selected>지역</option>
 						<option value="Seoul">서울</option>
 						<option value="KK">경기</option>
 						<option value="KW">강원</option>
@@ -107,9 +125,9 @@
 				<button id="post_btn">올리기</button> 
 			</div>
 			
-			<!-- main post -->
+			<!-- main view -->
 			<div class="posts">
-				<section class="post 1" id="posting_1">
+				<!-- <section class="post 1" id="posting_1">
 					<scidx id="1">
 					<div class="post-top">
 						<div class="post-img">
@@ -175,11 +193,16 @@
 							</div>						
 						</div>
 					</div>
-				</scidx></section>
+				</section> -->	
+			</div>
+			
+			<!-- popular -->
+			<div id="popular_wrapper" style="display:none">
+			
 			</div>
 			
 			<!-- search -->
-			<div id="search_wrapper">
+			<div id="search_wrapper" style="display:none">
 				<h3>찾고 싶은 맛을 골라주세요</h3>
 				<div id="taste_wrapper">
 	          		<label class="checkbox" for="hot">
@@ -373,16 +396,31 @@
 				</div>
 				<div id="ending_wrapper">
 				</div>
+				<div class="search-posts">
+			
+				</div>
 			</div>
 			
 			<!-- favorite -->
-			<div id="favorite_wrapper">
+			<div id="favorite_wrapper" style = "display:none">
 				<div class="write-rec-bar" id="write_rec_bar"><i class="fa fa-pencil"></i>즐겨찾기에 추가하신 게시글입니다.<i id="more" class="fa fa-sort-desc"></i></div>
+				<div class = "favorite-posts">
+	
+				</div>
 			</div>
-			<div class = "favorite-posts">
 			
+			<!-- history -->
+			<div id="history_wrapper" style="display:none">
+				<div class="write-rec-bar" id="write_rec_bar">
+					<button id="my_history_posting">게시글</button>
+					<button id="my_history_comment">댓글</button>
+				</div>
+				<div class="history-posts">
+				
+				</div>
 			</div>
+
 		</div>
 	</div>
-
-</div></body></html>
+</body>
+</html>
