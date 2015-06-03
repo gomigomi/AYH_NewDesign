@@ -15,6 +15,7 @@ $(function(){
 		$('#popular_wrapper').hide();
 		$('#history_wrapper').hide();
 		$('#preference_wrapper').hide();
+		$('#profileEdit_wrapper').hide();
 		
 		$('.posts').show();
 	})
@@ -26,11 +27,10 @@ $(function(){
 		$('#search_wrapper').hide();
 		$('#history_wrapper').hide();
 		$('#preference_wrapper').hide();
+		$('#profileEdit_wrapper').hide();
 		
 		$('popular_wrapper').show();
 	})
-	
-	
 	
 	//favorite
 	$(document).on('click', '#favorite_post', function() {
@@ -39,6 +39,7 @@ $(function(){
 		$('.posts').hide();
 		$('#history_wrapper').hide();
 		$('#preference_wrapper').hide();
+		$('#profileEdit_wrapper').hide();
 		
 		$('#favorite_wrapper').show();
 		
@@ -52,6 +53,7 @@ $(function(){
 		$('#search_wrapper').hide();
 		$('#popular_wrapper').hide();
 		$('#preference_wrapper').hide();
+		$('#profileEdit_wrapper').hide();
 		
 		$('#history_wrapper').show();
 		
@@ -77,6 +79,7 @@ $(function(){
 		$('#search_wrapper').hide();
 		$('#popular_wrapper').hide();
 		$('#history_wrapper').hide();
+		$('#profileEdit_wrapper').hide();
 		
 		$('#preference_wrapper').show();
 	})
@@ -88,6 +91,7 @@ $(function(){
 		$('#search_wrapper').hide();
 		$('#history_wrapper').hide();
 		$('#preference_wrapper').hide();
+		$('#profileEdit_wrapper').hide();
 		
 		$('#popular_wrapper').show();
 		renderPopularPostingList();
@@ -100,9 +104,24 @@ $(function(){
 		$('#popular_wrapper').hide();
 		$('#history_wrapper').hide();
 		$('#preference_wrapper').hide();
+		$('#profileEdit_wrapper').hide();
 		
 		$('#search_wrapper').show();
 	})
+	
+	//edit profile
+	$('#profile_edit').click(function() {
+		$('.posts').hide();
+		$('#favorite_wrapper').hide();
+		$('#popular_wrapper').hide();
+		$('#history_wrapper').hide();
+		$('#preference_wrapper').hide();
+		$('#search_wrapper').hide();
+		
+		$('#profileEdit_wrapper').show();
+	})
+	
+	
 })
 
 	
