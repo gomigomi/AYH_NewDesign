@@ -10,8 +10,11 @@ $(function(){
  			async : false,
  			success : function(res){
  				$('.preference-posts').empty();
+ 				$('#preference_wrapper .write-rec-bar').empty();
+ 				
  				postingPreferenceDatas = res.result;
  				console.log(postingPreferenceDatas);
+ 				
  				$('#preference_wrapper .write-rec-bar').append("We think you like "+postingPreferenceDatas[0].tasteR+postingPreferenceDatas[0].typeR+postingPreferenceDatas[0].timeR+"<br>");
  				if(postingPreferenceDatas.length==1){
  	 				$('.preference-posts').append("We are sorry but we couldn't find restaurent that you might like");

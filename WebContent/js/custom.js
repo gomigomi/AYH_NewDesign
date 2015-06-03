@@ -89,50 +89,7 @@ $(function() {
 	});
 	
 	
-	//profile edit process
-	$('#profile-edit-submit').click(
-			function() {
-				var id=$('#user_edit_id').val();
-				var name=$('#user_edit_name').val();
-				var pass=$('#user_edit_pass').val();
-				var passconf=$('#user_edit_passconf').val();
-				var thumb = $('#user_edit_thumb').val().substring(12);
-				
-				var form=$('#profile_edit')[0];
-				var updateUser=new FormData(form);
-				
-				
-				if (!passconf) {
-					alert("please fill out password confirm blank");
-				} else if (passconf == pass) {
-					$.ajax({
-						url : 'http://localhost:8080/postUser?type=2',
-						type : 'POST',
-						contentType: false,
-						processData: false,
-						data : updateUser,
-						success : function(res) {
-							
-							window.sessionStorage.setItem('name', name);
-							window.sessionStorage.setItem('pass', pass);
-							window.sessionStorage.setItem('thumb', thumb);
-							
-							$('#user_edit_name').val(name);
-							$('#user_edit_pass').val(pass);
-							$('#user_edit_passconf').val('');
-
-							alert('edit success');
-							$.modal.close();
-							$('.info').text(id + '('+name+')');
-							$('.thumb').css("background-image", 'url('+'"/img/common/'+thumb+'"'+')');						
-							updateUser = new FormData();
-							
-						}
-					});
-				} else {
-					alert('please check your password confirm again');
-				}
-			});
+	
 
 	
 	//user delete process
