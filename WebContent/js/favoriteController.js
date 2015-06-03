@@ -1,28 +1,38 @@
 var favoriteView;
 //Favorite View Button
-$(document).on('click', '#favorite-button', function() {
-	getFavoriteView();	
-})
 
 
-//Posting process in Favorite view
-$(document).on('click', '#favoriteView .fa-heart-o', function() {
-	var param = {
-			id : window.sessionStorage.getItem('id'),
-			posting_seq : $(this).closest('section').attr('id').substring(8)
-	};
-
+function getFavoriteView() {
+	$('#favoritePosting').empty();
+	var id = window.sessionStorage.getItem('id');
 	$.ajax ({
-		url : 'http://localhost:8080/postFavorite',
-		method : 'post',
+		url : 'http://localhost:8080/getFavorite?id='+id+'&type=1',
+		method : 'get',
 		dataType : 'json',
-		data : param,
+		async : false,
 		success : function(res) {
-			console.log("BOOKMARK : UPDATED");
-			getFavoriteView();
+			console.log('getFavoriteView_CF');
+			favoriteView = res.result;
+
+			if (favoriteView == "") {
+					$('#favoritePosting').empty();
+					$('#favoritePosting').append('<div id="nothingElem">추가하신 게시글이 없습니다.</div>');
+					return false;
+			}
+			
+			for(var i=0; i<favoriteView.length; i++) {
+				if( id == favoriteView[i].writer) {
+					$('.favorite-posts').append(getFavSectionItem(favoriteView[i], false));
+					handleRaty();
+				} else {
+					$('.favorite-posts').append(getFavSectionItem(favoriteView[i], true));
+					handleRaty();
+				}
+			}
 		}
-	})
-})
+	});
+}
+
 
 //Delete process in Favorite view
 $(document).on('click', '#favoriteView .fa-heart', function() {
