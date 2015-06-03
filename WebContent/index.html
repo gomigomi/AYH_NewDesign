@@ -5,21 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>HUNGRY?</title>
 
-<link href="Flat-UI-master/dist/css/vendor/bootstrap.min.css" rel="stylesheet">
-<link href="Flat-UI-master/dist/css/flat-ui.min.css" rel="stylesheet">
-<link href="css/custom.css" rel="stylesheet">
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="css/jquery.modal.css">
+<link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/jquery.raty.css">
+<link rel="stylesheet" href="css/custom.css">
+
 <link rel="stylesheet" href="css/searchButton.css">
 
 <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
-<script src="Flat-UI-master/dist/js/flat-ui.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/json2/20140204/json2.js"></script>
 <script src="js/slidr.js"></script><style type="text/css"></style>
+<script src="js/bootstrap.min.js"></script>
 <script src="js/jquery.raty.js"></script>
-<script src="js/jquery.modal.js"></script>
 
 <!-- basic modules -->
 <script src="js/customFunction.js"></script>
@@ -47,6 +45,7 @@
 </head>
 <body>
 	<div id="top_bar">
+	<div id="top_wrapper">
 		<div id="top_logo"><img src="topbar_logo.png"></div>
 		<div id="top_logon">
 			<button id="logout_btn"><i class="fa fa-power-off"></i></button>
@@ -54,130 +53,63 @@
 			<div id="top_thumb"></div>
 		</div>
 	</div>
-	<div id="wrapper">
+	</div>
+	<div id="bottom_wrapper">
 		<div id="left_sidebar">
-			<div class="profile-left" id="profile_left">프로필 </div>
-			<button class="profile-edit " id="profile_edit"><i class="fa fa-cog"></i>프로필 편집 </button><br>
-			<button class="recent-post" id="recent_post"><i class="fa fa-clock-o"></i> 최근 게시물 </button><br>
-			<button class="popular-post" id="popular_post"><i class="fa fa-sort-amount-desc"></i>인기 게시물 </button><br>
-			<button class="recommand-post" id="recommand_post"><i class="fa fa-ellipsis-h"></i>음식점 추천 </button><br>
-			<button class="search-post" id="search_post"><i class="fa fa-search"></i>음식점 검색 </button><br>
-			<button class="favorite-post" id="favorite_post"><i class="fa fa-heart"></i>관심 음식점 </button><br>
+			<button class="profile-edit " id="profile_edit"><i class="fa fa-cog"></i>프로필 편집 </button>
+			<button class="recent-post" id="recent_post"><i class="fa fa-clock-o"></i> 최근 게시물 </button>
+			<button class="popular-post" id="popular_post"><i class="fa fa-sort-amount-desc"></i>인기 게시물 </button>
+			<button class="recommand-post" id="recommand_post"><i class="fa fa-ellipsis-h"></i>음식점 추천 </button>
+			<button class="search-post" id="search_post"><i class="fa fa-search"></i>음식점 검색 </button>
+			<button class="favorite-post" id="favorite_post"><i class="fa fa-heart"></i>관심 음식점 </button>
 			<button class="my-history" id="my_history"><i class="fa fa-tasks"></i>내 활동내역 </button>
 		</div>
 		<div id="main_view">
-			<div class="write-rec-bar" id="write_rec_bar"><i class="fa fa-pencil"></i>추천하고싶은 음식점이 있나요?<i id="more" class="fa fa-sort-desc"></i></div>
-			<div id="write_bar" style="display:none">
-				<form action="" id="content_info" method="POST">
-					<select name="taste" id="tasteSel">
-						<option value="none" selected>맛</option>
-						<option value="hot">매운맛</option>
-						<option value="swe">단맛</option>
-						<option value="soa">신맛</option>
-						<option value="sal">짠맛</option>
-						<option value="bit">쓴맛</option>
-					</select>
-					<select name="f_type" id="f_typeSel">
-						<option value="none" selected>국가</option>
-						<option value="korean">한식</option>
-						<option value="chines">중식</option>
-						<option value="japanes">일식</option>
-						<option value="european">양식</option>
-					</select>
-					<select name="time" id="timeSel">
-						<option value="none" selected>시간대</option>
-						<option value="bf">아침</option>
-						<option value="lc">점심</option>
-						<option value="dn">저녁</option>
-					</select>
-					<select name="location" id="locationSel">
-						<option value="none" selected>지역</option>
-						<option value="Seoul">서울</option>
-						<option value="KK">경기</option>
-						<option value="KW">강원</option>
-						<option value="KS">경상</option>
-						<option value="CC">충청</option>
-						<option value="JR">전라</option>
-						<option value="JJ">제주</option>
-					</select>
-				</form>
-				
-				<textarea id="post_txt_box" rows="" cols=""></textarea>
-				<input id="post_img" type="file">
-				<button id="post_btn">올리기</button> 
-			</div>
-			
 			<!-- main view -->
-			<div class="posts">
-				<!-- <section class="post 1" id="posting_1">
-					<scidx id="1">
-					<div class="post-top">
-						<div class="post-img">
-							<img src="#" alt="썸네일">
-						</div>
-							<div class="top-top">
-								<div class="post-writer">강라겸</div>
-								<div class="btn-wrapper">
-									<span class="posting-buttons" style="display:'+display+'">
-										<a href="#post_edit" class="post-edit" rel="modal:open">
-											<button class="post-edit">
-												<i class="fa fa-pencil-square-o"></i>
-											</button>
-										</a>
-										<button class="post-delete">
-											<i class="fa fa-times"></i>
-										</button>
-									</span>
-									<span id="mainView_favorite">
-										<button id="heart-o" class="fa fa-heart-o favorite-btn" style="display:none"></button>
-										<button id="heart" class="fa fa-heart favorite-btn" style="display:block"></button>
-									</span>
-								</div>
-							</div>
-							<div class="top-bottom comment-form">
-								<span class="bac-point" id="'+postingDatas.avg+'">평균평점 5.0</span>
-								<span class="comment-raty-form">
-									
-									<span class="raty" data-score="5.0" style="cursor:pointer;"></span>
-									<button class="add-commentRaty-btn">평가</button>
-								</span>
-								<span class="post-regdate">2015.06.09</span>
-							</div>
-						</div>
-					<div class="post-description bac-content">
-						<span id="postingImg_view">
-						<a href="#more_content" rel="modal:open"><button class="more-content"><img width="200px" height="200px" src="img/chocogirl_jewel_tshirt_detail1.JPG"></button></a>
-						</span>
-						<span id="postingContent_div">
-							<span id="postingClassifyImg"><img id="'+postingDatas.type+'" class="type postingCI" src="img/icon/posting-nationality/nationality-korean.png"></span>
-							<span id="postingClassifyImg"><img id="'+postingDatas.location+'" class="location postingCI" src="img/icon/posting-location/location-Seoul.png"></span>
-							<span id="postingClassifyImg"><img id="'+postingDatas.taste+'" class="taste postingCI" src="img/icon/posting-taste/taste-hot.png"></span>
-							<span id="postingClassifyImg"><img id="'+postingDatas.time+'" class="time postingCI" src="img/icon/posting-time/time-lc.png"></span>
-							<div id="postingContent_view"> 디자인을 합시다 뀨르르르르르르르 히히히히힣 ㅣ큐큐큐큐큐 이ㅣ 이 나움 ㅣ낭 윈듀우고</div>
-						</span>
-					</div>
-					<div class="comment-cnt">
-						<div class="comment-text-form">
-							<input type="text" name="comment" class="comment">
-							<div class="add-comment-btn">Add</div>
-						</div>
-						<div class="comment-list">
-							<div class="comment-wrap">
-								<li class="comment-list-sub" id="1">
-									<span class="user" id="commentView-user"> 강라겸 </span>
-									<span class="regdate view" id="commentView-regdate"> 2015.06.19
-										<button class="comment-delete">
-											<i class="fa fa-times"></i>
-										</button>
-									</span>
-								</li>
-								<span class="comment view" id="commentView-content"> 이히히히힛 </span>
-							</div>						
-						</div>
-					</div>
-				</section> -->	
+	 		<div class="posts">
+		 		<div class="write-rec-bar" id="write_rec_bar"><i class="fa fa-pencil"></i>추천하고싶은 음식점이 있나요?<i id="more" class="fa fa-sort-desc"></i></div>
+				<div id="write_bar" style="display:none">
+					<form action="" id="content_info" method="POST">
+						<select name="taste" id="tasteSel">
+							<option value="none" selected>맛</option>
+							<option value="hot">매운맛</option>
+							<option value="swe">단맛</option>
+							<option value="soa">신맛</option>
+							<option value="sal">짠맛</option>
+							<option value="bit">쓴맛</option>
+						</select>
+						<select name="f_type" id="f_typeSel">
+							<option value="none" selected>국가</option>
+							<option value="korean">한식</option>
+							<option value="chines">중식</option>
+							<option value="japanes">일식</option>
+							<option value="european">양식</option>
+						</select>
+						<select name="time" id="timeSel">
+							<option value="none" selected>시간대</option>
+							<option value="bf">아침</option>
+							<option value="lc">점심</option>
+							<option value="dn">저녁</option>
+						</select>
+						<select name="location" id="locationSel">
+							<option value="none" selected>지역</option>
+							<option value="Seoul">서울</option>
+							<option value="KK">경기</option>
+							<option value="KW">강원</option>
+							<option value="KS">경상</option>
+							<option value="CC">충청</option>
+							<option value="JR">전라</option>
+							<option value="JJ">제주</option>
+						</select>
+					</form>
+					
+					<textarea id="post_txt_box" rows="" cols=""></textarea>
+					<input id="post_img" type="file">
+					<button id="post_btn">올리기</button>
+					<p></p><br>
+				</div>
 			</div>
-			
+						
 			<!-- popular -->
 			<div id="popular_wrapper" style="display:none">
 				<div class="popular-posts">
@@ -228,194 +160,64 @@
 			<div id="search_wrapper" style="display:none">
 				<h3>찾고 싶은 맛을 골라주세요</h3>
 				<div id="taste_wrapper">
-	          		<label class="checkbox" for="hot">
-	            		<input type="checkbox" name="taste" value="hot" id="hot" data-toggle="checkbox" class="custom-checkbox">
-	            			<span class="icons">
-	            				<span class="icon-unchecked"></span>
-	            				<span class="icon-checked"></span>
-	            			</span>
-	            		매운맛 
-	          		</label>				
-	          		<label class="checkbox" for="sou">
-	            		<input type="checkbox" name="taste" value="sou" id="sou" data-toggle="checkbox" class="custom-checkbox">
-	            			<span class="icons">
-	            				<span class="icon-unchecked"></span>
-	            				<span class="icon-checked"></span>
-	            			</span>
-	            		신맛 
-	          		</label>				
-	          		<label class="checkbox" for="bit">
-	            		<input type="checkbox" name="taste" value="bit" id="bit" data-toggle="checkbox" class="custom-checkbox">
-	            			<span class="icons">
-	            				<span class="icon-unchecked"></span>
-	            				<span class="icon-checked"></span>
-	            			</span>
-	            		쓴맛 
-	          		</label>				
-	          		<label class="checkbox" for="swe">
-	            		<input type="checkbox" name="taste" value="swe" id="swe" data-toggle="checkbox" class="custom-checkbox">
-	            			<span class="icons">
-	            				<span class="icon-unchecked"></span>
-	            				<span class="icon-checked"></span>
-	            			</span>
-	            		단맛 
-	          		</label>				
-	          		<label class="checkbox" for="sal">
-	            		<input type="checkbox" name="taste" value="sal" id="sal" data-toggle="checkbox" class="custom-checkbox">
-	            			<span class="icons">
-	            				<span class="icon-unchecked"></span>
-	            				<span class="icon-checked"></span>
-	            			</span>
-	            		짠맛 
-	          		</label>				
-	          		<label class="checkbox" for="ta-all">
-	            		<input type="checkbox" name="taste" value="ta-all" id="ta-all" data-toggle="checkbox" class="custom-checkbox">
-	            			<span class="icons">
-	            				<span class="icon-unchecked"></span>
-	            				<span class="icon-checked"></span>
-	            			</span>
-	            		모두 
-	          		</label>       		
+	            		<input type="checkbox" name="taste" value="hot" id="hot" class="checkboxCustom" />
+	          		<label class="checkbox" for="hot">매운맛</label>				
+	            		<input type="checkbox" name="taste" value="sou" id="sou" class="custom-checkbox">
+	            		<label class="checkbox" for="sou">신맛 </label>				
+	          		<input type="checkbox" name="taste" value="bit" id="bit" class="custom-checkbox">
+	          		<label class="checkbox" for="bit">쓴맛</label>				
+	            		<input type="checkbox" name="taste" value="swe" id="swe" class="custom-checkbox">
+	            		<label class="checkbox" for="swe">단맛 </label>				
+	            		<input type="checkbox" name="taste" value="sal" id="sal" class="custom-checkbox">
+	            		<label class="checkbox" for="sal">짠맛 </label>				
+	            		<input type="checkbox" name="taste" value="ta-all" id="ta-all" class="custom-checkbox">
+	            		<label class="checkbox" for="ta-all">모두 </label>       		
 				</div>
 				<br>
 				<h3>찾고 싶은 음식 종류를 골라주세요</h3>
 				<div id="type_wrapper">
-	          		<label class="checkbox" for="korean">
-	            		<input type="checkbox" name="type" value="korean" id="korean" data-toggle="checkbox" class="custom-checkbox">
-	            			<span class="icons">
-	            				<span class="icon-unchecked"></span>
-	            				<span class="icon-checked"></span>
-	            			</span>
-	            		한식 
-	          		</label>
-	           		<label class="checkbox" for="european">
-	            		<input type="checkbox" name="type" value="european" id="european" data-toggle="checkbox" class="custom-checkbox">
-	            			<span class="icons">
-	            				<span class="icon-unchecked"></span>
-	            				<span class="icon-checked"></span>
-	            			</span>
-	            		양식 
-	          		</label>
-	          		<label class="checkbox" for="china">
-	            		<input type="checkbox" name="type" value="chinese" id="china" data-toggle="checkbox" class="custom-checkbox">
-	            			<span class="icons">
-	            				<span class="icon-unchecked"></span>
-	            				<span class="icon-checked"></span>
-	            			</span>
-	            		중식 
-	          		</label>
-	          		<label class="checkbox" for="japan">
-	            		<input type="checkbox" name="type" value="japanes" id="japan" data-toggle="checkbox" class="custom-checkbox">
-	            			<span class="icons">
-	            				<span class="icon-unchecked"></span>
-	            				<span class="icon-checked"></span>
-	            			</span>
-	            		일식 
-	          		</label>
-	          		<label class="checkbox" for="ty-all">
-	            		<input type="checkbox" name="type" value="ty-all" id="ty-all" data-toggle="checkbox" class="custom-checkbox">
-	            			<span class="icons">
-	            				<span class="icon-unchecked"></span>
-	            				<span class="icon-checked"></span>
-	            			</span>
-	            		모두  
-	          		</label>
+	          		
+	            		<input type="checkbox" name="type" value="korean" id="korean" class="custom-checkbox">
+	            		<label class="checkbox" for="korean">한식 </label>
+	            		<input type="checkbox" name="type" value="european" id="european" class="custom-checkbox">
+	            		<label class="checkbox" for="european">양식 </label>
+	            		<input type="checkbox" name="type" value="chinese" id="china" class="custom-checkbox">
+	            		<label class="checkbox" for="china">중식 </label>
+	            		<input type="checkbox" name="type" value="japanes" id="japan" class="custom-checkbox">
+	            		<label class="checkbox" for="japan">일식 </label>
+	            		<input type="checkbox" name="type" value="ty-all" id="ty-all" class="custom-checkbox">
+	            		<label class="checkbox" for="ty-all">모두  </label>
 				</div>
 				<br>
 				<h3>먹을 시간대를 골라주세요</h3>
 				<div id="time_wrapper">
-	          		<label class="checkbox" for="bf">
-	            		<input type="checkbox" name="time" value="bf" id="bf" data-toggle="checkbox" class="custom-checkbox">
-	            			<span class="icons">
-	            				<span class="icon-unchecked"></span>
-	            				<span class="icon-checked"></span>
-	            			</span>
-	            		아침  
-	          		</label>
-					<label class="checkbox" for="lc">
-	            		<input type="checkbox" name="time" value="lc" id="lc" data-toggle="checkbox" class="custom-checkbox">
-	            			<span class="icons">
-	            				<span class="icon-unchecked"></span>
-	            				<span class="icon-checked"></span>
-	            			</span>
-	            		점심  
-	          		</label>
-					<label class="checkbox" for="dn">
-	            		<input type="checkbox" name="time" value="dn" id="dn" data-toggle="checkbox" class="custom-checkbox">
-	            			<span class="icons">
-	            				<span class="icon-unchecked"></span>
-	            				<span class="icon-checked"></span>
-	            			</span>
-	            		저녁  
-	          		</label>
-					<label class="checkbox" for="ti-all">
-	            		<input type="checkbox" name="time" value="ti-all" id="ti-all" data-toggle="checkbox" class="custom-checkbox">
-	            			<span class="icons">
-	            				<span class="icon-unchecked"></span>
-	            				<span class="icon-checked"></span>
-	            			</span>
-	            		모두  
-	          		</label>
+	          		
+	            		<input type="checkbox" name="time" value="bf" id="bf" class="custom-checkbox">
+	            		<label class="checkbox" for="bf">아침  </label>			
+	            		<input type="checkbox" name="time" value="lc" id="lc" class="custom-checkbox">
+	            		<label class="checkbox" for="lc">점심  </label>
+	            		<input type="checkbox" name="time" value="dn" id="dn" class="custom-checkbox">
+	            		<label class="checkbox" for="dn">저녁  </label>
+	            		<input type="checkbox" name="time" value="ti-all" id="ti-all" class="custom-checkbox">
+	            		<label class="checkbox" for="ti-all">모두  </label>
 				</div>
 				<br>
 				<h3>어디에 음식점이 있으면 하나요?</h3>
 				<div id="location_wrapper">
-	          		<label class="checkbox" for="seoul">
-	            		<input type="checkbox" name="location" value="seoul" id="seoul" data-toggle="checkbox" class="custom-checkbox">
-	            			<span class="icons">
-	            				<span class="icon-unchecked"></span>
-	            				<span class="icon-checked"></span>
-	            			</span>
-	            		서울 
-	          		</label>
-	          		<label class="checkbox" for="KK">
-	            		<input type="checkbox" name="location" value="KK" id="KK" data-toggle="checkbox" class="custom-checkbox">
-	            			<span class="icons">
-	            				<span class="icon-unchecked"></span>
-	            				<span class="icon-checked"></span>
-	            			</span>
-	            		경기 
-	          		</label>
-	          		<label class="checkbox" for="KW">
-	            		<input type="checkbox" name="location" value="KW" id="KW" data-toggle="checkbox" class="custom-checkbox">
-	            			<span class="icons">
-	            				<span class="icon-unchecked"></span>
-	            				<span class="icon-checked"></span>
-	            			</span>
-	            		강원 
-	          		</label>
-	          		<label class="checkbox" for="KS">
-	            		<input type="checkbox" name="location" value="KS" id="KS" data-toggle="checkbox" class="custom-checkbox">
-	            			<span class="icons">
-	            				<span class="icon-unchecked"></span>
-	            				<span class="icon-checked"></span>
-	            			</span>
-	            		경상 
-	          		</label>
-	          		<label class="checkbox" for="CC">
-	            		<input type="checkbox" name="location" value="CC" id="CC" data-toggle="checkbox" class="custom-checkbox">
-	            			<span class="icons">
-	            				<span class="icon-unchecked"></span>
-	            				<span class="icon-checked"></span>
-	            			</span>
-	            		충청 
-	          		</label>
-	          		<label class="checkbox" for="JR">
-	            		<input type="checkbox" name="location" value="JR" id="JR" data-toggle="checkbox" class="custom-checkbox">
-	            			<span class="icons">
-	            				<span class="icon-unchecked"></span>
-	            				<span class="icon-checked"></span>
-	            			</span>
-	            		전라 
-	          		</label>
-	          		<label class="checkbox" for="JJ">
-	            		<input type="checkbox" name="location" value="JJ" id="JJ" data-toggle="checkbox" class="custom-checkbox">
-	            			<span class="icons">
-	            				<span class="icon-unchecked"></span>
-	            				<span class="icon-checked"></span>
-	            			</span>
-	            		제주 
-	          		</label>
+	            		<input type="checkbox" name="location" value="seoul" id="seoul" class="custom-checkbox">
+	          		<label class="checkbox" for="seoul">서울</label>
+	            		<input type="checkbox" name="location" value="KK" id="KK" class="custom-checkbox">
+	            		<label class="checkbox" for="KK">경기 </label>
+	            		<input type="checkbox" name="location" value="KW" id="KW" class="custom-checkbox">
+	            		<label class="checkbox" for="KW">강원 </label>
+	            		<input type="checkbox" name="location" value="KS" id="KS" class="custom-checkbox">
+	            		<label class="checkbox" for="KS">경상 </label>
+	            		<input type="checkbox" name="location" value="CC" id="CC" class="custom-checkbox">
+	            		<label class="checkbox" for="CC">충청 </label>
+	            		<input type="checkbox" name="location" value="JR" id="JR" class="custom-checkbox">
+	            		<label class="checkbox" for="JR">전라 </label>
+	            		<input type="checkbox" name="location" value="JJ" id="JJ" class="custom-checkbox">
+	          		<label class="checkbox" for="JJ">제주 </label>
 				</div>
 				<div id="ending_wrapper">
 				</div>
@@ -445,5 +247,48 @@
 
 		</div>
 	</div>
+
+	<!-- modals -->
+	<!-- post-edit -->
+	<div class="modal fade" id="postEditModal" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title" id="myModalLabel">Modal title</h4>
+				</div>
+				<div class="modal-body">...</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary">Save changes</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- see more contents -->
+	<div class="modal fade" id="moreContentsModal" tabindex="-1"
+		role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title" id="myModalLabel">Modal title</h4>
+				</div>
+				<div class="modal-body">...</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary">Save changes</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
 </body>
 </html>
