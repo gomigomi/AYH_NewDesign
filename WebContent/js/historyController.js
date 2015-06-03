@@ -1,20 +1,4 @@
-//$(function() {
-//	var commentDatas = getCommentData();
-//	function getCommentData(){
-//		$.ajax({
-//			url : 'http://localhost:8080/getComment',
-//			method : 'get',
-//			dataType : 'json',
-//			success : function(res){
-//				console.log("get comment");
-//				commentDatas = res.result;
-//			}
-//		})
-//	}
-
-
-
-	//쓴 포스팅 불러오기 
+//쓴 포스팅 불러오기 
 function getPostingUser() {
 	$('.history-posts').empty();
 	var id = window.sessionStorage.getItem('id');
@@ -40,12 +24,10 @@ function getPostingUser() {
 			}
 		}
 	})
-}	
-	
-	
-	
-	//쓴 코멘트 게시물 불러오기 
-	function getCommentUser() {
+}
+
+// 쓴 코멘트 게시물 불러오기
+function getCommentUser() {
 	$('.history-posts').empty();
 	var id = window.sessionStorage.getItem('id');
 	$.ajax({

@@ -23,40 +23,19 @@
 
 <script src="js/addPosting.js"></script>
 <script src="js/addComment.js"></script>
-
 <script src="js/viewController.js"></script>
+
 <script src="js/userController.js"></script>
 <script src="js/searchButton.js"></script>
 <script src="js/historyController.js"></script>
+<script src="js/favoriteController.js"></script>
+<script src="js/preferenceController.js"></script>
+<script src="js/popularController.js"></script>
 
 <script src="js/imgUpload.js"></script>
 <script src="js/imgslide.js"></script>
 <script src="js/slideView/js"></script>
 
-<script src="js/favoriteController.js"></script>
-
-<!-- <script src="js/loginCheck.js"></script>
-
-
-<script src="js/userController.js"></script>
-<script src="js/mainViewController.js"></script>
-<script src="js/customFunction.js"></script>
-<script src="js/favoriteController.js"></script>
-<script src="js/viewController.js"></script>
-<!-- \<script src="js/loginCheck.js"></script>
->>>>>>> 9baf476f73bd6b91705ce5d44304fdfc4b60aae4
-<script src="js/viewController.js"></script>
-<script src="js/historyController.js"></script>
-
-<script src="js/imgUpload.js"></script>
-<script src="js/imgslide.js"></script>
-<script src="js/searchController.js"></script>
-<script src="js/slideView.js"></script>
-<script src="js/addComment.js"></script>
-<script src="js/addPosting.js"></script>
-
-
-<script src="js/custom.js"></script> -->
 
 <title>Insert title here</title>
 </head>
@@ -195,7 +174,17 @@
 			
 			<!-- popular -->
 			<div id="popular_wrapper" style="display:none">
+				<div class="popular-posts">
+				
+				</div>
+			</div>
 			
+			<!-- preference -->
+			<div id="preference_wrapper">
+				<div class="write-rec-bar" id="write_rec_bar"></div>
+				<div class="preference-posts">
+				
+				</div>
 			</div>
 			
 			<!-- search -->
@@ -328,7 +317,7 @@
 	            				<span class="icon-unchecked"></span>
 	            				<span class="icon-checked"></span>
 	            			</span>
-	            		저녁  
+	            		모두  
 	          		</label>
 				</div>
 				<br>
@@ -342,6 +331,56 @@
 	            			</span>
 	            		서울 
 	          		</label>
+	          		<label class="checkbox" for="KK">
+	            		<input type="checkbox" name="location" value="KK" id="KK" data-toggle="checkbox" class="custom-checkbox">
+	            			<span class="icons">
+	            				<span class="icon-unchecked"></span>
+	            				<span class="icon-checked"></span>
+	            			</span>
+	            		경기 
+	          		</label>
+	          		<label class="checkbox" for="KW">
+	            		<input type="checkbox" name="location" value="KW" id="KW" data-toggle="checkbox" class="custom-checkbox">
+	            			<span class="icons">
+	            				<span class="icon-unchecked"></span>
+	            				<span class="icon-checked"></span>
+	            			</span>
+	            		강원 
+	          		</label>
+	          		<label class="checkbox" for="KS">
+	            		<input type="checkbox" name="location" value="KS" id="KS" data-toggle="checkbox" class="custom-checkbox">
+	            			<span class="icons">
+	            				<span class="icon-unchecked"></span>
+	            				<span class="icon-checked"></span>
+	            			</span>
+	            		경상 
+	          		</label>
+	          		<label class="checkbox" for="CC">
+	            		<input type="checkbox" name="location" value="CC" id="CC" data-toggle="checkbox" class="custom-checkbox">
+	            			<span class="icons">
+	            				<span class="icon-unchecked"></span>
+	            				<span class="icon-checked"></span>
+	            			</span>
+	            		충청 
+	          		</label>
+	          		<label class="checkbox" for="JR">
+	            		<input type="checkbox" name="location" value="JR" id="JR" data-toggle="checkbox" class="custom-checkbox">
+	            			<span class="icons">
+	            				<span class="icon-unchecked"></span>
+	            				<span class="icon-checked"></span>
+	            			</span>
+	            		전라 
+	          		</label>
+	          		<label class="checkbox" for="JJ">
+	            		<input type="checkbox" name="location" value="JJ" id="JJ" data-toggle="checkbox" class="custom-checkbox">
+	            			<span class="icons">
+	            				<span class="icon-unchecked"></span>
+	            				<span class="icon-checked"></span>
+	            			</span>
+	            		제주 
+	          		</label>
+				</div>
+				<div id="ending_wrapper">
 				</div>
 				<div class="search-posts">
 			

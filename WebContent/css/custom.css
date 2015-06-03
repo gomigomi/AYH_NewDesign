@@ -188,6 +188,7 @@ body button {
 }
 .my-history i{
     padding-left: 1em;
+    padding-right: 1em;
 }
 
 .posts {
@@ -197,6 +198,17 @@ body button {
   
 #search_wrapper{
     width: 95%;
+	
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 10px;
+    padding: 0.01em 1.5em;
+    margin-bottom: 1em;
+    padding-bottom: 1em;
+}
+
+#ending_wrapper {
+	width: 95%;
 	
     margin: 0 auto;
     background-color: white;
@@ -224,6 +236,13 @@ body button {
 #time_wrapper label{
 	float:left;
 	margin-right: 1em;
+}
+#location_wrapper label{
+	float:left;
+	margin-right: 0.5em;
+}
+#location_wrapper label span {
+	padding-right: 0.1em;
 }
 #title{
     font-size: -webkit-xxx-large;
