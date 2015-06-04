@@ -165,9 +165,19 @@ body button {
     color: #F15A24;
     width: 60%;
 }
+#post_btn:hover{
+    background-color: #F15A24;
+}
 #post_btn{
-    float: right;
-	
+    float: right;	
+    height: 1.5em;
+    border-radius: 5px;
+    border: 0;
+    width: 14%;
+    background-color: #cfd3d4;
+    color: white;
+    line-height: 0.5em;
+    text-align: center;
 }
 #profile_edit{
 }
@@ -358,25 +368,9 @@ body button {
 .post-regdate{
     float: right;
 }
-#profile-edit-submit{
-	margin-left: 15%;
-	margin-right: 23px;
-}
 .posting-buttons{
 	float: right;;
-	/* background-color: transparent; */
-	/* color: black; */
 }
-/* .post-edit{
-    background: transparent;
-    border: 0;
-    margin-right: 10px;
-}
-.post-delete{
-    background: transparent;
-    border: 0;
-    margin-right: 10px;
-} */
 .favorite-btn{
 	
 }
@@ -408,6 +402,7 @@ section{
     display: inline-block;
     background-color: white;
     border-radius: 10px;
+    width: 100%;
 }
 
 /*Comment Declare*/
@@ -725,8 +720,7 @@ comment-list-sub {
     font-size: medium;
 }
 #mainView_favorite{
-    float: left;
-	
+    float: left;	
     position: relative;
     bottom: -3.5px;
 }
@@ -801,4 +795,66 @@ input[type=checkbox]:checked + label:hover:before {
     text-align: center;  
     line-height: 20px;  
 
-} 
+}
+#profileEdit_thumb{
+	
+    float: left;
+    margin-left: 5%;
+    width: 200px;
+}
+#profileEdit_thumb img{
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    background-color: orange;
+    margin-bottom: 5%;
+}
+#profileEdit_thumb input{
+
+}
+#profileEdit{
+    float: left;
+    width: 61%;
+    text-align: center;
+    height: 200px;
+    padding-top: 2%;
+}
+#profileEdit input{
+    width: 80%;
+	margin-bottom:2%;
+    border-radius: 7px;
+    border: solid 1px #cfd3d4;
+    padding: 1%;
+}
+#profile-edit-submit{
+    color: white;
+    BACKGROUND-COLOR: #cfd3d4;
+}
+#profile-edit-submit:hover{
+    background-color: #F15A24;
+	
+}
+#profileWithdrawal{
+	
+}
+#profileWithdrawal input{
+    float: left;
+	
+    margin: 1%;
+    border-radius: 7px;
+    border: solid 1px #cfd3d4;
+    padding: 0.5% 1%;
+    width: 35%;
+}
+#profileWithdrawal input[type=button]{
+    background-color: ##cfd3d4;
+	
+    width: 20%;
+    color: white;
+    background-color: #cfd3d4;
+    border: 0;
+}
+#profileWithdrawal input[type=button]:hover{
+    background-color: #f15a24;
+	
+}
