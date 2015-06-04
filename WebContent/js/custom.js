@@ -92,43 +92,6 @@ $(function() {
 	
 
 	
-	//user delete process
-	$('#user-delete-submit').click(function(){
-		var id = $('#user_edit_id').val();
-		var pass = $('#user_edit_pass').val();
-		var passconf = $('#user_edit_passconf').val();
-
-		if (!passconf) {
-			alert("please fill out password confirm blank");
-		} else if (passconf == pass) {
-			var check=confirm('Are you sure to delete your id? All your postings will be deleted');
-			if (check){
-				$.ajax({
-					url :'http://localhost:8080/deleteUser?id=' + id,
-					method :'DELETE',
-					dataType :'json',
-					success : function(res) {
-						console.log("user-delete");
-						
-						$('#user_edit_id').val('');
-						$('#user_edit_name').val('');
-						$('#user_edit_pass').val('');
-						$('#user_edit_passconf').val('');
-
-						$.modal.close();
-
-						sessionStorage.clear();
-						
-						location.href="/NewFront.jsp";	
-						
-						renderPostingList();
-					}
-				});
-			}else{return false;}
-		} else {
-			alert('please check your password confirm again');
-		}
-	});
 	
 	
 	/**

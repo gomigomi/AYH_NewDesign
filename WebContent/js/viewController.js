@@ -41,6 +41,7 @@ $(function(){
 		$('#preference_wrapper').hide();
 		$('#profileEdit_wrapper').hide();
 		
+		$('.favorite-posts').empty();
 		$('#favorite_wrapper').show();
 		
 		getFavoriteView();	
@@ -106,6 +107,7 @@ $(function(){
 		$('#preference_wrapper').hide();
 		$('#profileEdit_wrapper').hide();
 		
+		$('.search-posts').empty();
 		$('#search_wrapper').show();
 	})
 	
