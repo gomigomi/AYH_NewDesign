@@ -126,7 +126,7 @@ body button {
     width: 100%;
     margin-bottom: 0.5em;
 }
-#tasteSel{
+select{
     background-color: #F15A24;
     border: 0px;
     color: white;
@@ -135,49 +135,24 @@ body button {
     font-size: smaller;
     margin-right: 0.3em;
 }
-#f_typeSel{
-	background-color: #F15A24;
-    border: 0px;
-    color: white;
-    margin-right: 0.3em;
-	width: 20%;
-    height: 30px;
-    font-size: smaller;
-}
-#timeSel{
-	background-color: #F15A24;
-    border: 0px;
-    color: white;
-    margin-right: 0.3em;
-	width: 20%;
-	height: 30px;
-    font-size: smaller;
-}
-#locationSel{
-	background-color: #F15A24;
-    border: 0px;
-    color: white;
-	width: 20%;
-    height: 30px;
-    font-size: smaller;}
 #post_img{
     float: left;
     color: #F15A24;
     width: 60%;
 }
 #post_btn:hover{
-    background-color: #F15A24;
+    background-color: #DC5322;
 }
 #post_btn{
     float: right;	
-    height: 1.5em;
     border-radius: 5px;
     border: 0;
     width: 14%;
-    background-color: #cfd3d4;
+    background-color: #F15A24;
     color: white;
-    line-height: 0.5em;
     text-align: center;
+    padding: 0.2%;
+    height: 23px;
 }
 #profile_edit{
 }
@@ -385,6 +360,9 @@ body button {
     width: 100%;
 
     height: 130px;
+    border-radius: 9px;
+    border: solid 1px #cfd3d4;
+    margin-top: 1%;
 }
 #post-edit-submit{
     /* margin-left: 80%; */
@@ -730,13 +708,13 @@ comment-list-sub {
     border-radius: 5px;
     border: 0;
     width: 14%;
-    background-color: #cfd3d4;
+    background-color: #F15A24;
     color: white;
     line-height: 1.5em;
     text-align: center;
 }
 .add-comment-btn:hover{
-    background-color: #F15A24;
+    background-color: #DC5322;
 }
 input[type=checkbox] {  
     display: none;  
@@ -752,7 +730,6 @@ input[type=checkbox] + label{
 }
 
 input[type=checkbox]+ label:before {     
-
     content: "";  
     display: inline-block;    
     width: 20px;  
@@ -765,7 +742,6 @@ input[type=checkbox]+ label:before {
     border-radius: 5px; 
 }
 input[type=checkbox]:checked + label:before { 
-
     content: "\2228"; 
     font-size: 18px; 
     font-weight:800; 
@@ -776,7 +752,6 @@ input[type=checkbox]:checked + label:before {
 
 }
 input[type=checkbox]+ label:hover:before {     
-
     content: "\2228";  
     font-size: 18px; 
     font-weight:800; 
@@ -786,7 +761,6 @@ input[type=checkbox]+ label:hover:before {
     line-height: 20px;
 }
 input[type=checkbox]:checked + label:hover:before { 
-
     content: "\2228"; 
     font-size: 18px; 
     font-weight:800; 
@@ -794,10 +768,40 @@ input[type=checkbox]:checked + label:hover:before {
     background:#F15A24;
     text-align: center;  
     line-height: 20px;  
-
+}
+input[type=file] {  
+    display: none;  
+}
+#post_img_fileName{
+	
+}
+input[type=file] + label{
+    display: inline-block;  
+    cursor: pointer;   
+    font-size: 13px;
+    border-radius: 5px;
+    width: 14%;
+    background-color: #cfd3d4;
+    padding: 0.5%;
+    color: white;
+    font-weight: normal;
+    text-align: center;
+    height: 23px;
+}
+input[type=file] + label:hover{
+    display: inline-block;  
+    cursor: pointer;   
+    font-size: 13px;
+    border-radius: 5px;
+    width: 14%;
+    background-color:#F15A24;
+    padding: 0.5%;
+    color: white;
+    font-weight: normal;
+    text-align: center;
+    height: 23px;
 }
 #profileEdit_thumb{
-	
     float: left;
     margin-left: 5%;
     width: 200px;
@@ -809,8 +813,10 @@ input[type=checkbox]:checked + label:hover:before {
     background-color: orange;
     margin-bottom: 5%;
 }
-#profileEdit_thumb input{
+#profileEdit_thumb label{
+    width: 80px;
 
+    float: right;
 }
 #profileEdit{
     float: left;
@@ -828,18 +834,18 @@ input[type=checkbox]:checked + label:hover:before {
 }
 #profile-edit-submit{
     color: white;
-    BACKGROUND-COLOR: #cfd3d4;
+    border:0;
+    BACKGROUND-COLOR: #F15A24;
 }
 #profile-edit-submit:hover{
-    background-color: #F15A24;
+    background-color: #DC5322;
 	
 }
 #profileWithdrawal{
 	
 }
 #profileWithdrawal input{
-    float: left;
-	
+    float: left;	
     margin: 1%;
     border-radius: 7px;
     border: solid 1px #cfd3d4;
@@ -847,14 +853,27 @@ input[type=checkbox]:checked + label:hover:before {
     width: 35%;
 }
 #profileWithdrawal input[type=button]{
-    background-color: ##cfd3d4;
-	
+    background-color: #F15A24;	
     width: 20%;
     color: white;
-    background-color: #cfd3d4;
     border: 0;
 }
 #profileWithdrawal input[type=button]:hover{
-    background-color: #f15a24;
-	
+    background-color: #DC5322;	
+}
+.save-btn{
+    background-color: #F15A24;	
+    border: 0;
+}
+.save-btn:hover{
+	background-color:#DC5322;
+
+}
+.close-btn{
+	background-color:#ECF0F1;
+	border:0;
+}
+.close-btn:hover{
+	backgroun-color:cfd3d4;
+	border:0;
 }
