@@ -52,7 +52,7 @@ public class SearchDao {
 			String sql_ta ="";
 				
 			//모두 선택을 위한 코드. 
-			if(searchParam.get("f_type")[0].toString().equals("ty-all")){
+			if(searchParam.get("type")[0].toString().equals("ty-all")){
 				sql_ty = "";
 			}else{
 				sql_ty = "and type='"+searchParam.get("f_type")[0].toString()+"' ";

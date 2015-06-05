@@ -66,6 +66,10 @@ body button {
     float: left;
 	
 }
+
+#top_logo:hover{
+	
+}
 #top_logon{
 	
 }
@@ -427,7 +431,7 @@ section{
     margin-right: 5px;
 }
 
-.comment-cnt .form .add-comment-btn{
+.comment-cnt .form .add-comment-btn, #search_btn{
     float: right;
     height: 25px;
     line-height: 25px;
@@ -715,7 +719,7 @@ comment-list-sub {
 #mainView_favorite{
     float: left;	
 }
-.add-comment-btn{
+.add-comment-btn, #search_btn{
     float: right;	
     height: 1.5em;
     border-radius: 5px;

@@ -30,7 +30,6 @@ public class SearchServlet extends HttpServlet{
 
 		PrintWriter printout = response.getWriter();
 		JSONObject JObject = new JSONObject();
-		String type = request.getParameter("type");
 		Map<String, String[]> postingParam = request.getParameterMap();
 		SearchDao dao = new SearchDao();
 		

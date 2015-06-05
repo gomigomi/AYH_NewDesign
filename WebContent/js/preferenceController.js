@@ -17,7 +17,8 @@ $(function(){
  				
  				$('#preference_wrapper .write-rec-bar').append("We think you like "+postingPreferenceDatas[0].tasteR+postingPreferenceDatas[0].typeR+postingPreferenceDatas[0].timeR+"<br>");
  				if(postingPreferenceDatas.length==1){
- 	 				$('#preference_notFound').append("We are sorry but we couldn't find restaurent that you might like");
+ 					$('#preference_notFound').empty();
+ 	 				$('#preference_notFound').append("미안해요. 찾을수가 없네요 ㅠㅅㅠ. 선호도를 더 표현해주세요.");
  				}
  				for(var i=1; i<postingPreferenceDatas.length; i++ ){
 					if(window.sessionStorage.getItem('id')==postingPreferenceDatas[i].writer){
