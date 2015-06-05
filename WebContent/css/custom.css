@@ -567,7 +567,7 @@ section{
 }
 
 .comment-text-form {
-	margin-top : 2%;
+	margin-top : 3%;
 }
 
 input.comment {
@@ -654,7 +654,8 @@ comment-list-sub {
     margin: 0;
     border: 0;
     border-radius: 10px;
-    margin-top : 2%;
+    margin-top : 5%;
+    margin-left : 3%;
 }
 
 #img-slider img{	

@@ -14,7 +14,7 @@ $(function() {
 		}
 
 		$.ajax({
-			url : 'http://localhost:8080/doSearch',
+			url : '/doSearch',
 			method : 'GET',
 			dataType : 'JSON',
 			data : {

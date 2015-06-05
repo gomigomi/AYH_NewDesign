@@ -14,7 +14,7 @@ $(function(){
 		console.log(param);
 		
 		$.ajax({
-			url: 'http://localhost:8080/postComment',
+			url: '/postComment',
 			method: 'post',
 			dataType: 'json',
 			data: param,
@@ -23,7 +23,7 @@ $(function(){
 				if(res.result=='success'){
 					
 					$.ajax({
-						url : 'http://localhost:8080/getComment?type=2',
+						url : '/getComment?type=2',
 						method : 'GET',
 						dataType : 'JSON',
 						async : false,

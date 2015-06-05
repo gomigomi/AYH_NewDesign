@@ -4,7 +4,7 @@ $(function(){
     	var id=window.sessionStorage.getItem('id');
 
  		$.ajax({
- 			url: 'http://localhost:8080/getPosting?type=6&id='+id,
+ 			url: '/getPosting?type=6&id='+id,
  			method: 'get',
  			dataType: 'json',
  			async : false,

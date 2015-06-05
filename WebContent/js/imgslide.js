@@ -18,7 +18,7 @@ $(function() {
 		
 		
 		$.ajax({	//Request Login API
-			url: 'http://localhost:8080/getImg?posting_seq='+posting_seq,
+			url: '/getImg?posting_seq='+posting_seq,
 			method : 'get',
 			dataType : 'json',
 			async : false,

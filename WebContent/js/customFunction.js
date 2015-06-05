@@ -4,7 +4,7 @@ var allScoreDatas;
 /*comment를 위한 함수 선언*/
 function getCommentData() {
 	$.ajax({
-		url : 'http://localhost:8080/getComment?type=1',
+		url : '/getComment?type=1',
 		method : 'get',
 		dataType : 'json',
 		async:false,
@@ -20,7 +20,7 @@ $(document).on('click', '.comment-delete', function() {
 	var seq = $(this).closest('li').attr('id');
 	if(seq) {
 		$.ajax({
-			url : 'http://localhost:8080/deleteComment?seq='+seq,
+			url : '/deleteComment?seq='+seq,
 			method : 'DELETE',
 			async : false,
 			dataType : 'JSON',
@@ -41,7 +41,7 @@ $(document).on('click', '.comment-delete', function() {
 function getFavoriteData(){
 	var id = window.sessionStorage.getItem('id');
 	$.ajax ({
-		url : 'http://localhost:8080/getFavorite?id='+id+'&type=2',
+		url : '/getFavorite?id='+id+'&type=2',
 		method : 'get',
 		dataType : 'json',
 		async : false,
@@ -64,7 +64,7 @@ $(document).on('click', '.add-commentRaty-btn', function() {
 	};
 	
 	$.ajax ({
-		url : 'http://localhost:8080/getScore?type=1&id='+param.id+'&posting_seq='+param.posting_seq,
+		url : '/getScore?type=1&id='+param.id+'&posting_seq='+param.posting_seq,
 		method : 'GET',
 		dataType : 'JSON',
 		success : function(res) {
@@ -72,56 +72,14 @@ $(document).on('click', '.add-commentRaty-btn', function() {
 				var check = confirm("Do you want to re-estimate?")
 				if(check) {
 					$.ajax({
-						url : 'http://localhost:8080/postScore?type=2',
+						url : '/postScore?type=2',
 						method : 'POST',
 						dataType : 'JSON',
 						data : param,
 						success : function(res) {
 							if(res.result == 'success') {
 								alert("감사합니다!!");
-								
-//								//점수화면 동적 제어.
-//								var myPoint =Number(parentElem.find('.raty').attr('data-score'));
-//								var currentPoint = Number(param.point);
-//								var pre_idx = Number(parentElem.find('scIdx').attr('id'));
-//								var sc_idx = Number(parentElem.find('scIdx').attr('id'));
-//								if(sc_idx == 0) {
-//									console.log("added");
-//									sc_idx+=1;
-//								}
-//								
-//								var basePoint = Number(parentElem.find('.bac-point').attr('id'));
-//								var newAvg = ((basePoint*pre_idx+currentPoint)-myPoint)/(sc_idx);
-//								
-//								//소수점 두 자리로 맞추기 위한 코드.
-//								//방법 1.
-////								var zeroCounter = 0;
-////								zeroCounter = newAvg.indexOf(".");
-////
-////								if(zeroCounter == -1) {
-////									newAvg = String(newAvg+'.00');
-////								}		
-//								//방법 2.
-////								newAvg = newAvg*1.01;
-////								newAvg = String(newAvg);
-////								parseFloat(newAvg, 2);
-////								newAvg.toFixed(2)
-//								//방법 3.
-////								Math.round(newAvg*100)/1;
-//								//방법 4. 유레카!!
-//								console.log("내가 준 점수 "+currentPoint);
-//								console.log("내가 줬던 점수 "+myPoint);
-//								console.log("기존 평균 "+basePoint);
-//								console.log("인덱스 "+sc_idx);
-////								var testAvg = ();
-//								console.log("평균 "+newAvg);
-//
-//								
-//								var printNum = newAvg.toFixed(2);
-//
-//								parentElem.find('.bac-point').empty();
-//								parentElem.find('.bac-point').append('Point '+printNum);
-								
+					
 								//점수화면 동적 제어.
 								var myPoint =Number(parentElem.find('.raty').attr('data-score'));
 								var currentPoint = Number(param.point);
@@ -154,7 +112,7 @@ $(document).on('click', '.add-commentRaty-btn', function() {
 								var printNum = newAvg.toFixed(2);
 
 								parentElem.find('.bac-point').empty();
-								parentElem.find('.bac-point').append('Point '+printNum);
+								parentElem.find('.bac-point').append('평균평점 '+printNum);
 								
 								console.log("내가 준 점수 "+currentPoint);
 								console.log("내가 줬던 점수 "+myPoint);
@@ -176,7 +134,7 @@ $(document).on('click', '.add-commentRaty-btn', function() {
 				return false;
 			} else if (res.result == "0"){
 				$.ajax ({
-					url : 'http://localhost:8080/postScore?type=1',
+					url : '/postScore?type=1',
 					method : 'POST',
 					dataType : 'JSON',
 					data : param,
@@ -218,7 +176,7 @@ $(document).on('click', '.add-commentRaty-btn', function() {
 							var printNum = newAvg.toFixed(2);
 
 							parentElem.find('.bac-point').empty();
-							parentElem.find('.bac-point').append('Point '+printNum);
+							parentElem.find('.bac-point').append('평균평점 '+printNum);
 							
 							console.log("내가 준 점수 "+currentPoint);
 							console.log("내가 줬던 점수 "+myPoint);
@@ -248,7 +206,7 @@ function getBasisScore() {
 	var parentElem = $(this).parents('section');
 	var id = window.sessionStorage.getItem("id");
 	$.ajax({
-		url : 'http://localhost:8080/getScore?type=2&id='+id,
+		url : '/getScore?type=2&id='+id,
 		method : 'GET',
 		dataType : 'JSON',
 		async : false,
@@ -262,7 +220,7 @@ getBasisScore();
 
 function getAllScore() {
 	$.ajax ({
-		url : 'http://localhost:8080/getScore?type=3',
+		url : '/getScore?type=3',
 		method : 'GET',
 		dataType : 'JSON',
 		async : false,

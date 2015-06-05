@@ -1,7 +1,7 @@
 function renderPopularPostingList(){
 	$('.popular-posts').empty();
 	$.ajax({
-		url: 'http://localhost:8080/getPosting?type=4',
+		url: '/getPosting?type=4',
 		method: 'get',
 		dataType: 'json',
 		async : false,

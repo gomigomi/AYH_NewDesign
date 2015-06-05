@@ -399,7 +399,7 @@ public class PostingDao {
 			stmt7 = conn.createStatement();
 			stmt8 = conn.createStatement();
 			
-			String baseSql1 ="SELECT A.*, B.thumb, B.name, IFNULL(C.img,'no-image.jpg') AS img, IFNULL(round(avg(D.point), 2),'not rated') AS avg "+
+			String baseSql1 ="SELECT A.*, B.thumb, B.name, IFNULL(C.img,'no-image.jpg') AS img, IFNULL(round(avg(D.point), 2), 0.00) AS avg "+
 					"FROM posting AS A "+
 					"LEFT JOIN TempScoreView S ON S.posting_seq = A.seq "+
 					"LEFT JOIN score D ON D.posting_seq = A.seq "+

@@ -4,7 +4,7 @@ var id = window.sessionStorage.getItem('id');
 function getFavoriteView() {
 	$('#favoritePosting').empty();
 	$.ajax ({
-		url : 'http://localhost:8080/getFavorite?id='+id+'&type=1',
+		url : '/getFavorite?id='+id+'&type=1',
 		method : 'get',
 		dataType : 'json',
 		async : false,
@@ -41,7 +41,7 @@ $(document).on('click', '#favoriteView .fa-heart', function() {
 		var posting_seq = $(this).closest('section').attr('id').substring(8);
 		
 		$.ajax ({
-			url : 'http://localhost:8080/deleteFavorite?id='+id+'&posting_seq='+posting_seq,
+			url : '/deleteFavorite?id='+id+'&posting_seq='+posting_seq,
 			method : 'delete',
 			success : function(res) {
 				console.log('BOOKMARK : User('+id+') deleted favorite seq : '+posting_seq+'.');
@@ -63,7 +63,7 @@ $(document).on('click', '#mainView_favorite .fa-heart-o', function(e) {
 	console.log(param.posting_seq);
 	
 	$.ajax({
-		url : 'http://localhost:8080/postFavorite',
+		url : '/postFavorite',
 		method : 'post',
 		dataType : 'json',
 		data : param,
@@ -88,7 +88,7 @@ $(document).on('click', '#mainView_favorite .fa-heart', function(){
 		var posting_seq = $(this).closest('section').attr('id').substring(8);
 		
 		$.ajax ({
-			url : 'http://localhost:8080/deleteFavorite?id='+id+'&posting_seq='+posting_seq,
+			url : '/deleteFavorite?id='+id+'&posting_seq='+posting_seq,
 			method : 'delete',
 			success : function(res) {
 				console.log('BOOKMARK : User('+id+') deleted favorite seq : '+posting_seq+'.');

@@ -3,7 +3,7 @@ function getPostingUser() {
 	$('.history-posts').empty();
 	var id = window.sessionStorage.getItem('id');
 	$.ajax({
-		url : 'http://localhost:8080/getPosting?type=2&id=' + id,
+		url : '/getPosting?type=2&id=' + id,
 		method : 'get',
 		dataType : 'json',
 		async : false,
@@ -31,7 +31,7 @@ function getCommentUser() {
 	$('.history-posts').empty();
 	var id = window.sessionStorage.getItem('id');
 	$.ajax({
-		url : 'http://localhost:8080/getPosting?type=3&id=' + id,
+		url : '/getPosting?type=3&id=' + id,
 		method : 'get',
 		dataType : 'json',
 		async : false,
