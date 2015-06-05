@@ -568,6 +568,7 @@ input.comment {
 .postingCI {
 	width : 20px;
 	height : 20px;
+	margin-right : 1%;
 }
 
 #postingContent_div {
@@ -916,12 +917,7 @@ input[type=file] + label:hover{
     float: left;
     height: 350px;
 }
-#moreContents{
-    width: 330px;
-	
-    float: left;
-    margin-left: 1%;
-}
+
 .modal-body button{
 	
 }
@@ -939,6 +935,7 @@ input[type=file] + label:hover{
 }
 #my_history_submenu{
 	display:none;
+	font-size : 0.8em;
 }
 #my_history_submenu button{
     margin: 0;

@@ -1,0 +1,26 @@
+#moreContents{
+    width: 330px;
+    float: left;
+    margin-left: 3%;
+}
+
+#textContent {
+	font-size : 1.2em;
+}
+
+#info-wrapper {
+	margin : 5% 0 3% 0;
+}
+
+#moreContentDiv {
+	background-color : #F15A24;
+	margin-bottom : 3%;
+	height : 2px;
+	width : 95%;
+	border-radius : 5px;
+}
+
+.modalPostingCI {
+	width : 1.5em;
+	height : 1.5em;
+}
