@@ -22,27 +22,38 @@ $(function(){
 				console.log("postcomment");
 				if(res.result=='success'){
 					
-					var id = window.sessionStorage.getItem('id');
-					var cmtDisplay = "none";
-					if(param.writer==id) {
-						cmtDisplay = "inline-block";
-					}
+					$.ajax({
+						url : 'http://localhost:8080/getComment?type=2',
+						method : 'GET',
+						dataType : 'JSON',
+						async : false,
+						success : function(res) {
+							currentCommentSeq = res.result;
+							
+							var id = window.sessionStorage.getItem('id');
+							var cmtDisplay = "none";
+							if(param.writer==id) {
+								cmtDisplay = "inline-block";
+							}
+							
+							//Append comment to comment list
+							var commentItem = 
+							'<div class="comment-wrap">'+
+							'<li class = "comment-list-sub" id="'+currentCommentSeq[0].seq+'">'+
+							'<span class="user" id="commentView-user">' + param.writer+'</span>'+
+							'<span class="regdate view" id="commentView-regdate">'+getNowDate()+
+								'<button class="comment-delete" style="display:'+cmtDisplay+'">'+
+								'<i class="fa fa-times"></i>'+
+								'</button>'+
+							'</span>' + '</li>'+
+							'<span class="comment view" id="commentView-content">'+ param.content + '</span>'+
+							'</div>'
+							
+							parentElem.find('.comment-list').append(commentItem);	
+							parentElem.find('input.comment').val('');
+						} 
+					})
 					
-					//Append comment to comment list
-					var commentItem = 
-					'<div class="comment-wrap">'+
-					'<li class = "comment-list-sub" id="'+param.seq+'">'+
-					'<span class="user" id="commentView-user">' + param.writer+'</span>'+
-					'<span class="regdate view" id="commentView-regdate">'+getNowDate()+
-						'<button class="comment-delete" style="display:'+cmtDisplay+'">'+
-						'<i class="fa fa-times"></i>'+
-						'</button>'+
-					'</span>' + '</li>'+
-					'<span class="comment view" id="commentView-content">'+ param.content + '</span>'+
-					'</div>'
-					
-					parentElem.find('.comment-list').append(commentItem);	
-					parentElem.find('input.comment').val('');
 				}else{
 					alert('comment add fail');
 					parentElem.find('input').focus();

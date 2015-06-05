@@ -84,6 +84,41 @@ public class CommentDao {
 	}
 	
 	
+	public List<HashMap<String, Object>> getCommentSeq() {
+		Connection conn = null;
+		Statement stmt = null;
+		List<HashMap<String, Object>> result = new ArrayList<HashMap<String, Object>>();
+		
+		try{
+			conn = getConnection();
+			stmt = conn.createStatement();
+			
+			String sql ="SELECT A.seq FROM comment as A "
+					+ "ORDER BY A.seq DESC limit 1";
+			ResultSet rs = stmt.executeQuery(sql);
+
+			while(rs.next()){
+				HashMap<String, Object> item = new HashMap<String, Object>();
+				item.put("seq", rs.getString("seq"));
+				
+				result.add(item);
+			}
+
+			rs.close();
+			stmt.close();
+			conn.close();
+
+		}catch(SQLException se){
+			se.printStackTrace();
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+		}
+
+		return result;
+	}
+	
+	
 	public String deleteComment(String seq){
 		Connection conn = null;
 		Statement stmt = null;
