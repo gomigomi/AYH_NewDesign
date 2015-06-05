@@ -900,10 +900,11 @@ input[type=file] + label:hover{
     background-color: #DC5322;	
 }
 
-.user_delete {
+.user-delete {
 	color : red;
 	padding-left : 3.5%;
 	font-weight : 500;
+	margin-left : 3%;
 }
 
 #save_btn{
@@ -961,4 +962,10 @@ input[type=file] + label:hover{
 }
 #commentH{
 	display:none;
+}
+
+#nothingElem {
+	color : grey;
+	font-size : 1.8em;
+	margin : 18% 0 0 30%;
 }
