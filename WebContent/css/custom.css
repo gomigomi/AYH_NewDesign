@@ -344,8 +344,9 @@ select{
 }
 .post-writer{
     float: left;
-    font-size: x-large;
+    font-size: 1.5em;
     width: 100%;
+    color : brown;
 }
 .post-author{
     color: rgb(61, 79, 93);
@@ -566,6 +567,7 @@ section{
 }
 
 .comment-text-form {
+	margin-top : 2%;
 }
 
 input.comment {
@@ -597,6 +599,7 @@ input.comment {
 
 #postingContent_view {
 	font-size: medium;
+	margin-top : 1%;
 }
 
 #postingClassification_view {
@@ -651,7 +654,9 @@ comment-list-sub {
     margin: 0;
     border: 0;
     border-radius: 10px;
+    margin-top : 2%;
 }
+
 #img-slider img{	
     width: 300px;
     height: 300px;
@@ -714,11 +719,10 @@ comment-list-sub {
 }
 .top-top{
     width: 90%;
-	
     float: right;
     padding-left: 2%;
     position: relative;
-    padding-bottom: 2%;
+
 }
 .top-bottom{
     width: 97%;

@@ -137,7 +137,7 @@ function getFavSectionItem(favoriteView, isHide) {
 		'<scIdx id="'+favoriteView.sc_idx+'"/>'+
 		'<div class="post-top">'+
 			'<div class="post-img"> '+
-				'<img src="/img/common/'+favoriteView.thumb+'" alt="썸네일"/>'+
+				'<img src="/img/thumb/'+favoriteView.thumb+'" alt="썸네일"/>'+
 			'</div>'+ 
 			'<div class="top-top">'+ 
 				'<div class="post-writer">'+favoriteView.name+
