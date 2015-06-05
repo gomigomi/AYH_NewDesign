@@ -96,6 +96,16 @@ body button {
     color: white;
     line-height: 40px;
 }
+
+#top_id {
+	font-size : 1.5em;
+	color : firebrick;
+}
+
+#top_name {
+	font-size : 1.5em;
+}
+
 #logout_btn{
     float: right;
     margin: 0em 1em;
