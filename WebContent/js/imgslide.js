@@ -33,7 +33,7 @@ $(function() {
 		}
 		else if(imgDatas.length==1){
 			slidecontent=
-				'<img data-slidr="one" src="img/'+imgDatas[0]+'"/>'
+				'<img data-slidr="one" class="slideImg" src="img/'+imgDatas[0]+'"/>'
 			$('#carousel-example-generic').append(slidecontent);
 		}else if(imgDatas.length==2){
 			slidecontent=
