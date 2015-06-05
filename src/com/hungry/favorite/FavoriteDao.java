@@ -48,7 +48,7 @@ public class FavoriteDao {
 					"LEFT OUTER JOIN score S ON S.posting_seq = A.seq "+
 					"WHERE D.id = '"+id+"'"+
 					"GROUP BY A.seq "+
-					"ORDER BY A.seq DESC";
+					"ORDER BY D.seq DESC";
 
 			ResultSet rs = stmt.executeQuery(sql);
 

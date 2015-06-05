@@ -738,7 +738,7 @@ comment-list-sub {
     color: gray;
     font-size: medium;
 }
-#mainView_favorite{
+#mainView_favorite, #favoriteView_favorite{
     float: left;	
 }
 .add-comment-btn, #search_btn{

@@ -33,8 +33,8 @@ function getFavoriteView() {
 
 
 //Delete process in Favorite view
-$(document).on('click', '#favoriteView .fa-heart', function() {
-	var check = confirm("DELETE this from your FAVORITE?\n\nIf you click OK, this will be disappeared immediately.");
+$(document).on('click', '#favoriteView_favorite .fa-heart', function() {
+	var check = confirm("FAVORITE에서 이 게시글을 삭제하시겠습니까?\n\n확인을 누르시면 게시글이 바로 삭제됩니다.");
 	
 	if(check) {
 		var id = window.sessionStorage.getItem('id');
@@ -81,7 +81,7 @@ $(document).on('click', '#mainView_favorite .fa-heart-o', function(e) {
 
 //Delete process in Main view
 $(document).on('click', '#mainView_favorite .fa-heart', function(){
-	var check = confirm('DELETE this from your FAVORITE?');
+	var check = confirm('FAVORITE에서 이 게시글을 삭제하시겠습니까?');
 	
 	if(check) {
 		var id = window.sessionStorage.getItem('id');
@@ -142,7 +142,7 @@ function getFavSectionItem(favoriteView, isHide) {
 			'<div class="top-top">'+ 
 				'<div class="post-writer">'+favoriteView.name+
 					'<div class="btn-wrapper">'+
-						'<span id=mainView_favorite>'+
+						'<span id=favoriteView_favorite>'+
 							'<button id="heart" class="fa fa-heart favorite-btn" style="display:block"></button>'+
 						'</span>'+
 						'<span class="posting-buttons" style="display:'+display+'"> '+
