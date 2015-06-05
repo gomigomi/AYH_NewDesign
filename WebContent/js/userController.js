@@ -7,6 +7,10 @@ var userElem = '<span class = "top_id_name" id="top_name">'+name+'</span>'+
 			
 			
 $(function(){
+	$('#user_edit_id').val(id);
+	$('#user_edit_name').val(name);
+	$('#user_delete_id').val(id);
+	
 	$('#user_information').append(userElem);
 	$('#top_thumb').append("<img src='/img/common/"+thumb+"'>");
 
@@ -16,27 +20,25 @@ $(function(){
 		location.href="/NewFront.jsp";
 	})
 
-	$('#profile_edit').click(function() {
-		
-	})
-
-})
-
-
-//profile edit process
-	$('#profile-edit-submit').click(
+	//profile edit process
+	$('#profile_edit_submit').click(
 		function() {
 			var id = $('#user_edit_id').val();
 			var name = $('#user_edit_name').val();
 			var pass = $('#user_edit_pass').val();
-			var passconf = $('#user_edit_passconf').val();
-			var thumb = $('#user_edit_thumb').val().substring(12);
+			var newPass = $('#user_edit_newpass').val();
+//			var thumb = $('#user_edit_thumb').val().substring(12);
 
-			var form = $('#profile_edit')[0];
+			var form = $('#profile_edit_form')[0];
 			var updateUser = new FormData(form);
 
+			
 			if (!passconf) {
-				alert("please fill out password confirm blank");
+				alert("비밀번호를 한 번 더 입력해 주세요.")
+				return false;
+			} else if (!pass) {
+				alert("비밀번호를 입력해 주세요.");
+				return false;
 			} else if (passconf == pass) {
 				$.ajax({
 					url : 'http://localhost:8080/postUser?type=2',
@@ -63,46 +65,30 @@ $(function(){
 
 					}
 				});
-			} else {
-				alert('please check your password confirm again');
-			}
+			} 
 		});
 
 
-//user delete process
-$('#user-delete-submit').click(function(){
-	var id = $('#user_edit_id').val();
-	var pass = $('#user_edit_pass').val();
-	var passconf = $('#user_edit_passconf').val();
+	//user delete process
+	$('#profile_delete_submit').click(function() {
+		var id = $('#user_edit_id').val();
+		var pass = $('#user_edit_pass').val();
 
-	if (!passconf) {
-		alert("please fill out password confirm blank");
-	} else if (passconf == pass) {
-		var check=confirm('Are you sure to delete your id? All your postings will be deleted');
-		if (check){
+		var check = confirm('Are you sure to delete your id? All your postings will be deleted');
+		if (check) {
 			$.ajax({
-				url :'http://localhost:8080/deleteUser?id=' + id,
-				method :'DELETE',
-				dataType :'json',
+				url : 'http://localhost:8080/deleteUser?id='+id,
+				method : 'DELETE',
+				dataType : 'json',
 				success : function(res) {
 					console.log("user-delete");
-					
-					$('#user_edit_id').val('');
-					$('#user_edit_name').val('');
-					$('#user_edit_pass').val('');
-					$('#user_edit_passconf').val('');
-
-					$.modal.close();
-
 					sessionStorage.clear();
-					
-					location.href="/NewFront.jsp";	
-					
-					renderPostingList();
+					location.href = "/NewFront.jsp";
 				}
 			});
-		}else{return false;}
-	} else {
-		alert('please check your password confirm again');
-	}
-});
+		}
+	});
+
+})
+
+

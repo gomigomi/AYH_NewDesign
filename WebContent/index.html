@@ -126,7 +126,7 @@
 				<div class="section_wrapper">
 				<h3>회원 정보 수정</h3>
 					<section>
-					<form method="POST" enctype="multipart/form-data">
+					<form method="POST" enctype="multipart/form-data" id = "profile_edit_form">
 						<div id="profileEdit_thumb">
 							<img src="#" />
 							<input type="text" id="editFileName" readonly="readonly" style="border: 0;width: 115px;" >
@@ -136,10 +136,9 @@
 						<div id="profileEdit">
 							<input type="text" id="user_edit_id" placeholder=" ID" READONLY name="id"><br>
 							<input type="text" id="user_edit_name" placeholder=" Nick-name" onfocus="this.value=''" name="name"><br>
-							<input type="password" id="user_orgin_pass" placeholder="Password" name="pass"><br>
-							<input type="password" id="user_edit_pass" placeholder="New Password" name="newpass"><br>
-							<input type="password" id="user_edit_passconf" placeholder=" Confirmation" name="passconf"><br>
-							<input type="button" value="Profile Edit" id="profile-edit-submit"><br>
+							<input type="password" id="user_edit_pass" placeholder="Password" name="pass"><br>
+							<input type="password" id="user_edit_newpass" placeholder="New Password" name="newpass"><br>
+							<input type="button" value="Profile Edit" id="profile_edit_submit"><br>
 						</div>
 					</form>
 					</section>
@@ -150,9 +149,9 @@
 						<div id="profileWithdrawal">
 							주의사항: 당신이 쓴 글과 댓글, 별점은 삭제되지않으며, 회원 개인정보는 모두 삭제됩니다. <br>
 							계속 하시려면 아이디와 비밀번호를 한번 더 입력해주세요.<br>
-							<input type="text" id="user_edit_id" placeholder=" ID" READONLY name="id">
-							<input type="password" id="user_orgin_pass" placeholder="Password" name="pass">
-							<input type="button" value="Profile Edit" id="profile-edit-submit">
+							<input type="text" id="user_delete_id" class = "user_delete" placeholder=" ID" READONLY name="id">
+							<input type="password" id="user_delete_pass" class = "user_delete" placeholder="Password" name="pass">
+							<input type="button" value="Withdrawer" id="profile_delete_submit">
 						</div>
 					</section>
 				</div>
