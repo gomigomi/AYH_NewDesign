@@ -4,6 +4,7 @@ var favoriteDatas;
 var favoriteView;
 var scoreDatas;
 var allScoreDatas;
+var searchDatas;
 var postingPreferenceDatas;
 var formData=new FormData();
 var editFormData = new FormData();
