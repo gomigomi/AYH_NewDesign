@@ -50,8 +50,13 @@
 		<div id="top_logo"><a href="http://localhost:8080/index.html"><img src="topbar_logo.png"></a></div>
 		<div id="top_logon">
 			<button id="logout_btn"><i class="fa fa-power-off"></i></button>
-			<span id="user_information"></span>
-			<div id="top_thumb"></div>
+			<div id="user_information">
+				<span class="top_id_name" id="top_name"></span>
+				<span class="top_id_name" id="top_id"></span>
+			</div>
+			<div id="top_thumb">
+				<img id="top_thumbImg" src="#">
+			</div>
 		</div>
 	</div>
 	</div>
@@ -131,7 +136,7 @@
 				<div class="section_wrapper">
 				<h3>회원 정보 수정</h3>
 					<section>
-					<form method="POST" enctype="multipart/form-data">
+					<form id="userEdit" method="POST" enctype="multipart/form-data">
 						<div id="profileEdit_thumb">
 							<img id="profileEdit_thumbImg" src="#" />
 							<input type="text" id="editFileName" readonly="readonly" style="border: 0;width: 115px;" >

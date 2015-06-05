@@ -169,7 +169,7 @@ public class UserDao {
 	
 //end FirstExample
 	
-	public String updateUser(Map<String, String> userParam){
+	public String updateUserImg(Map<String, String> userParam){
 		Connection conn = null;
 		Statement stmt = null;
 		String result = "success";
@@ -193,6 +193,33 @@ public class UserDao {
 			
 		}
 
+		return result;
+	}
+	
+	public String updateUser(Map<String, String[]> updateUserParam){
+		Connection conn=null;
+		Statement stmt = null;
+		String result = "success";
+
+		try{
+			conn = getConnection();
+			stmt = conn.createStatement();
+			
+			String sql= "UPDATE user SET name='"+updateUserParam.get("name")+"', pass='"+updateUserParam.get("pass")+"', where id='"+updateUserParam.get("id")+"'";
+			stmt.executeUpdate(sql);
+
+			stmt.close();
+			conn.close();
+			
+		}catch(SQLException se){
+			se.printStackTrace();
+			result = "fail";
+		}catch(Exception e){
+			e.printStackTrace();
+			result = "fail";
+		}finally{
+			
+		}
 		return result;
 	}
 	
