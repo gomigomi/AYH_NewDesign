@@ -7,8 +7,9 @@ $(function() {
 		var location = $(":checkbox[name='location']:checked").val();
 		console.log(type, taste, time, location);
 		
-		if(location == 'none' || type=="" || taste=="" || time==""){
-			alert('please fill out the form');
+		if(location == null || type== null || taste== null || time== null){
+			$('.search-posts').empty();
+			$('.search-posts').append('<div id="errorElem">놓치신 게 있네용</div>');	
 			return false;
 		}
 
@@ -31,6 +32,8 @@ $(function() {
 				if(searchDatas == "") {
 					$('.search-posts').empty();
 					$('.search-posts').append('<div id="nothingElem">검색결과가 없습니다.</div>');	
+				}else{
+					$('.search-posts').empty();
 				}
 					
 				$('#write').val('');
