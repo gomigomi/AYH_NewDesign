@@ -82,7 +82,7 @@ public class UserServlet extends HttpServlet{
 				
 			}else if(type.equals("2")){	//Update API
 
-				String savePath = "/Users/gomi/workspace/AYH_NewDesign/WebContent/img/common";
+				String savePath = "/Users/gomi/workspace/AYH_NewDesign/WebContent/img/thumb";
 //				String savePath = "/Users/john/AYH_NewDesign/WebContent/img/common";
 				int maxSize = 5*1024*1024;
 				
@@ -97,10 +97,12 @@ public class UserServlet extends HttpServlet{
 				userUpdateParam.put("name",multi.getParameter("name").toString());
 				userUpdateParam.put("thumb",thumbName);
 				
-				JObject.put("result", dao.updateUser(userUpdateParam));
+				JObject.put("result", dao.updateUserImg(userUpdateParam));
 				
+				}else if(type.equals("3")){
+					Map<String, String[]> updateUserParam = request.getParameterMap();		
+					JObject.put("result", dao.updateUser(updateUserParam));
 				}
-
 		}catch(JSONException e){
 			
 			e.printStackTrace();

@@ -41,7 +41,7 @@ function getSectionItem(postingDatas, isHide){
 		'<scIdx id="'+sc_idx+'"/>'+
 		'<div class="post-top">'+
 			'<div class="post-img"> '+
-				'<img src="/img/common/'+postingDatas.thumb+'" alt="썸네일"/>'+
+				'<img src="/img/thumb/'+postingDatas.thumb+'" alt="썸네일"/>'+
 			'</div>'+ 
 			'<div class="top-top">'+ 
 				'<div class="post-writer">'+postingDatas.name+
