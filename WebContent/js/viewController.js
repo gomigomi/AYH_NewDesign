@@ -18,7 +18,6 @@ $(function(){
 		$('#profileEdit_wrapper').hide();
 		$('#my_history_submenu').hide();
 		
-		
 		$('.posts').show();
 	})
 		
@@ -52,13 +51,7 @@ $(function(){
 	})
 	
 	//history
-	$('#my_history').click(function() {
-		$('.posts').hide();
-		$('#favorite_wrapper').hide();
-		$('#search_wrapper').hide();
-		$('#popular_wrapper').hide();
-		$('#preference_wrapper').hide();
-		$('#profileEdit_wrapper').hide();		
+	$('#my_history').click(function() {	
 		if($('#my_history_submenu').css('display')=='none'){
 			$('#my_history_submenu').fadeIn("slow");
 		}else{
@@ -66,6 +59,12 @@ $(function(){
 		}
 		//게시글
 		$('#my_history_posting').click(function(){
+			$('.posts').hide();
+			$('#favorite_wrapper').hide();
+			$('#search_wrapper').hide();
+			$('#popular_wrapper').hide();
+			$('#preference_wrapper').hide();
+			$('#profileEdit_wrapper').hide();	
 			$('#history_wrapper').show();
 			$('#commentH').hide();
 			$('#postingH').show();
@@ -76,6 +75,12 @@ $(function(){
 		
 		//댓글
 		$('#my_history_comment').click(function(){
+			$('.posts').hide();
+			$('#favorite_wrapper').hide();
+			$('#search_wrapper').hide();
+			$('#popular_wrapper').hide();
+			$('#preference_wrapper').hide();
+			$('#profileEdit_wrapper').hide();	
 			$('#history_wrapper').show();
 			$('#postingH').hide();
 			$('#commentH').show();

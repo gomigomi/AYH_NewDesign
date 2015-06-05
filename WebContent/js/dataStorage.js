@@ -6,6 +6,7 @@ var scoreDatas;
 var allScoreDatas;
 var searchDatas;
 var postingPreferenceDatas;
+var currentCommentSeq;
 var formData=new FormData();
 var editFormData = new FormData();
 var count = 0;

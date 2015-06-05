@@ -4,7 +4,7 @@ var allScoreDatas;
 /*comment를 위한 함수 선언*/
 function getCommentData() {
 	$.ajax({
-		url : 'http://localhost:8080/getComment',
+		url : 'http://localhost:8080/getComment?type=1',
 		method : 'get',
 		dataType : 'json',
 		async:false,
@@ -18,19 +18,22 @@ getCommentData();
 
 $(document).on('click', '.comment-delete', function() {
 	var seq = $(this).closest('li').attr('id');
-	
-	$.ajax({
-		url : 'http://localhost:8080/deleteComment?seq='+seq,
-		method : 'DELETE',
-		async : false,
-		dataType : 'JSON',
-		success : function(res) {		
-			$('li[id$="'+seq+'"]').closest('div').remove();
-		},
-		error : function() {
-			alert("Please Try Again.");
-		}
-	})
+	if(seq) {
+		$.ajax({
+			url : 'http://localhost:8080/deleteComment?seq='+seq,
+			method : 'DELETE',
+			async : false,
+			dataType : 'JSON',
+			success : function(res) {		
+				$('li[id$="'+seq+'"]').closest('div').remove();
+			},
+			error : function() {
+				alert("다시 시도해주세요.");
+			}
+		})
+	} else if (!seq) {
+		$('li[id$="'+seq+'"]').closest('div').remove();
+	}
 })
 
 

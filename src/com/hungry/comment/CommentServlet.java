@@ -21,23 +21,23 @@ public class CommentServlet extends HttpServlet{
 
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Select 쿼리를 위한 Ajax GET 핸들러
-	 * type=1 : all
-	 * type=2 : login
-	 * login시 결과값은 success or fail
-	 */
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("application/json; charset=UTF-8");//READ
 
 		PrintWriter printout = response.getWriter();
 		JSONObject JObject = new JSONObject();
+		String type = request.getParameter("type");
 		//String type = request.getParameter("type");
 
 		CommentDao dao = new CommentDao();
 
 		try{
-			JObject.put("result", dao.getComment());
+			if(type.equals("1")) {
+				JObject.put("result", dao.getComment());
+			} else if(type.equals("2")) {
+				JObject.put("result", dao.getCommentSeq());
+			}
+		 
 		}catch (JSONException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
