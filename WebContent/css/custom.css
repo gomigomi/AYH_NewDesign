@@ -910,3 +910,20 @@ input[type=file] + label:hover{
     width: 350px;
     height: 350px;
 }
+#my_history_submenu{
+	display:none;
+}
+#my_history_submenu button{
+    margin: 0;
+	
+    position: relative;
+    top: -1.2em;
+    left: 1em;
+    color: gray;
+}
+#postingH{
+	display:none;
+}
+#commentH{
+	display:none;
+}

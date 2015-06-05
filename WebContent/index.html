@@ -63,6 +63,10 @@
 			<button class="search-post" id="search_post"><i class="fa fa-search"></i>음식점 검색 </button>
 			<button class="favorite-post" id="favorite_post"><i class="fa fa-heart"></i>관심 음식점 </button>
 			<button class="my-history" id="my_history"><i class="fa fa-tasks"></i>내 활동내역 </button>
+			<div id="my_history_submenu">
+				<button id="my_history_posting">내가 쓴 게시글</button>
+				<button id="my_history_comment">댓글 단 게시글</button>
+			</div>
 		</div>
 		<div id="main_view">
 			<!-- main view -->
@@ -244,7 +248,9 @@
 			
 			<!-- favorite -->
 			<div id="favorite_wrapper" style = "display:none">
-				<div class="write-rec-bar" id="write_rec_bar">즐겨찾기에 추가하신 게시글입니다.</div>
+				<div class="write-rec-bar" id="write_rec_bar">
+					<i class="fa fa-check"></i>
+					즐겨찾기에 추가하신 게시글입니다.</div>
 				<div class = "favorite-posts">
 	
 				</div>
@@ -253,8 +259,9 @@
 			<!-- history -->
 			<div id="history_wrapper" style="display:none">
 				<div class="write-rec-bar" id="write_rec_bar">
-					<button id="my_history_posting">게시글</button>
-					<button id="my_history_comment">댓글</button>
+					<i class="fa fa-check"></i>
+					<span id="postingH">사용자가 쓴 게시글입니다.</span>
+					<span id="commentH">사용자가 댓글을 쓴 게시글입니다.</span>
 				</div>
 				<div class="history-posts">
 				
