@@ -1,4 +1,5 @@
 @CHARSET "EUC-KR";
+*:focus { outline:none; }
 @media (max-width: 2048px) and (min-width: 800px){
 	#left_sidebar{   
 		width: 150px;	
@@ -162,7 +163,7 @@ select{
     padding: 0.2%;
     height: 23px;
 }
-#profile_edit{
+#profileEdit{
 }
 .profile-edit i{
 }
@@ -841,20 +842,28 @@ input[type=file] + label:hover{
     text-align: center;
     height: 200px;
     padding-top: 2%;
+    font-weight: 500;
+    color: crimson;
 }
+
+#user_edit_newpass{
+	color : grey;
+}
+
 #profileEdit input{
     width: 80%;
 	margin-bottom:2%;
     border-radius: 7px;
     border: solid 1px #cfd3d4;
     padding: 1%;
+    padding-left: 3%;
 }
-#profile-edit-submit{
+#profile_edit_submit{
     color: white;
     border:0;
     BACKGROUND-COLOR: #F15A24;
 }
-#profile-edit-submit:hover{
+#profile_edit_submit:hover{
     background-color: #DC5322;
 	
 }
@@ -878,6 +887,13 @@ input[type=file] + label:hover{
 #profileWithdrawal input[type=button]:hover{
     background-color: #DC5322;	
 }
+
+.user_delete {
+	color : red;
+	padding-left : 3.5%;
+	font-weight : 500;
+}
+
 #save_btn{
     background-color: #F15A24;	
     border: 0;
