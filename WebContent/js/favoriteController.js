@@ -1,10 +1,8 @@
-var favoriteView;
 //Favorite View Button
-
+var id = window.sessionStorage.getItem('id');
 
 function getFavoriteView() {
 	$('#favoritePosting').empty();
-	var id = window.sessionStorage.getItem('id');
 	$.ajax ({
 		url : 'http://localhost:8080/getFavorite?id='+id+'&type=1',
 		method : 'get',
@@ -131,44 +129,42 @@ function getFavSectionItem(favoriteView, isHide) {
 		point = item.point;
 	})
 	
+	
+	
 	var sectionElem = 
-		'<section class="post '+favoriteView.seq+'" id="posting_'+favoriteView.seq+'">'+
+	'<div class="section_wrapper">'+
+	'<section class="post '+favoriteView.seq+'" id="posting_'+favoriteView.seq+'">'+
 		'<scIdx id="'+favoriteView.sc_idx+'"/>'+
-		'<div class="post-header post-top">'+
-			'<span class="post-avatar post-img"> '+
-				'<img src="/img/common/'+favoriteView.thumb+'"/>'+
-			'</span>'+ 
-			'<span class="post-meta bacpost-meta">'+ 
-				'<span class="post-writer">'+ 
-					'<a class="post-author" href="#">'+favoriteView.writer+'</a>'+
-				'</span>'+ 
-				'<span class="posting-buttons" style="display:'+display+'"> '+
-					'<a href="#post_edit" rel="modal:open">'+
-						'<button class="post-edit">'+
-							'<i class="fa fa-pencil-square-o"></i>'+
-						'</button>'+
-					'</a>'+
-					'<button class="post-delete">'+
-						'<i class="fa fa-times"></i>'+
-					'</button>'+
-				'</span>'+
-				'<span id=mainView_favorite>'+
-					'<button id="heart" class="fa fa-heart favorite-btn" style="display:block"></button>'+
-				'</span>'+
-				'<div class = "comment-form">'+
-					'<span class="bac-point" id="'+favoriteView.avg+'">Point '+favoriteView.avg+'</span>'+
+		'<div class="post-top">'+
+			'<div class="post-img"> '+
+				'<img src="/img/common/'+favoriteView.thumb+'" alt="썸네일"/>'+
+			'</div>'+ 
+			'<div class="top-top">'+ 
+				'<div class="post-writer">'+favoriteView.writer+
+					'<div class="btn-wrapper">'+
+						'<span id=mainView_favorite>'+
+							'<button id="heart" class="fa fa-heart favorite-btn" style="display:block"></button>'+
+						'</span>'+
+						'<span class="posting-buttons" style="display:'+display+'"> '+
+							'<button class="post-edit fa fa-pencil-square-o" data-toggle="modal" data-target="#postEditModal"></button>'+
+							'<button class="post-delete fa fa-times"></button>'+
+						'</span>'+
+					'</div>'+
+				'</div>'+
+				'<div class="top-bottom comment-form">'+
+					'<span class="bac-point" id="'+favoriteView.avg+'">평균평점 '+favoriteView.avg+'</span>'+
 					'<span class="comment-raty-form">'+
-						'<span class="ex">내가 준 점수&nbsp;&nbsp;&nbsp;&nbsp;</span>'+
 						'<span class="raty" data-score="'+point+'" style="cursor:pointer;"></span>'+
-						'<span class = "pure-button add-commentRaty-btn">평가</span>'+
+						'<span class = "add-commentRaty-btn">평가</span>'+
 					'</span>'+
 					'<span class="post-regdate">'+favoriteView.regdate+'</span>'+
 				'</div>'+
-			'</span>'+
-		'</div>'+
+			'</div>'+
 		'<div class="post-description bac-content">'+
 			'<span id = "postingImg_view">'+
-			'<a href="#more_content" rel="modal:open"><button class="more-content"><img width="200px" height="200px" src="img/'+favoriteView.img+'"/></button></a>'+
+				'<button class="more-content" data-toggle="modal" data-target="#moreContentsModal">'+
+					'<img src="img/'+favoriteView.img+'"/>'+
+				'</button></a>'+
 			'</span>'+
 			'<span id = "postingContent_div">'+
 				'<span id = "postingClassifyImg"><img id = "'+favoriteView.type+'" class ="type postingCI" src="/img/icon/posting-nationality/nationality-'+favoriteView.type+'.png"/></span>'+
@@ -181,26 +177,39 @@ function getFavSectionItem(favoriteView, isHide) {
 		'<div class="comment-cnt">'+
 			'<div class="comment-text-form">'+
 				'<input type="text" name="comment" class="comment" />'+
-				'<div class="pure-button add-comment-btn">Add</div>'+
+				'<div class="add-comment-btn">Add</div>'+
 			'</div>'+
 			'<div class = "comment-list">'+
-			
+	
 			'</div>'+
 		'</div>'+
-	'</section>'
-
+	'</section>'+
+	'</div>'
+	
+	var cmtDisplay = 'none';
 	var currentCommentDatas = _.filter(commentDatas, function(value) {
 		return value.posting_seq == favoriteView.seq;
 	});
 	var sectionObject = $(sectionElem);
+	
+	$.each(currentCommentDatas, function(idx, item) {
+		if(item.writer == id) {
+			cmtDisplay = 'inline-block';
+		}
+	})
 
 	$.each(currentCommentDatas, function(idx, item) {
 		var liElem = 
-				'<li class = "comment-list-sub">'+
-					'<span class="user" id="commentView-user">'+item.writer+'</span>'+
-					'<span class="regdate view" id="commentView-regdate">'+item.regdate.substr(0, 10)+'</span>'+
-				'</li>'+
-				'<span class="comment view" id="commentView-content">'+item.content+'</span>'
+			'<div class="comment-wrap">'+
+				'<li class = "comment-list-sub" id="'+item.seq+'">'+
+					'<span class="user" id="commentView-user">' + item.writer+'</span>'+
+					'<span class="regdate view" id="commentView-regdate">'+item.regdate.substr(0, 10)+
+						'<button class="comment-delete" style="display:'+cmtDisplay+'">'+
+							'<i class="fa fa-times"></i>'+
+						'</button>'+
+					'</span>' + '</li>'+
+					'<span class="comment view" id="commentView-content">'+ item.content + '</span>'+
+			'</div>'
 
 		sectionObject.find('.comment-list').append(liElem);
 	});

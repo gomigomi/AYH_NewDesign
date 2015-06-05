@@ -1,7 +1,7 @@
 var postingDatas;
 var commentDatas;
-var FavoriteDatas;
-var FavoriteView;
+var favoriteDatas;
+var favoriteView;
 var scoreDatas;
 var allScoreDatas;
 var postingPreferenceDatas;
