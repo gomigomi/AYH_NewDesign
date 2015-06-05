@@ -214,6 +214,17 @@ select{
     padding-bottom: 1em;
 }
 
+#search_posts {
+	width: 95%;
+	
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 10px;
+    padding: 0.01em 1.5em;
+    margin-bottom: 1em;
+    padding-bottom: 1em;
+}
+
 #search_wrapper input{
 	
 }
