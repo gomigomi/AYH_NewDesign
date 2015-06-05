@@ -16,6 +16,8 @@ $(function(){
 		$('#history_wrapper').hide();
 		$('#preference_wrapper').hide();
 		$('#profileEdit_wrapper').hide();
+		$('#my_history_submenu').hide();
+		
 		
 		$('.posts').show();
 	})
@@ -28,6 +30,7 @@ $(function(){
 		$('#history_wrapper').hide();
 		$('#preference_wrapper').hide();
 		$('#profileEdit_wrapper').hide();
+		$('#my_history_submenu').hide();
 		
 		$('popular_wrapper').show();
 	})
@@ -40,6 +43,7 @@ $(function(){
 		$('#history_wrapper').hide();
 		$('#preference_wrapper').hide();
 		$('#profileEdit_wrapper').hide();
+		$('#my_history_submenu').hide();
 		
 		$('.favorite-posts').empty();
 		$('#favorite_wrapper').show();
@@ -54,12 +58,17 @@ $(function(){
 		$('#search_wrapper').hide();
 		$('#popular_wrapper').hide();
 		$('#preference_wrapper').hide();
-		$('#profileEdit_wrapper').hide();
-		
-		$('#history_wrapper').show();
-		
+		$('#profileEdit_wrapper').hide();		
+		if($('#my_history_submenu').css('display')=='none'){
+			$('#my_history_submenu').fadeIn("slow");
+		}else{
+			$('#my_history_submenu').fadeOut("slow");
+		}
 		//게시글
 		$('#my_history_posting').click(function(){
+			$('#history_wrapper').show();
+			$('#commentH').hide();
+			$('#postingH').show();
 			getPostingUser();
 			$('#history-posting').show();
 			$('#history-comment').hide();
@@ -67,6 +76,9 @@ $(function(){
 		
 		//댓글
 		$('#my_history_comment').click(function(){
+			$('#history_wrapper').show();
+			$('#postingH').hide();
+			$('#commentH').show();
 			getCommentUser();
 			$('#history-comment').show();
 			$('#history-posting').hide();								
@@ -81,6 +93,7 @@ $(function(){
 		$('#popular_wrapper').hide();
 		$('#history_wrapper').hide();
 		$('#profileEdit_wrapper').hide();
+		$('#my_history_submenu').hide();
 		
 		$('#preference_wrapper').show();
 	})
@@ -93,6 +106,7 @@ $(function(){
 		$('#history_wrapper').hide();
 		$('#preference_wrapper').hide();
 		$('#profileEdit_wrapper').hide();
+		$('#my_history_submenu').hide();
 		
 		$('#popular_wrapper').show();
 		renderPopularPostingList();
@@ -106,6 +120,7 @@ $(function(){
 		$('#history_wrapper').hide();
 		$('#preference_wrapper').hide();
 		$('#profileEdit_wrapper').hide();
+		$('#my_history_submenu').hide();
 		
 		$('.search-posts').empty();
 		$('#search_wrapper').show();
@@ -119,6 +134,7 @@ $(function(){
 		$('#history_wrapper').hide();
 		$('#preference_wrapper').hide();
 		$('#search_wrapper').hide();
+		$('#my_history_submenu').hide();
 		
 		$('#profileEdit_wrapper').show();
 	})
