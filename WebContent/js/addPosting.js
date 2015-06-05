@@ -36,6 +36,7 @@ function getSectionItem(postingDatas, isHide){
 	})
 			
 	var sectionElem = 
+	'<div class="section_wrapper">'+
 	'<section class="post '+postingDatas.seq+'" id="posting_'+postingDatas.seq+'">'+
 		'<scIdx id="'+sc_idx+'"/>'+
 		'<div class="post-top">'+
@@ -45,19 +46,13 @@ function getSectionItem(postingDatas, isHide){
 			'<div class="top-top">'+ 
 				'<div class="post-writer">'+postingDatas.writer+
 					'<div class="btn-wrapper">'+
-						'<span class="posting-buttons" style="display:'+display+'"> '+
-							'<a href="#post_edit" rel="modal:open">'+
-								'<button class="post-edit">'+
-									'<i class="fa fa-pencil-square-o"></i>'+
-								'</button>'+
-							'</a>'+
-							'<button class="post-delete">'+
-								'<i class="fa fa-times"></i>'+
-							'</button>'+
-						'</span>'+
 						'<span id=mainView_favorite>'+
 							'<button id="heart-o" class="fa fa-heart-o favorite-btn" style="display:'+favoriteDisplaySub+'"></button>'+
 							'<button id="heart" class="fa fa-heart favorite-btn" style="display:'+favoriteDisplay+'"></button>'+
+						'</span>'+
+						'<span class="posting-buttons" style="display:'+display+'"> '+
+							'<button class="post-edit fa fa-pencil-square-o" data-toggle="modal" data-target="#postEditModal"></button>'+
+							'<button class="post-delete fa fa-times"></button>'+
 						'</span>'+
 					'</div>'+
 				'</div>'+
@@ -72,7 +67,9 @@ function getSectionItem(postingDatas, isHide){
 			'</div>'+
 		'<div class="post-description bac-content">'+
 			'<span id = "postingImg_view">'+
-				'<a href="#more_content" rel="modal:open"><button class="more-content"><img width="200px" height="200px" src="img/'+postingDatas.img+'"/></button></a>'+
+				'<button class="more-content" data-toggle="modal" data-target="#moreContentsModal">'+
+					'<img src="img/'+postingDatas.img+'"/>'+
+				'</button></a>'+
 			'</span>'+
 			'<span id = "postingContent_div">'+
 				'<span id = "postingClassifyImg"><img id = "'+postingDatas.type+'" class ="type postingCI" src="/img/icon/posting-nationality/nationality-'+postingDatas.type+'.png"/></span>'+
@@ -91,7 +88,8 @@ function getSectionItem(postingDatas, isHide){
 	
 			'</div>'+
 		'</div>'+
-	'</section>'
+	'</section>'+
+	'</div>'
 	
 /* comment와 posting 연결 */
 	var currentCommentDatas = _.filter(commentDatas, function(value) {

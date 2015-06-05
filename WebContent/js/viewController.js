@@ -14,6 +14,8 @@ $(function(){
 		$('#search_wrapper').hide();
 		$('#popular_wrapper').hide();
 		$('#history_wrapper').hide();
+		$('#preference_wrapper').hide();
+		$('#profileEdit_wrapper').hide();
 		
 		$('.posts').show();
 	})
@@ -24,11 +26,11 @@ $(function(){
 		$('#favorite_wrapper').hide();
 		$('#search_wrapper').hide();
 		$('#history_wrapper').hide();
+		$('#preference_wrapper').hide();
+		$('#profileEdit_wrapper').hide();
 		
 		$('popular_wrapper').show();
 	})
-	
-	
 	
 	//favorite
 	$(document).on('click', '#favorite_post', function() {
@@ -36,7 +38,10 @@ $(function(){
 		$('#search_wrapper').hide();
 		$('.posts').hide();
 		$('#history_wrapper').hide();
+		$('#preference_wrapper').hide();
+		$('#profileEdit_wrapper').hide();
 		
+		$('.favorite-posts').empty();
 		$('#favorite_wrapper').show();
 		
 		getFavoriteView();	
@@ -48,6 +53,8 @@ $(function(){
 		$('#favorite_wrapper').hide();
 		$('#search_wrapper').hide();
 		$('#popular_wrapper').hide();
+		$('#preference_wrapper').hide();
+		$('#profileEdit_wrapper').hide();
 		
 		$('#history_wrapper').show();
 		
@@ -65,6 +72,58 @@ $(function(){
 			$('#history-posting').hide();								
 		})
 	})
+	
+	//preference
+	$('#recommand_post').click(function() {
+		$('.posts').hide();
+		$('#favorite_wrapper').hide();
+		$('#search_wrapper').hide();
+		$('#popular_wrapper').hide();
+		$('#history_wrapper').hide();
+		$('#profileEdit_wrapper').hide();
+		
+		$('#preference_wrapper').show();
+	})
+	
+	//popular
+	$('#popular_post').click(function() {
+		$('.posts').hide();
+		$('#favorite_wrapper').hide();
+		$('#search_wrapper').hide();
+		$('#history_wrapper').hide();
+		$('#preference_wrapper').hide();
+		$('#profileEdit_wrapper').hide();
+		
+		$('#popular_wrapper').show();
+		renderPopularPostingList();
+	})
+	
+	//search
+	$('#search_post').click(function() {
+		$('.posts').hide();
+		$('#favorite_wrapper').hide();
+		$('#popular_wrapper').hide();
+		$('#history_wrapper').hide();
+		$('#preference_wrapper').hide();
+		$('#profileEdit_wrapper').hide();
+		
+		$('.search-posts').empty();
+		$('#search_wrapper').show();
+	})
+	
+	//edit profile
+	$('#profile_edit').click(function() {
+		$('.posts').hide();
+		$('#favorite_wrapper').hide();
+		$('#popular_wrapper').hide();
+		$('#history_wrapper').hide();
+		$('#preference_wrapper').hide();
+		$('#search_wrapper').hide();
+		
+		$('#profileEdit_wrapper').show();
+	})
+	
+	
 })
 
 	

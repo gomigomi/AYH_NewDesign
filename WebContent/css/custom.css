@@ -1,3 +1,44 @@
+@CHARSET "EUC-KR";
+@media (max-width: 2048px) and (min-width: 800px){
+	#left_sidebar{   
+		width: 150px;	
+		padding-top: 2%;
+	}
+	#main_view{
+		background-color:#ECF0F1;
+		float: left;
+		padding-top: 2%;	
+		width: 650px;
+	}
+	#top_wrapper{
+	    width: 800px;	
+	    margin: 0 auto;
+	}
+	#bottom_wrapper{	
+	    width: 800px;
+	    margin: 0 auto;
+	}
+	#left_sidebar button {
+    width: 90%;
+    margin-bottom: 10%;
+	}
+}
+@media all and (min-width: 300px) and (max-width: 800px){
+	#left_sidebar{
+		height: 90%;
+		padding: 2% 5%;
+	}
+	#main_view{
+		height: 90%;
+		background-color:#ECF0F1;
+		float: left;
+		width: 100%;
+	}
+}
+#left_sidebar{
+	float: left;
+    background-color: #ECF0F1;
+}
 body{
 	background-color:#ECF0F1;
 }
@@ -6,32 +47,24 @@ body button {
 	background : transparent;
 	border : 0;
 }
-#left_sidebar{   
-	height: 90%;
-	background-color:#ECF0F1;
-	float: left;
-	width: 30%;
-	padding-left: 2em;
-}
-#left_sidebar button {
+
+#left_sidebar button i{
+    padding-right: 10%;
 
 }
-#main_view{
-	height: 90%;
-	background-color:#ECF0F1;
-	width: 70%;
-	float: right;
+
+#left_sidebar button:hover {
+	background-color:#cfd3d4;
 }
 #top_bar{
 	float: left;
 	width: 100%;
 	background-color:#F15A24;
-	padding: 0.5em 0em;
+	padding: 0.5% 3%;
 }
 #top_logo{
     float: left;
 	
-    margin: 0em 1em;
 }
 #top_logon{
 	
@@ -44,6 +77,10 @@ body button {
     border-radius: 100%;
     float: right;
     margin: 0em 0.1em;
+}
+#top_thumb img{
+	width: 100%;
+	border-radius: 100%;
 }
 .top_id_name{
     width: inherit;
@@ -68,18 +105,15 @@ body button {
     background-color: white;
     width: 95%;
     margin: 0 auto;
-    padding: 0.25em;
-    margin-top: 1em;
-    margin-bottom: 1em;
+    padding: 0.5% 1%;
+    margin-bottom: 2%;
 }
 #write_bar{
     background-color: white;
     border-radius: 10px;
     margin: 0 auto;
     width: 95%;
-    padding: 0.5em;
-    margin-top: 1em;
-    height: 33%;
+    padding: 2% 3%;
     margin-bottom : 3%;
 }
 .write-rec-bar i{
@@ -96,7 +130,7 @@ body button {
     width: 100%;
     margin-bottom: 0.5em;
 }
-#tasteSel{
+select{
     background-color: #F15A24;
     border: 0px;
     color: white;
@@ -105,95 +139,53 @@ body button {
     font-size: smaller;
     margin-right: 0.3em;
 }
-#f_typeSel{
-	background-color: #F15A24;
-    border: 0px;
-    color: white;
-    margin-right: 0.3em;
-	width: 20%;
-    height: 30px;
-    font-size: smaller;
-}
-#timeSel{
-	background-color: #F15A24;
-    border: 0px;
-    color: white;
-    margin-right: 0.3em;
-	width: 20%;
-	height: 30px;
-    font-size: smaller;
-}
-#locationSel{
-	background-color: #F15A24;
-    border: 0px;
-    color: white;
-	width: 20%;
-    height: 30px;
-    font-size: smaller;}
 #post_img{
     float: left;
     color: #F15A24;
     width: 60%;
 }
+#post_btn:hover{
+    background-color: #DC5322;
+}
 #post_btn{
-    float: right;
-	
+    float: right;	
+    border-radius: 5px;
+    border: 0;
+    width: 14%;
+    background-color: #F15A24;
+    color: white;
+    text-align: center;
+    padding: 0.2%;
+    height: 23px;
 }
-#profile_left{
-    padding: 0.3em;
-}
-
 #profile_edit{
-    padding: 0.3em;
 }
 .profile-edit i{
-    padding-left: 1em;
-    padding-right: 1em;
 }
 #recent_post{
-    padding: 0.3em;
 }
 .recent-post i{
-
-    padding-left: 1em;
-    padding-right: 1em;
 }
 #popular_post{
-	   padding: 0.3em;
 }
-.popular-post i{
-    padding-left: 1em;
-    padding-right: 1em;}
+.popular-post i{}
 #recommand_post{
-	   padding: 0.3em;
 }
-.recommand-post i{
-    padding-left: 1em;
-    padding-right: 1em;}
+.recommand-post i{}
 #search_post{
-	   padding: 0.3em;
 }
 .search-post i{
-    padding-left: 1em;
-    padding-right: 1em;}
+}
 #favorite_post{
-	   padding: 0.3em;
 }
 .favorite-post i{
-    padding-left: 1em;
-    padding-right: 1em;
     }
 #my_history{
-	   padding: 0.3em;
 }
 .my-history i{
-    padding-left: 1em;
-    padding-right: 1em;
 }
 
 .posts {
-	position : relative;
-	left : 2.5%;
 }
   
 #search_wrapper{
@@ -320,13 +312,13 @@ body button {
     
     width: 100%;
     border-radius: 100%;
-	background-color: orange;
-    height: 0;
-    padding-bottom: 100%;
+	
+    /* background-color: orange; */
 }
 .post-writer{
     float: left;
     font-size: x-large;
+    width: 100%;
 }
 .post-author{
     color: rgb(61, 79, 93);
@@ -347,9 +339,6 @@ body button {
     color: cadetblue;
     background-color: transparent;
 }
-span#postingImg_view{
-    margin-right: 3%;
-}
 .bacpost-meta p{
     margin-top: 0;
     margin-bottom: 0;
@@ -357,25 +346,9 @@ span#postingImg_view{
 .post-regdate{
     float: right;
 }
-#profile-edit-submit{
-	margin-left: 15%;
-	margin-right: 23px;
-}
 .posting-buttons{
-	float: left;;
-	/* background-color: transparent; */
-	/* color: black; */
+	float: right;;
 }
-/* .post-edit{
-    background: transparent;
-    border: 0;
-    margin-right: 10px;
-}
-.post-delete{
-    background: transparent;
-    border: 0;
-    margin-right: 10px;
-} */
 .favorite-btn{
 	
 }
@@ -390,20 +363,27 @@ span#postingImg_view{
     width: 100%;
 
     height: 130px;
+    border-radius: 9px;
+    border: solid 1px #cfd3d4;
+    margin-top: 1%;
 }
 #post-edit-submit{
     /* margin-left: 80%; */
     float: right;
 }
 
+.section_wrapper{
+	margin: 0 auto;
+    margin-bottom: 2%;
+    width: 95%;
+}
+
 section{
-    margin: 0 auto;
-    margin-bottom: 1em;
-    padding: 0.7em;
+    padding: 2%;
     display: inline-block;
     background-color: white;
     border-radius: 10px;
-    width: 95%;
+    width: 100%;
 }
 
 /*Comment Declare*/
@@ -543,12 +523,19 @@ section{
 
 .post-description {
 	display : inline-flex;
+	width: 100%;
 }
 
 #postingImg_view {
-	display : inline;
+	width: 200px;
+	height: 200px;
+	display : inline;	
+	margin-right: 3%;
+}
+#postingImg_view img{
+    width: 200px;
 	
-	
+    height: 200px;
 }
 
 .comment-text-form {
@@ -569,8 +556,8 @@ input.comment {
 
 #postingContent_div {
 	display : inline;
-	width: 65%;
 	overflow : scroll;
+	width: 60%;
 }
 
 #postingClassifyImg {
@@ -610,18 +597,25 @@ comment-list-sub {
 
 .comment-raty-form {
 	position : relative;
-	left : 23%;
+	left: 10%;
 }
-
+.comment-raty-form img{
+    height: 1em;
+	
+}
 .add-commentRaty-btn {
     border-radius: 5px;
     border: 0;
-    height: 1.3em;
-    width: 3em;
-    background-color: #F15A24;
+    font-size: small;
+    background-color: #cfd3d4;
     color: white;
     line-height: 1.3em;
     text-align: center;
+    margin-left: 2%;
+    padding: 0.5% 1%;
+}
+.add-commentRaty-btn:hover {
+    background-color: #F15A24;
 }
 .more-content{
     background-color: transparent;
@@ -676,36 +670,42 @@ comment-list-sub {
 }
 .btn-wrapper{
     float: right;
-	
 }
 .btn-wrapper button{
     width: 40px;	
 	color: #34495e;	
     height: 40px;
+    font-size: initial;
+}
+.btn-wrapper button:hover{
+    width: 40px;	
+	color: #F15A24;	
+    height: 40px;
 
+    font-size: initial;
 }
 .top-top{
     width: 90%;
 	
     float: right;
     padding-left: 2%;
+    position: relative;
+    padding-bottom: 2%;
 }
 .top-bottom{
-    width: 90%;
+    width: 97%;
 	
-    float: right;
+    float: left;
     position: relative;
     top: -0.5em;
     color: gray;
-    padding-left: 2%;
+    font-size: medium;
 }
 #mainView_favorite{
-    float: right;
-	
+    float: left;	
 }
 .add-comment-btn{
-    float: right;
-	
+    float: right;	
     height: 1.5em;
     border-radius: 5px;
     border: 0;
@@ -714,4 +714,195 @@ comment-list-sub {
     color: white;
     line-height: 1.5em;
     text-align: center;
+}
+.add-comment-btn:hover{
+    background-color: #DC5322;
+}
+input[type=checkbox] {  
+    display: none;  
+}
+
+input[type=checkbox] + label{
+    display: inline-block;  
+    cursor: pointer;  
+    position: relative;  
+    padding-left: 25px;  
+    margin-right: 15px;  
+    font-size: 13px;
+}
+
+input[type=checkbox]+ label:before {     
+    content: "";  
+    display: inline-block;    
+    width: 20px;  
+    height: 20px;  
+    margin-right: 10px;  
+    position: absolute;  
+    left: 0;  
+    bottom: 1px;  
+    background-color: #ECF0F1;  
+    border-radius: 5px; 
+}
+input[type=checkbox]:checked + label:before { 
+    content: "\2228"; 
+    font-size: 18px; 
+    font-weight:800; 
+    color: #fff;  
+    background:#F15A24;
+    text-align: center;  
+    line-height: 20px;  
+
+}
+input[type=checkbox]+ label:hover:before {     
+    content: "\2228";  
+    font-size: 18px; 
+    font-weight:800; 
+    color: #fff;  
+    background: #ECF0F1;
+    text-align: center;  
+    line-height: 20px;
+}
+input[type=checkbox]:checked + label:hover:before { 
+    content: "\2228"; 
+    font-size: 18px; 
+    font-weight:800; 
+    color: #fff;  
+    background:#F15A24;
+    text-align: center;  
+    line-height: 20px;  
+}
+input[type=file] {  
+    display: none;  
+}
+#post_img_fileName{
+	
+}
+input[type=file] + label{
+    display: inline-block;  
+    cursor: pointer;   
+    font-size: 13px;
+    border-radius: 5px;
+    width: 14%;
+    background-color: #cfd3d4;
+    padding: 0.5%;
+    color: white;
+    font-weight: normal;
+    text-align: center;
+    height: 23px;
+}
+input[type=file] + label:hover{
+    display: inline-block;  
+    cursor: pointer;   
+    font-size: 13px;
+    border-radius: 5px;
+    width: 14%;
+    background-color:#F15A24;
+    padding: 0.5%;
+    color: white;
+    font-weight: normal;
+    text-align: center;
+    height: 23px;
+}
+#profileEdit_thumb{
+    float: left;
+    margin-left: 5%;
+    width: 200px;
+}
+#profileEdit_thumb img{
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    background-color: orange;
+    margin-bottom: 5%;
+}
+#profileEdit_thumb label{
+    width: 80px;
+
+    float: right;
+}
+#profileEdit{
+    float: left;
+    width: 61%;
+    text-align: center;
+    height: 200px;
+    padding-top: 2%;
+}
+#profileEdit input{
+    width: 80%;
+	margin-bottom:2%;
+    border-radius: 7px;
+    border: solid 1px #cfd3d4;
+    padding: 1%;
+}
+#profile-edit-submit{
+    color: white;
+    border:0;
+    BACKGROUND-COLOR: #F15A24;
+}
+#profile-edit-submit:hover{
+    background-color: #DC5322;
+	
+}
+#profileWithdrawal{
+	
+}
+#profileWithdrawal input{
+    float: left;	
+    margin: 1%;
+    border-radius: 7px;
+    border: solid 1px #cfd3d4;
+    padding: 0.5% 1%;
+    width: 35%;
+}
+#profileWithdrawal input[type=button]{
+    background-color: #F15A24;	
+    width: 20%;
+    color: white;
+    border: 0;
+}
+#profileWithdrawal input[type=button]:hover{
+    background-color: #DC5322;	
+}
+#save_btn{
+    background-color: #F15A24;	
+    border: 0;
+}
+#save_btn:hover{
+	background-color:#DC5322;
+
+}
+.close-btn{
+	background-color:#ECF0F1;
+	border:0;
+}
+.close-btn:hover{
+	backgroun-color:cfd3d4;
+	border:0;
+}
+#carousel-example-generic{
+    width: 350px;
+	
+    float: left;
+    height: 350px;
+}
+#moreContents{
+    width: 330px;
+	
+    float: left;
+    margin-left: 1%;
+}
+.modal-body button{
+	
+}
+.modal-body .carousel-control{
+    opacity: 0.3;	
+}
+
+.modal-body .carousel-control:hover{
+    opacity: 0.4;	
+}
+.carousel-inner>.item>a>img, .carousel-inner>.item>img,
+.slideImg{
+    width: 350px;
+    height: 350px;
 }
