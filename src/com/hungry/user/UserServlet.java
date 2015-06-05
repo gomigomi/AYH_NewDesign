@@ -93,7 +93,7 @@ public class UserServlet extends HttpServlet{
 				String thumbName=multi.getFilesystemName("thumb");
 				
 		       	userUpdateParam.put("id",multi.getParameter("id").toString());
-		       	userUpdateParam.put("pass",multi.getParameter("pass").toString());
+		       	userUpdateParam.put("pass",multi.getParameter("editPass").toString());
 		       	userUpdateParam.put("name",multi.getParameter("name").toString());
 		       	userUpdateParam.put("thumb",thumbName);
 		       	

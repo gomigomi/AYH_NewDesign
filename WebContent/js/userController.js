@@ -21,58 +21,54 @@ $(function(){
 	})
 
 	//profile edit process
-	$('#profile_edit_submit').click(
-		function() {
-			var id = $('#user_edit_id').val();
-			var name = $('#user_edit_name').val();
-			var pass = $('#user_edit_pass').val();
-			var newPass = $('#user_edit_newpass').val();
+	$('#profile_edit_submit').click(function() {
+		var id = $('#user_edit_id').val();
+		var name = $('#user_edit_name').val();
+		var editPass = $('#user_edit_pass').val();
+		var newPass = $('#user_edit_newPass').val();
 //			var thumb = $('#user_edit_thumb').val().substring(12);
 
-			var form = $('#profile_edit_form')[0];
-			var updateUser = new FormData(form);
+		var form = $('#profile_edit_form')[0];
+		var updateUser = new FormData(form);
 
-			
-			if (!passconf) {
-				alert("비밀번호를 한 번 더 입력해 주세요.")
-				return false;
-			} else if (!pass) {
-				alert("비밀번호를 입력해 주세요.");
-				return false;
-			} else if (passconf == pass) {
-				$.ajax({
-					url : 'http://localhost:8080/postUser?type=2',
-					type : 'POST',
-					contentType : false,
-					processData : false,
-					data : updateUser,
-					success : function(res) {
+		
+		if (!editPass) {
+			alert("비밀번호를 입력해 주세요.");
+			return false;
+		} else if (pass == editPass) {
+			alert("hi");
+			$.ajax({
+				url : 'http://localhost:8080/postUser?type=2',
+				type : 'POST',
+				contentType : false,
+				processData : false,
+				data : updateUser,
+				success : function(res) {
 
-						window.sessionStorage.setItem('name', name);
-						window.sessionStorage.setItem('pass', pass);
-						window.sessionStorage.setItem('thumb', thumb);
+					window.sessionStorage.setItem('name', name);
+					window.sessionStorage.setItem('pass', pass);
+					window.sessionStorage.setItem('thumb', thumb);
 
-						$('#user_edit_name').val(name);
-						$('#user_edit_pass').val(pass);
-						$('#user_edit_passconf').val('');
+					$('#user_edit_name').val(name);
+					$('#user_edit_pass').val(pass);
+					$('#user_edit_passconf').val('');
 
-						alert('edit success');
-						$.modal.close();
-						$('.info').text(id + '(' + name + ')');
-						$('.thumb').css("background-image",
-								'url(' + '"/img/common/' + thumb + '"' + ')');
-						updateUser = new FormData();
-
-					}
-				});
-			} 
-		});
+					alert('edit success');
+					$.modal.close();
+					$('.info').text(id + '(' + name + ')');
+					$('.thumb').css("background-image",
+							'url(' + '"/img/common/' + thumb + '"' + ')');
+					updateUser = new FormData();
+				}
+			});
+		}
+	});
 
 
 	//user delete process
 	$('#profile_delete_submit').click(function() {
-		var id = $('#user_edit_id').val();
-		var pass = $('#user_edit_pass').val();
+		var id = $('#user_delete_id').val();
+		var pass = $('#user_delete_pass').val();
 
 		var check = confirm('Are you sure to delete your id? All your postings will be deleted');
 		if (check) {
