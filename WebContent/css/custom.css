@@ -23,6 +23,10 @@
     width: 90%;
     margin-bottom: 10%;
 	}
+	.post-img img{
+		width: 58px;
+		height: 58px;
+	}
 }
 @media all and (min-width: 300px) and (max-width: 800px){
 	#left_sidebar{
