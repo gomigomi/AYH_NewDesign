@@ -154,7 +154,7 @@ $(document).on('click', '.add-commentRaty-btn', function() {
 								var printNum = newAvg.toFixed(2);
 
 								parentElem.find('.bac-point').empty();
-								parentElem.find('.bac-point').append('Point '+printNum);
+								parentElem.find('.bac-point').append('평균평점 '+printNum);
 								
 								console.log("내가 준 점수 "+currentPoint);
 								console.log("내가 줬던 점수 "+myPoint);

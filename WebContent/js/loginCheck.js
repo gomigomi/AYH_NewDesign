@@ -15,8 +15,7 @@ $(document).ready(function() {
 		$('.logon').show();
 		$('.logoff').hide();
 		
-		$('.thumb').css("background-image", 'url('+'"/img/common/'+thumb+'"'+')');
-		$('.info').text(session.id + '('+session.name+')');
+		$('#top_thumbImg').attr("src","/img/thumb/"+thumb);
 		$('#user_edit_id').val(session.id);
 		$('#user_edit_name').val(session.name);
 		$('#user_edit_pass').val(pass);
