@@ -11,7 +11,7 @@
 
   <%
   String root = request.getSession().getServletContext().getRealPath("/");
-  String savePath = root + "img/common/";
+  String savePath = root + "img/thumb/";
   int maxSize = 5*1024*1024;
   System.out.println(request);
 

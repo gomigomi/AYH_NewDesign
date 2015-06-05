@@ -13,8 +13,8 @@ function getFavoriteView() {
 			favoriteView = res.result;
 
 			if (favoriteView == "") {
-					$('#favoritePosting').empty();
-					$('#favoritePosting').append('<div id="nothingElem">추가하신 게시글이 없습니다.</div>');
+					$('.favorite-posts').empty();
+					$('.favorite-posts').append('<div id="nothingElem">추가하신 게시글이 없습니다.</div>');
 					return false;
 			}
 			

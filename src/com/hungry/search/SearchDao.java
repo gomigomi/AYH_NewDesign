@@ -55,7 +55,7 @@ public class SearchDao {
 			if(searchParam.get("type")[0].toString().equals("ty-all")){
 				sql_ty = "";
 			}else{
-				sql_ty = "and type='"+searchParam.get("f_type")[0].toString()+"' ";
+				sql_ty = "and type='"+searchParam.get("type")[0].toString()+"' ";
 			}
 			if(searchParam.get("time")[0].toString().equals("ti-all")){
 				sql_ti = "";

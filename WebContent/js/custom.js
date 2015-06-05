@@ -130,7 +130,7 @@ $(function() {
 			success : function(res){
 				console.log("postposting");
 				if(res.result == 'success'){
-					$('#write').val('');
+					$('#post_txt_box').val('');
 					$("#tasteSel > option[value=none]").attr("selected", "true");
 					$("#f_typeSel > option[value=none]").attr("selected", "true");
 					$("#timeSel > option[value=none]").attr("selected", "true");
