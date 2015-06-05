@@ -31,6 +31,8 @@ $(function(){
 							currentCommentSeq = res.result;
 							
 							var id = window.sessionStorage.getItem('id');
+							var name = window.sessionStorage.getItem('name');
+							
 							var cmtDisplay = "none";
 							if(param.writer==id) {
 								cmtDisplay = "inline-block";
@@ -40,7 +42,7 @@ $(function(){
 							var commentItem = 
 							'<div class="comment-wrap">'+
 							'<li class = "comment-list-sub" id="'+currentCommentSeq[0].seq+'">'+
-							'<span class="user" id="commentView-user">' + param.writer+'</span>'+
+							'<span class="user" id="commentView-user">' +name+'</span>'+
 							'<span class="regdate view" id="commentView-regdate">'+getNowDate()+
 								'<button class="comment-delete" style="display:'+cmtDisplay+'">'+
 								'<i class="fa fa-times"></i>'+

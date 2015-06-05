@@ -47,7 +47,7 @@ public class PostingDao {
 			conn = getConnection();
 			stmt = conn.createStatement();
 			
-			String sql = "SELECT A.*, B.thumb, IFNULL(C.img,'no-image.jpg') AS img, IFNULL(round(avg(S.point), 2), 0.00) AS avg "+
+			String sql = "SELECT A.*, B.thumb, B.name, IFNULL(C.img,'no-image.jpg') AS img, IFNULL(round(avg(S.point), 2), 0.00) AS avg "+
 					"FROM posting AS A "+
 					"LEFT OUTER JOIN user B ON B.id = A.writer "+ 
 					"LEFT OUTER JOIN image C ON C.posting_seq = A.seq "+ 
@@ -70,6 +70,7 @@ public class PostingDao {
 				item.put("taste", rs.getString("taste"));
 				item.put("time", rs.getString("time"));
 				item.put("location", rs.getString("location"));
+				item.put("name",  rs.getString("name"));
 				
 				result.add(item);
 			}
@@ -97,7 +98,7 @@ public class PostingDao {
 			conn = getConnection();
 			stmt = conn.createStatement();
 			
-			String sql = "SELECT A.*, B.thumb, IFNULL(C.img,'no-image.jpg') AS img, IFNULL(round(avg(S.point), 2), 0.00) AS avg "+
+			String sql = "SELECT A.*, B.thumb, B.name, IFNULL(C.img,'no-image.jpg') AS img, IFNULL(round(avg(S.point), 2), 0.00) AS avg "+
 					"FROM posting AS A "+
 					"LEFT OUTER JOIN user B ON B.id = A.writer "+ 
 					"LEFT OUTER JOIN image C ON C.posting_seq = A.seq "+ 
@@ -120,6 +121,7 @@ public class PostingDao {
 				item.put("taste", rs.getString("taste"));
 				item.put("time",  rs.getString("time"));
 				item.put("location", rs.getString("location"));
+				item.put("name",  rs.getString("name"));
 				
 				result.add(item);
 			}
@@ -146,7 +148,7 @@ public class PostingDao {
 			conn = getConnection();
 			stmt = conn.createStatement();
 			
-			String sql = "SELECT A.*, B.thumb, IFNULL(D.img,'no-image.jpg') AS img, IFNULL(round(avg(S.point), 2), 0.00) AS avg "+
+			String sql = "SELECT A.*, B.thumb, B.name, IFNULL(D.img,'no-image.jpg') AS img, IFNULL(round(avg(S.point), 2), 0.00) AS avg "+
 					"FROM posting AS A "+
 					"LEFT OUTER JOIN user B ON B.id = A.writer "+ 
 					"LEFT OUTER JOIN comment C ON C.posting_seq = A.seq "+ 
@@ -170,6 +172,7 @@ public class PostingDao {
 				item.put("type", rs.getString("type"));
 				item.put("location", rs.getString("location"));
 				item.put("time", rs.getString("time"));
+				item.put("name",  rs.getString("name"));
 				
 				result.add(item);
 			}
@@ -197,7 +200,7 @@ public class PostingDao {
 			conn = getConnection();
 			stmt = conn.createStatement();
 			
-			String sql = "SELECT A.*, B.thumb, IFNULL(C.img,'no-image.jpg') AS img, IFNULL(round(avg(S.point), 2), 0.00) AS avg "+
+			String sql = "SELECT A.*, B.thumb, B.name, IFNULL(C.img,'no-image.jpg') AS img, IFNULL(round(avg(S.point), 2), 0.00) AS avg "+
 					"FROM posting AS A "+
 					"LEFT OUTER JOIN user B ON B.id = A.writer "+ 
 					"LEFT OUTER JOIN image C ON C.posting_seq = A.seq "+ 
@@ -219,6 +222,7 @@ public class PostingDao {
 				item.put("taste", rs.getString("taste"));
 				item.put("location", rs.getString("location"));
 				item.put("time", rs.getString("time"));
+				item.put("name",  rs.getString("name"));
 				
 				result.add(item);
 			}
@@ -330,7 +334,7 @@ public class PostingDao {
 			conn = getConnection();
 			stmt = conn.createStatement();
 			
-			String sql = "SELECT A.*, B.thumb, IFNULL(C.img,'no-image.jpg') AS img, IFNULL(round(avg(S.point), 2),0.00) AS avg "+
+			String sql = "SELECT A.*, B.thumb, B.name, IFNULL(C.img,'no-image.jpg') AS img, IFNULL(round(avg(S.point), 2),0.00) AS avg "+
 					"FROM posting AS A "+
 					"LEFT OUTER JOIN user B ON B.id = A.writer "+ 
 					"LEFT OUTER JOIN image C ON C.posting_seq = A.seq "+ 
@@ -354,6 +358,7 @@ public class PostingDao {
 				item.put("taste", rs.getString("taste"));
 				item.put("time", rs.getString("time"));
 				item.put("location", rs.getString("location"));
+				item.put("name",  rs.getString("name"));
 				
 				result.add(item);
 			}
@@ -394,7 +399,7 @@ public class PostingDao {
 			stmt7 = conn.createStatement();
 			stmt8 = conn.createStatement();
 			
-			String baseSql1 ="SELECT A.*, B.thumb, IFNULL(C.img,'no-image.jpg') AS img, IFNULL(round(avg(D.point), 2),'not rated') AS avg "+
+			String baseSql1 ="SELECT A.*, B.thumb, B.name, IFNULL(C.img,'no-image.jpg') AS img, IFNULL(round(avg(D.point), 2),'not rated') AS avg "+
 					"FROM posting AS A "+
 					"LEFT JOIN TempScoreView S ON S.posting_seq = A.seq "+
 					"LEFT JOIN score D ON D.posting_seq = A.seq "+
@@ -468,6 +473,7 @@ public class PostingDao {
 				item1.put("taste", rs.getString("taste"));
 				item1.put("time", rs.getString("time"));
 				item1.put("location", rs.getString("location"));
+				item.put("name",  rs.getString("name"));
 				
 				result.add(item1);
 			}
@@ -490,6 +496,7 @@ public class PostingDao {
 					item2.put("taste", rs2.getString("taste"));
 					item2.put("time", rs2.getString("time"));
 					item2.put("location", rs2.getString("location"));
+					item.put("name",  rs.getString("name"));
 					
 					result.add(item2);
 				}			
@@ -514,6 +521,7 @@ public class PostingDao {
 					item3.put("taste", rs3.getString("taste"));
 					item3.put("time", rs3.getString("time"));
 					item3.put("location", rs3.getString("location"));
+					item.put("name",  rs.getString("name"));
 
 					System.out.println(item3);
 					result.add(item3);			

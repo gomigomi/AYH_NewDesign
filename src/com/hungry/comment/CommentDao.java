@@ -11,17 +11,6 @@ import java.util.List;
 import java.util.Map;
 
 public class CommentDao {
-//	static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";  
-//	static final String DB_URL = "jdbc:mysql://ec2-54-199-180-105.ap-northeast-1.compute.amazonaws.com:3306/bac-krk";
-//
-//	static final String USER = "root";
-//	static final String PASS = "wjsxo123";
-//	static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";  
-//	static final String DB_URL = "jdbc:mysql://54.64.160.105:3306/AYH";
-//
-//	static final String USER = "root";
-//	static final String PASS = "900418";
-//	
 	static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";  
 	static final String DB_URL = "jdbc:mysql://localhost:3306/AYH";
 
@@ -55,7 +44,9 @@ public class CommentDao {
 			conn = getConnection();
 			stmt = conn.createStatement();
 			
-			String sql ="SELECT * FROM comment";
+			String sql ="SELECT A.*, B.name "
+					+ "FROM comment AS A "
+					+ "LEFT OUTER JOIN user B ON B.id = A.writer";
 			ResultSet rs = stmt.executeQuery(sql);
 
 			while(rs.next()){
@@ -65,6 +56,7 @@ public class CommentDao {
 				item.put("content", rs.getString("content"));
 				item.put("writer", rs.getString("writer"));
 				item.put("regdate", rs.getString("regdate"));
+				item.put("name",  rs.getString("name"));
 				
 				result.add(item);
 			}

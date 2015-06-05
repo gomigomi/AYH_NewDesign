@@ -140,7 +140,7 @@ function getFavSectionItem(favoriteView, isHide) {
 				'<img src="/img/common/'+favoriteView.thumb+'" alt="썸네일"/>'+
 			'</div>'+ 
 			'<div class="top-top">'+ 
-				'<div class="post-writer">'+favoriteView.writer+
+				'<div class="post-writer">'+favoriteView.name+
 					'<div class="btn-wrapper">'+
 						'<span id=mainView_favorite>'+
 							'<button id="heart" class="fa fa-heart favorite-btn" style="display:block"></button>'+

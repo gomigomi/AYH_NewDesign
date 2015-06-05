@@ -44,7 +44,7 @@ function getSectionItem(postingDatas, isHide){
 				'<img src="/img/common/'+postingDatas.thumb+'" alt="썸네일"/>'+
 			'</div>'+ 
 			'<div class="top-top">'+ 
-				'<div class="post-writer">'+postingDatas.writer+
+				'<div class="post-writer">'+postingDatas.name+
 					'<div class="btn-wrapper">'+
 						'<span id=mainView_favorite>'+
 							'<button id="heart-o" class="fa fa-heart-o favorite-btn" style="display:'+favoriteDisplaySub+'"></button>'+
@@ -110,7 +110,7 @@ function getSectionItem(postingDatas, isHide){
 		var liElem = 
 			'<div class="comment-wrap">'+
 				'<li class = "comment-list-sub" id="'+item.seq+'">'+
-					'<span class="user" id="commentView-user">' + item.writer+'</span>'+
+					'<span class="user" id="commentView-user">' + item.name+'</span>'+
 					'<span class="regdate view" id="commentView-regdate">'+item.regdate.substr(0, 10)+
 						'<button class="comment-delete" style="display:'+cmtDisplay+'">'+
 							'<i class="fa fa-times"></i>'+
