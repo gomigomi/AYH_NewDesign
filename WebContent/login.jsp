@@ -38,7 +38,7 @@
 <%--jsp ¼¼¼Ç session to js jquery ¼¼¼Ç session --%>
 <%
 	String id = (String)session.getAttribute("id");
-	String pw = (String)session.getAttribute("pw");
+	String pw = (String)session.getAttribute("pass");
 	String name = (String)session.getAttribute("name");
 	String thumb = (String)session.getAttribute("thumb");
 %>
