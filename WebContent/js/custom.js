@@ -18,7 +18,7 @@ function readURL(input) {
 			var reader = new FileReader();
 			reader.onload = function(e) {
 				$('#img_preview').append(
-						'<img width="200px" height="200px" src="'
+						'<img width="150px" height="150px" src="'
 								+ e.target.result + '" alt="your image" />');
 			}
 		}
@@ -71,11 +71,6 @@ $(function() {
 	//log-out process
 	$('#log_out').click(function(){
 		sessionStorage.clear();
-
-//		$('.logon').hide();
-//		$('.logoff').show();
-//
-//		renderPostingList();
 		location.href="/NewFront.jsp";
 	});
 
@@ -88,145 +83,11 @@ $(function() {
 		}
 	});
 	
-	
-	
-
-	
-	
-	
-	/**
-	 * Login Btn Handler
-	 */
-	//log-in process
-	$('#login-submit').click(function(){
-		var id = $('#user_id').val();
-		var pass = $('#user_pass').val();
-
-		if(id == '' || pass == ''){
-			alert('please write your id or pass');
-			return false;
-		}
-
-		$.ajax({	//Request Login API
-			url: 'http://localhost:8080/getUser?type=2&id='+id+'&pass='+pass,
-			method : 'get',
-			dataType : 'json',
-			success : function(res){
-				console.log("login-api");
-				if(res.result.id){
-					$('#user_id').val('');
-					$('#user_pass').val('');
-					$.modal.close();
-					window.sessionStorage.setItem('id', res.result.id);
-					window.sessionStorage.setItem('name',res.result.name);
-					window.sessionStorage.setItem('thumb',res.result.thumb);
-					window.sessionStorage.setItem('pass',res.result.pass);
-
-					var name = res.result.name;
-					var id = res.result.id;
-					var pass=res.result.pass;
-					var thumb=res.result.thumb;
-					
-//					$('.logon').show();
-//					$('.thumb').show();
-//					$('info').show();
-//					$('.logoff').hide();
-//
-//					renderPostingList();
-					location.reload([false]);
-					$('.thumb').css("background-image", 'url('+'"/img/common/'+thumb+'"'+')');
-					$('.info').text(id + '('+name+')');
-
-					$('#user_edit_id').val(id);
-					$('#user_edit_name').val(name);
-					$('#user_edit_pass').val(pass);
-					//$('.thumb').css('background-image : ', 'url('+_+')') 썸네일 처리
-				}else{
-					alert('log in Fail')
-				}
-			},
-			error : function(){
-
-			}
-
-		});
-	});
-	
-	
-	//sign-in process
-	$('#signin-submit').click(function(){
-		var id = $('#user_signin_id').val();
-		var name = $('#user_signin_name').val();
-		var pass = $('#user_signin_pass').val();
-		var passconf = $('#user_signin_passconf').val();
-		
-		var regexp = /[0-9a-z]/; // 예외처리를 위한 변수 선언 : 숫자,영문,특수문자
-
-		if(id == '' || pass == '' || name =='' || passconf =='' ){
-			alert('please fill out the all blanks');
-			return false;
-		}
-		else if(pass!=passconf){
-			alert('password confirm failed');
-			return false;
-		} //한글 예외처리 
-		else if(id != " " && regexp.test(id) == false ){
-			alert("영(소)문자와 숫자만 입력 가능합니다.");
-			return false;
-		}
-			
-				
-		$.ajax({	//ID 중복 체크
-			url: 'http://localhost:8080/getUser?type=3&id='+id,
-			method : 'get',
-			dataType : 'json',
-			success : function(res){
-				console.log("id overlap");
-				if(res.result==1){
-					alert('Sorry. Id is already exist');
-					$('#user_signin_id').val('');
-					$('#user_signin_id').focus();
-					return false;
-				} else {
-					$.ajax({	//Request Signin API
-						url: 'http://localhost:8080/postUser?type=1&id='+id+'&pass='+pass+'&name='+name,
-						method : 'post',
-						dataType : 'json',
-						success : function(res){
-							console.log("create user");
-							
-							alert('sign in success!')
-							$('#user_signin_id').val('');
-							$('#user_signin_name').val('');
-							$('#user_signin_pass').val('');
-							$('#user_signin_passconf').val('');
-							$.modal.close();
-							
-							window.sessionStorage.setItem('id', id);
-							window.sessionStorage.setItem('name', name);
-							
-							$('.logon').show();
-							$('.thumb').show()
-							$('.info').show();
-							$('.logoff').hide();
-						},
-						error : function(){
-							
-						}
-					});
-				}
-			},
-			error : function(){
-				
-			}
-		});
-	});
-	
-    $("#img_Upload").on('change', function(){
+    $("#post_img").on('change', function(){
         readURL(this);
     });
     
-    $("#img_edit").on('change', function(){
+    $("#postEdit_img").on('change', function(){
         readEditURL(this);
     });
 	
@@ -281,20 +142,21 @@ $(function() {
 			},
 			error : function(){}
 		});
-		
-		$.ajax({
-             url: 'http://localhost:8080/postImg?type=1',
-             processData: false,
-             contentType: false,
-             data: formData,
-             type: 'POST',
-             success: function(result){
-                   $('#img_preview').empty();
-                   $('#img_upload_frm')[0].reset();
-                   formData=new FormData();
-                   renderPostingList();
-             }
-         });
+		if($('#post_img').val()){
+			$.ajax({
+	             url: 'http://localhost:8080/postImg?type=1',
+	             processData: false,
+	             contentType: false,
+	             data: formData,
+	             type: 'POST',
+	             success: function(result){
+	                   $('#img_preview').empty();
+	                   $('#img_upload_frm')[0].reset();
+	                   formData=new FormData();
+	                   renderPostingList();
+	             }
+	         });
+		}
       });
 
 	function renderPostingList(){
@@ -382,7 +244,7 @@ $(function() {
 		$("#location_edit > option[value="+location+"]").attr("selected", "true");
 		
 		console.log(seq);
-		$(document).on('click', '#post-edit-submit' , function(){
+		$(document).on('click', '#save_btn' , function(){
 			taste=$("#taste_edit option:selected").val();
 			f_type=$("#type_edit option:selected").val();
 			time=$("#time_edit option:selected").val();
@@ -408,7 +270,7 @@ $(function() {
 					$('#post_edit_area').val('');
 				}
 			});			
-			if($('#img_edit').val()){
+			if($('#postEdit_img').val()){
 				$.ajax({
 		             url: 'http://localhost:8080/postImg?type=2&seq='+seq,
 		             processData: false,
@@ -418,13 +280,13 @@ $(function() {
 		             type: 'POST',
 		             success: function(result){
 		                   $('#img_edit_preview').empty();
-		                   $("#img_edit").val("");
+		                   $("#postEdit_img").val("");
 		                   editFormData=new FormData();
 		                   renderPostingList();
 		             }
 		         });
 			}			
-			$.modal.close();
+			$('#postEditModal').modal('hide');
 			renderPostingList();
 		});
 	});
@@ -441,16 +303,6 @@ function handleRaty(){
 			return $(this).attr('data-score');
 		}
 	});
-
-	//It's nessesary when you want to express rated score.  
-//	$('span.raty-view').raty({
-//		score: function() {
-//			half : true;
-//			noRatedMsg : "I'am readOnly and I haven't rated yet!";
-//			return $(this).attr('data-score');
-//		},
-//		readOnly: true,
-//	});
 }
 
 function getNowDate(){
