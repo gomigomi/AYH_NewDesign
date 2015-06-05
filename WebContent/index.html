@@ -133,16 +133,17 @@
 					<section>
 					<form method="POST" enctype="multipart/form-data">
 						<div id="profileEdit_thumb">
-							<img src="#" />
+							<img id="profileEdit_thumbImg" src="#" />
 							<input type="text" id="editFileName" readonly="readonly" style="border: 0;width: 115px;" >
-							<input id="thumb" type="file" name="thumb" onchange="javascript: document.getElementById('editFileName').value=this.value">
-							<label for="thumb">파일선택</label>
+							<input id="thumbE" type="file" name="thumb" onchange="javascript: document.getElementById('editFileName').value=this.value.substring(12)">
+							<label for="thumbE">파일선택</label>
 						</div>
 						<div id="profileEdit">
 							<input type="text" id="user_edit_id" placeholder=" ID" READONLY name="id"><br>
 							<input type="text" id="user_edit_name" placeholder=" Nick-name" onfocus="this.value=''" name="name"><br>
 							<input type="password" id="user_edit_pass" placeholder="Password" name="pass"><br>
 							<input type="password" id="user_edit_newPass" placeholder="New Password" name="newpass"><br>
+							<input type="password" id="user_edit_newPass_Confirm" placeholder="New Password Confirm" name="newpassconfirm"><br>
 							<input type="button" value="Profile Edit" id="profile_edit_submit"><br>
 						</div>
 					</form>

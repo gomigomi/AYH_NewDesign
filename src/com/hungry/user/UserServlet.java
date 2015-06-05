@@ -82,26 +82,24 @@ public class UserServlet extends HttpServlet{
 				
 			}else if(type.equals("2")){	//Update API
 
-//				String savePath = "/Users/gomi/FinalAYH/WebContent/img/common";
-				String savePath = "/Users/john/AYH_NewDesign/WebContent/img/common";
+				String savePath = "/Users/gomi/workspace/AYH_NewDesign/WebContent/img/common";
+//				String savePath = "/Users/john/AYH_NewDesign/WebContent/img/common";
 				int maxSize = 5*1024*1024;
-
-				MultipartRequest multi = new MultipartRequest(request, savePath, maxSize, "UTF-8", new DefaultFileRenamePolicy());
 				
+				MultipartRequest multi = new MultipartRequest(request, savePath, maxSize, "UTF-8", new DefaultFileRenamePolicy());
+			
 				Map<String, String> userUpdateParam = new HashMap<String, String>();
 				
 				String thumbName=multi.getFilesystemName("thumb");
+			
+				userUpdateParam.put("id",multi.getParameter("id").toString());
+				userUpdateParam.put("pass",multi.getParameter("pass").toString());
+				userUpdateParam.put("name",multi.getParameter("name").toString());
+				userUpdateParam.put("thumb",thumbName);
 				
-		       	userUpdateParam.put("id",multi.getParameter("id").toString());
-		       	userUpdateParam.put("pass",multi.getParameter("editPass").toString());
-		       	userUpdateParam.put("name",multi.getParameter("name").toString());
-		       	userUpdateParam.put("thumb",thumbName);
-		       	
-		      	System.out.print(userUpdateParam);
-		      	
 				JObject.put("result", dao.updateUser(userUpdateParam));
-			}
-
+				
+				}
 
 		}catch(JSONException e){
 			
