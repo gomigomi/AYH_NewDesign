@@ -454,87 +454,92 @@ public class PostingDao {
 			String timeSql = "and A.time = '"+time+"' ";
 			
 			result.add(item);			
-			System.out.println(result);
+			
+			ResultSet rs,rs2 = null,rs3 = null;
 			
 			//쿼리실행 - 3개전부!!  
-			ResultSet rs = stmt6.executeQuery(baseSql1+tasteSql+typeSql+timeSql+baseSql2);
+			rs = stmt6.executeQuery(baseSql1+tasteSql+typeSql+timeSql+baseSql2);
 			System.out.println("3 exeute");
-			
-			while(rs.next()){
-				HashMap<String, Object> item1 = new HashMap<String, Object>();
-				item1.put("seq", rs.getString("seq"));
-				item1.put("content", rs.getString("content"));
-				item1.put("writer", rs.getString("writer"));
-				item1.put("regdate", rs.getString("regdate"));
-				item1.put("thumb", rs.getString("thumb"));
-				item1.put("avg", rs.getString("avg"));
-				item1.put("img", rs.getString("img"));
-				item1.put("type", rs.getString("type"));
-				item1.put("taste", rs.getString("taste"));
-				item1.put("time", rs.getString("time"));
-				item1.put("location", rs.getString("location"));
-				item.put("name",  rs.getString("name"));
-				
-				result.add(item1);
+			if(rs.isBeforeFirst()){
+				while(rs.next()){
+					HashMap<String, Object> item1 = new HashMap<String, Object>();
+					item1.put("seq", rs.getString("seq"));
+					item1.put("content", rs.getString("content"));
+					item1.put("writer", rs.getString("writer"));
+					item1.put("regdate", rs.getString("regdate"));
+					item1.put("thumb", rs.getString("thumb"));
+					item1.put("avg", rs.getString("avg"));
+					item1.put("img", rs.getString("img"));
+					item1.put("type", rs.getString("type"));
+					item1.put("taste", rs.getString("taste"));
+					item1.put("time", rs.getString("time"));
+					item1.put("location", rs.getString("location"));
+					item1.put("name",  rs.getString("name"));
+					
+					result.add(item1);
+				}
 			}
+
+			System.out.println(result);
 
 			//쿼리실행 - 2개!!
 			if (result.size()==1){
-				ResultSet rs2=stmt7.executeQuery(baseSql1+tasteSql+typeSql+baseSql2);
+				rs2=stmt7.executeQuery(baseSql1+tasteSql+typeSql+baseSql2);
 				System.out.println("sql2 exeute");
+					while(rs2.next()){
+						HashMap<String, Object> item2 = new HashMap<String, Object>();
+						item2.put("seq", rs2.getString("seq"));
+						item2.put("content", rs2.getString("content"));
+						item2.put("writer", rs2.getString("writer"));
+						item2.put("regdate", rs2.getString("regdate"));
+						item2.put("thumb", rs2.getString("thumb"));
+						item2.put("avg", rs2.getString("avg"));
+						item2.put("img", rs2.getString("img"));
+						item2.put("type", rs2.getString("type"));
+						item2.put("taste", rs2.getString("taste"));
+						item2.put("time", rs2.getString("time"));
+						item2.put("location", rs2.getString("location"));
+						item2.put("name",  rs2.getString("name"));
+						
+						result.add(item2);
+					}
 				
-				while(rs2.next()){
-					HashMap<String, Object> item2 = new HashMap<String, Object>();
-					item2.put("seq", rs2.getString("seq"));
-					item2.put("content", rs2.getString("content"));
-					item2.put("writer", rs2.getString("writer"));
-					item2.put("regdate", rs2.getString("regdate"));
-					item2.put("thumb", rs2.getString("thumb"));
-					item2.put("avg", rs2.getString("avg"));
-					item2.put("img", rs2.getString("img"));
-					item2.put("type", rs2.getString("type"));
-					item2.put("taste", rs2.getString("taste"));
-					item2.put("time", rs2.getString("time"));
-					item2.put("location", rs2.getString("location"));
-					item.put("name",  rs.getString("name"));
-					
-					result.add(item2);
-				}			
-				rs2.close();
 			}
 
+			System.out.println(result);
+			
 			//쿼리실행 - 1개!!
 			if(result.size()==1){
-				ResultSet rs3=stmt8.executeQuery(baseSql1+tasteSql+baseSql2);
+				rs3=stmt8.executeQuery(baseSql1+tasteSql+baseSql2);
 				System.out.println("sql3 exeute");
-				
-				while(rs3.next()){
-					HashMap<String, Object> item3 = new HashMap<String, Object>();
-					item3.put("seq", rs3.getString("seq"));
-					item3.put("content", rs3.getString("content"));
-					item3.put("writer", rs3.getString("writer"));
-					item3.put("regdate", rs3.getString("regdate"));
-					item3.put("thumb", rs3.getString("thumb"));
-					item3.put("avg", rs3.getString("avg"));
-					item3.put("img", rs3.getString("img"));
-					item3.put("type", rs3.getString("type"));
-					item3.put("taste", rs3.getString("taste"));
-					item3.put("time", rs3.getString("time"));
-					item3.put("location", rs3.getString("location"));
-					item.put("name",  rs.getString("name"));
+					while(rs3.next()){
+						HashMap<String, Object> item3 = new HashMap<String, Object>();
+						item3.put("seq", rs3.getString("seq"));
+						item3.put("content", rs3.getString("content"));
+						item3.put("writer", rs3.getString("writer"));
+						item3.put("regdate", rs3.getString("regdate"));
+						item3.put("thumb", rs3.getString("thumb"));
+						item3.put("avg", rs3.getString("avg"));
+						item3.put("img", rs3.getString("img"));
+						item3.put("type", rs3.getString("type"));
+						item3.put("taste", rs3.getString("taste"));
+						item3.put("time", rs3.getString("time"));
+						item3.put("location", rs3.getString("location"));
+						item3.put("name",  rs3.getString("name"));
+	
+						System.out.println(item3);
+						result.add(item3);			
+					
+					}						
 
-					System.out.println(item3);
-					result.add(item3);			
-				
-				}						
-				
 				System.out.println(result);
-				rs3.close();
 			}
 	
 			System.out.println(result);
 			
-			rs.close();				
+			rs.close();
+			rs2.close();
+			rs3.close();
 			taste_rs.close();			
 			type_rs.close();
 			time_rs.close();
