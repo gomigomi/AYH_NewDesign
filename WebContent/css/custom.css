@@ -78,6 +78,10 @@ body button {
     float: right;
     margin: 0em 0.1em;
 }
+#top_thumb img{
+	width: 100%;
+	border-radius: 100%;
+}
 .top_id_name{
     width: inherit;
 	
@@ -308,9 +312,8 @@ select{
     
     width: 100%;
     border-radius: 100%;
-	background-color: orange;
-    height: 0;
-    padding-bottom: 100%;
+	
+    /* background-color: orange; */
 }
 .post-writer{
     float: left;
@@ -530,8 +533,9 @@ section{
 	margin-right: 3%;
 }
 #postingImg_view img{
-    width: 100%;
+    width: 200px;
 	
+    height: 200px;
 }
 
 .comment-text-form {
@@ -686,7 +690,7 @@ comment-list-sub {
     float: right;
     padding-left: 2%;
     position: relative;
-    top: -0.5em;
+    padding-bottom: 2%;
 }
 .top-bottom{
     width: 97%;
@@ -699,8 +703,6 @@ comment-list-sub {
 }
 #mainView_favorite{
     float: left;	
-    position: relative;
-    bottom: -3.5px;
 }
 .add-comment-btn{
     float: right;	
@@ -861,11 +863,11 @@ input[type=file] + label:hover{
 #profileWithdrawal input[type=button]:hover{
     background-color: #DC5322;	
 }
-.save-btn{
+#save_btn{
     background-color: #F15A24;	
     border: 0;
 }
-.save-btn:hover{
+#save_btn:hover{
 	background-color:#DC5322;
 
 }
@@ -876,4 +878,31 @@ input[type=file] + label:hover{
 .close-btn:hover{
 	backgroun-color:cfd3d4;
 	border:0;
+}
+#carousel-example-generic{
+    width: 350px;
+	
+    float: left;
+    height: 350px;
+}
+#moreContents{
+    width: 330px;
+	
+    float: left;
+    margin-left: 1%;
+}
+.modal-body button{
+	
+}
+.modal-body .carousel-control{
+    opacity: 0.3;	
+}
+
+.modal-body .carousel-control:hover{
+    opacity: 0.4;	
+}
+.carousel-inner>.item>a>img, .carousel-inner>.item>img,
+.slideImg{
+    width: 350px;
+    height: 350px;
 }

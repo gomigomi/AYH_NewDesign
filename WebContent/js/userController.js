@@ -8,7 +8,7 @@ var userElem = '<span class = "top_id_name" id="top_name">'+name+'</span>'+
 			
 $(function(){
 	$('#user_information').append(userElem);
-	$('#top_thumb').css("background-image", 'url('+'"/img/common/'+thumb+'"'+')');
+	$('#top_thumb').append("<img src='/img/common/"+thumb+"'>");
 
 	//로그아웃 버튼 제어.
 	$('#logout_btn').click(function(){

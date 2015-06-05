@@ -3,20 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>HUNGRY?</title>
+<title>배고파요?</title>
 
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/jquery.raty.css">
 <link rel="stylesheet" href="css/custom.css">
 <link rel="stylesheet" href="css/preference.css">
-
 <link rel="stylesheet" href="css/searchButton.css">
 
 <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/json2/20140204/json2.js"></script>
-<script src="js/slidr.js"></script><style type="text/css"></style>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/jquery.raty.js"></script>
 
@@ -103,11 +101,13 @@
 							<option value="JJ">제주</option>
 						</select>
 					</form>
-					
+					<div id="img_preview"></div>
 					<textarea id="post_txt_box" rows="" cols=""></textarea>
 					<input type="text" id="fileName" readonly="readonly" style="border: 0;" >
-					<input id="post_img" type="file" onchange="javascript: document.getElementById('fileName').value=this.value">
-					<label for="post_img">파일선택</label>
+					<form enctype="multipart/form-data" id="img_upload_frm">
+						<input id="post_img" multiple type="file" onchange="javascript: document.getElementById('fileName').value=this.value">
+						<label for="post_img">파일선택</label>
+					</form>		
 					<button id="post_btn">올리기</button>
 					<p></p>
 				</div>
@@ -269,7 +269,7 @@
 						aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
-					<h4 class="modal-title" id="myModalLabel">Modal title</h4>
+					<h4 class="modal-title" id="myModalLabel">포스팅 수정</h4>
 				</div>
 				<div class="modal-body">
 					<select name=taste id="taste_edit">
@@ -299,15 +299,16 @@
 						<option value=JR>전라</option>
 						<option value=JJ>제주</option>
 					</select>
+					<div id="img_edit_preview"></div>
 					<textarea id="post_edit_area"></textarea>				
-					<input id="post_img" type="file" onchange="javascript: document.getElementById('fileName').value=this.value">
-					<label for="post_img" style="float:right;">파일선택</label>
+					<input id="postEdit_img" type="file" onchange="javascript: document.getElementById('fileName').value=this.value" multiple>
+					<label for="postEdit_img" style="float:right;">파일선택</label>
 					<input type="text" id="fileName" readonly="readonly" style="border: 0; width: 50%; float:right;" >
 					<p></p>
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="close-btn btn btn-default" data-dismiss="modal">Close</button>
-					<button type="button" class="btn btn-primary save-btn">Save changes</button>
+					<button type="button" id="save_btn" class="btn btn-primary">Save changes</button>
 				</div>
 			</div>
 		</div>
@@ -315,19 +316,28 @@
 	<!-- see more contents -->
 	<div class="modal fade" id="moreContentsModal" tabindex="-1"
 		role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-		<div class="modal-dialog">
+		<div class="modal-dialog" style="width:750px;">
 			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal"
-						aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-					<h4 class="modal-title" id="myModalLabel">Modal title</h4>
-				</div>
-				<div class="modal-body">...</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-					<button type="button" class="btn btn-primary">Save changes</button>
+				<div class="modal-body">
+					<!-- imgslide -->
+					<section style="padding:0;">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						<div id="carousel-example-generic" class="carousel slide" data-ride="carousel" style="width:350px;">
+						</div>
+						<div id="moreContents">
+							<div id="info-wrapper">
+								<span><img class="postingCI" src="/img/icon/posting-location/location-Seoul.png"></span>
+								<span><img class="postingCI" src="/img/icon/posting-nationality/nationality-chines.png"></span>
+								<span><img class="postingCI" src="/img/icon/posting-taste/taste-hot.png"></span>
+								<span><img class="postingCI" src="/img/icon/posting-time/time-lc.png"></span>
+							</div>
+							<div id="textContent">
+								여긴 글 헤
+							</div>
+						</div>
+					</section>
 				</div>
 			</div>
 		</div>
