@@ -3,7 +3,7 @@ var additionalPosting;
 function slideContent(posting_seq){	
 	console.log("slideContnet");
 	$.ajax({
-		url : 'http://localhost:8080/getPosting?type=5&posting_seq='+posting_seq,
+		url : '/getPosting?type=5&posting_seq='+posting_seq,
 		method : 'GET',
 		dataType : 'JSON',
 		async : false,

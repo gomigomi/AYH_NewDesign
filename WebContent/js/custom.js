@@ -116,7 +116,7 @@ $(function() {
 		
 		
 		$.ajax({
-			url: 'http://localhost:8080/postPosting?type=1',
+			url: '/postPosting?type=1',
 			method : 'post',
 			dataType: 'json',
 			data : {
@@ -144,7 +144,7 @@ $(function() {
 		});
 		if($('#post_img').val()){
 			$.ajax({
-	             url: 'http://localhost:8080/postImg?type=1',
+	             url: '/postImg?type=1',
 	             processData: false,
 	             contentType: false,
 	             data: formData,
@@ -163,7 +163,7 @@ $(function() {
 		$('.posts .post').remove();
 		count=0;
 		$.ajax({
-			url: 'http://localhost:8080/getPosting?type=1',
+			url: '/getPosting?type=1',
 			method: 'get',
 			dataType: 'json',
 			async : false,
@@ -219,7 +219,7 @@ $(function() {
 		var check=confirm('Are you sure to delete this post?');
 		if (check){
 			$.ajax({
-				url :'http://localhost:8080/deletePosting?seq=' + seq,
+				url :'/deletePosting?seq=' + seq,
 				method :'DELETE',
 				dataType :'json',
 				success : function(res) {
@@ -253,7 +253,7 @@ $(function() {
 			var content=$('#post_edit_area').val();
 			
 			$.ajax({
-				url :'http://localhost:8080/postPosting?type=2',
+				url :'/postPosting?type=2',
 				method :'post',
 				async : false,
 				dataType :'json',
@@ -272,7 +272,7 @@ $(function() {
 			});			
 			if($('#postEdit_img').val()){
 				$.ajax({
-		             url: 'http://localhost:8080/postImg?type=2&seq='+seq,
+		             url: '/postImg?type=2&seq='+seq,
 		             processData: false,
 		             contentType: false,
 		             data: editFormData,

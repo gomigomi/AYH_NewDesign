@@ -74,7 +74,7 @@ $(function() {
 			}
 					if($('#editFileName').val()){
 						$.ajax({
-							url : 'http://localhost:8080/postUser?type=2',
+							url : '/postUser?type=2',
 							type : 'POST',
 							contentType : false,
 							processData : false,
@@ -101,7 +101,7 @@ $(function() {
 							});
 					}else{
 						$.ajax({
-							url : 'http://localhost:8080/postUser?type=3',
+							url : '/postUser?type=3',
 							type : 'POST',
 							data:{
 								id: id,
@@ -139,7 +139,7 @@ $(function() {
 						var check = confirm('Are you sure to delete your id? All your postings will be deleted');
 						if (check) {
 							$.ajax({
-								url : 'http://localhost:8080/deleteUser?id='
+								url : '/deleteUser?id='
 										+ id,
 								method : 'DELETE',
 								dataType : 'json',
