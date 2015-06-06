@@ -13,9 +13,9 @@ function slideContent(posting_seq){
 			console.log(posting_seq);
 			console.log(additionalPosting);
 			
-			$('#slideContent').empty();
+			$('#moreContent').empty();
 			console.log(additionalPosting[0].content);
-			$('#slideContent').append(getModalItem(additionalPosting));
+			$('#moreContent').append(getModalItem(additionalPosting));
 		}
 	})
 	
@@ -41,22 +41,13 @@ function getModalItem(additionalPosting){
 	});
 
 	var sectionElem = 
-	'<section id = "slideSection" class="post '+additionalPosting[0].seq+'" id="posting_'+additionalPosting[0].seq+'">'+
-	'<span id = "slidePoint">'+
-		'<span class="bac-point">Point '+additionalPosting[0].avg+'</span>'+
-	'</span>'+
-	'<span id = "slideIcon">'+
-		'<span id = "postingClassifyImg"><img class = "imgNational postingCI" src="/img/icon/posting-nationality/nationality-'+additionalPosting[0].type+'.png"/></span>'+
-		'<span id = "postingClassifyImg"><img class = "imgLocation postingCI" src="/img/icon/posting-location/location-'+additionalPosting[0].location+'.png"/></span>'+
-		'<span id = "postingClassifyImg"><img class = "imgTaste postingCI" src="/img/icon/posting-taste/taste-'+additionalPosting[0].taste+'.png"/></span>'+
-		'<span id = "postingClassifyImg"><img class = "imgTime postingCI" src="/img/icon/posting-time/time-'+additionalPosting[0].time+'.png"/></span>'+
-	'<span>'+
-	'<div id = "slideContentModal">'+
-		'<h2>'+additionalPosting[0].content+'</h2>'+
-	'</div>'+
-	
-
-'</section>'
+	    	'<div id="info-wrapper">'+
+		    	'<span><img class="postingCI modalPostingCI" src="/img/icon/posting-location/location-+'postingData.location'+.png"></span>'+
+		    	'<span><img class="postingCI modalPostingCI" src="/img/icon/posting-nationality/nationality-postingData.png"></span>'+
+		    	'<span><img class="postingCI modalPostingCI" src="/img/icon/posting-taste/taste-hot.png"></span>'+
+		    	'<span><img class="postingCI modalPostingCI" src="/img/icon/posting-time/time-lc.png"></span>'+
+			'</div>'+
+			'<div id="moreContentDiv"></div>'
 
 	var sectionObject = $(sectionElem);
 

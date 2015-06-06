@@ -16,7 +16,6 @@ $(function() {
 	    			'<span class="sr-only">Next</span>'+
 	    		'</a>'
 		
-		
 		$.ajax({	//Request Login API
 			url: '/getImg?posting_seq='+posting_seq,
 			method : 'get',
@@ -27,6 +26,8 @@ $(function() {
 				console.log(imgDatas);
 			}
 		});
+		
+			
 		if(imgDatas[0]=='no-image.jpg'){
 			$('#moreContentsModal').modal('hide');
 			console.log('hiding');
@@ -61,6 +62,7 @@ $(function() {
 				'</div>'
 			$('#carousel-example-generic').append(slidecontent+slideArrow);
 		}
+		slideContent(posting_seq);
 	})
 	
 	//슬라이드 모달 초기화 
@@ -70,3 +72,5 @@ $(function() {
 	});
 
 });
+
+
