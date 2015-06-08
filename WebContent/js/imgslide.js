@@ -1,3 +1,5 @@
+var additionalPosting;
+
 $(function() {
 	$(document).on('click','.more-content',function(){
 		
@@ -26,7 +28,6 @@ $(function() {
 				console.log(imgDatas);
 			}
 		});
-		
 			
 		if(imgDatas[0]=='no-image.jpg'){
 			$('#moreContentsModal').modal('hide');
@@ -62,15 +63,66 @@ $(function() {
 				'</div>'
 			$('#carousel-example-generic').append(slidecontent+slideArrow);
 		}
-		slideContent(posting_seq);
+		$.ajax({
+			url : '/getPosting?type=5&posting_seq='+posting_seq,
+			method : 'GET',
+			dataType : 'JSON',
+			async : false,
+			success : function(res) {
+				additionalPosting = res.result;
+				
+				console.log(posting_seq);
+				console.log(additionalPosting);
+				
+				$('#moreContents').empty();
+				console.log(additionalPosting[0].content);
+				
+				$('#moreContents').append(getModalItem(additionalPosting[0]));
+			}
+		});
 	})
 	
 	//슬라이드 모달 초기화 
 	$('#moreContentsModal').on('hidden.bs.modal', function (e) {
 		$('#carousel-example-generic').empty();
-		console.log('empting')
+		additionalPosting = null;
+		console.log('empting');
+		
 	});
 
 });
 
+//내용 연
+function getModalItem(additionalPosting){
+	
+	//favorite 하트를 변경하기위한 부분 
+	var favoriteDisplay = "none";
+	var favoriteDisplaySub ='block';
+	
+	/*favorite와 posting 연결*/
+	var currentFavoriteDatas = _.filter(favoriteDatas, function(value){
+//			alert("flag"+value.posting_seq+"posting"+additionalPosting.seq);
+		return value.posting_seq == additionalPosting.seq;
+	});
+			
+	$.each(currentFavoriteDatas, function(idx, item){
+		if (item.flag == "1") {
+			favoriteDisplay = "block";
+			favoriteDisplaySub = "none";
+		}
+	});
 
+	var sectionElem = 
+	    	'<div id="info-wrapper">'+
+		    	'<span id = "postingClassifyImg"><img id = "'+additionalPosting.type+'" class ="type postingCI" src="/img/icon/posting-nationality/nationality-'+additionalPosting.type+'.png"/></span>'+
+				'<span id = "postingClassifyImg"><img id = "'+additionalPosting.location+'" class ="location postingCI" src="/img/icon/posting-location/location-'+additionalPosting.location+'.png"/></span>'+
+				'<span id = "postingClassifyImg"><img id = "'+additionalPosting.taste+'" class ="taste postingCI" src="/img/icon/posting-taste/taste-'+additionalPosting.taste+'.png"/></span>'+
+				'<span id = "postingClassifyImg"><img id = "'+additionalPosting.time+'" class ="time postingCI" src="/img/icon/posting-time/time-'+additionalPosting.time+'.png"/></span>'+
+			'</div>'+
+			'<div id="moreContentDiv"></div>'+
+			'<div id="realContentDiv">'+additionalPosting.content+'</div>'
+			
+			
+	return sectionElem;
+
+}
