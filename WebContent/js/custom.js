@@ -119,6 +119,7 @@ $(function() {
 			url: '/postPosting?type=1',
 			method : 'post',
 			dataType: 'json',
+			async: false,
 			data : {
 				f_type: f_type,
 				taste : taste,
@@ -148,19 +149,20 @@ $(function() {
 	             processData: false,
 	             contentType: false,
 	             data: formData,
+	             async: false,
 	             type: 'POST',
 	             success: function(result){
 	                   $('#img_preview').empty();
 	                   $('#img_upload_frm')[0].reset();
 	                   formData=new FormData();
-	                   renderPostingList();
 	             }
 	         });
 		}
+        renderPostingList();
       });
 
 	function renderPostingList(){
-		$('.posts .post').remove();
+		$('#recent_wrapper').empty();
 		count=0;
 		$.ajax({
 			url: '/getPosting?type=1',
@@ -176,39 +178,35 @@ $(function() {
 			}
 		})
 	}
-   //스크롤 내릴때마다 자동 로딩되게 해주는
-	var timer = setInterval(function() {scrollOK = true;}, 100);
-	var scrollOK = true;
-	$(window).bind('scroll',function() {
-		if (scrollOK) {
-			scrollOK = false;
-			if ($(this).scrollTop() + $(this).height() >= ($(document).height() - 100)) {
-				console.log('You Hit Bottom!');
-				if(postingDatas.length-count<5){
-					for(var i=0; i<postingDatas.length-count; i++ ){
-
-						renderSectionElem();
-					}
-				}else{
-					for(var i=0; i<5; i++ ){
-						renderSectionElem();
-					}
-				}
-			
-			}
-		}
-	});
+//스크롤 내릴때마다 자동 로딩되게 해주는
+//	var timer = setInterval(function() {scrollOK = true;}, 100);
+//	var scrollOK = true;
+//	$(window).bind('scroll',function() {
+//		if (scrollOK) {
+//			scrollOK = false;
+//			if ($(this).scrollTop() + $(this).height() >= ($(document).height() - 100)) {
+//				console.log('You Hit Bottom!');
+//				if(postingDatas.length-count<5){
+//					for(var i=0; i<postingDatas.length-count; i++ ){
+//						renderSectionElem();
+//					}
+//				}else{
+//					for(var i=0; i<5; i++ ){
+//						renderSectionElem();
+//					}
+//				}
+//			
+//			}
+//		}
+//	});
 	
 
 	//1번.posts 2번#popular_post 3번#favoritePosting 4번#history-posting 5번#history-comment 6번# 7번#
 	function renderSectionElem(){
 		if(window.sessionStorage.getItem('id')==postingDatas[count].writer){
-			$('.posts').append(getSectionItem(postingDatas[count], false));
-			handleRaty();
-			
+			$('#recent_wrapper').append(getSectionItem(postingDatas[count], false));
 			} else if (window.sessionStorage.getItem('id') != postingDatas[count].writer){
-			$('.posts').append(getSectionItem(postingDatas[count], true));
-			handleRaty();			
+			$('#recent_wrapper').append(getSectionItem(postingDatas[count], true));		
 		} 
 		count++;
 	}
