@@ -205,8 +205,10 @@ $(function() {
 	function renderSectionElem(){
 		if(window.sessionStorage.getItem('id')==postingDatas[count].writer){
 			$('#recent_wrapper').append(getSectionItem(postingDatas[count], false));
+				handleRaty();
 			} else if (window.sessionStorage.getItem('id') != postingDatas[count].writer){
-			$('#recent_wrapper').append(getSectionItem(postingDatas[count], true));		
+			$('#recent_wrapper').append(getSectionItem(postingDatas[count], true));	
+			handleRaty();
 		} 
 		count++;
 	}
