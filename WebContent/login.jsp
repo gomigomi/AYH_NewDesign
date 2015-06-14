@@ -20,19 +20,25 @@
 	String regdateHash;
 	String thumbHash;
 	
-	
-	//¼­ºí¸´ ÇÔ¼ö->ÇØ½¬¸Ê->½ºÆ®¸µ->jsp¼¼¼Ç½ºÅä¸®Áö
-	idHash = (String)userHash.get("id");
-	pwHash = (String)userHash.get("pass");
-	nameHash = (String)userHash.get("name");
-	regdateHash = (String)userHash.get("regdate");
-	thumbHash = (String)userHash.get("thumb");
-	
-	session.setAttribute("id", idHash);
-	session.setAttribute("pass", pwHash);
-	session.setAttribute("name", nameHash);
-	session.setAttribute("regdate", regdateHash);
-	session.setAttribute("thumb", thumbHash);
+	if(userHash.isEmpty()){
+		System.out.println("wrong");
+		request.setAttribute("errMsg", "아이디나 비밀번호가 일치하지 않습니다.");
+		RequestDispatcher rd = request.getRequestDispatcher("NewFront.jsp");
+		rd.forward(request, response);
+	}else{
+		idHash = (String)userHash.get("id");
+		pwHash = (String)userHash.get("pass");
+		nameHash = (String)userHash.get("name");
+		regdateHash = (String)userHash.get("regdate");
+		thumbHash = (String)userHash.get("thumb");
+		
+		session.setAttribute("id", idHash);
+		session.setAttribute("pass", pwHash);
+		session.setAttribute("name", nameHash);
+		session.setAttribute("regdate", regdateHash);
+		session.setAttribute("thumb", thumbHash);		
+	}
+
 %>		
 
 <%--jsp ¼¼¼Ç session to js jquery ¼¼¼Ç session --%>
@@ -44,12 +50,12 @@
 %>
 
 <%
-	if(idHash.isEmpty()){
+/* 	if(idHash.isEmpty()){
 		System.out.println("wrong");
 		request.setAttribute("errMsg", "아이디나 비밀번호가 일치하지 않습니다.");
 		RequestDispatcher rd = request.getRequestDispatcher("NewFront.jsp");
 		rd.forward(request, response);
-	}
+	} */
 %>
 
 <!DOCTYPE html>
