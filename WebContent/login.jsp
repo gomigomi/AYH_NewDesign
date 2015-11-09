@@ -28,14 +28,10 @@
 	}else{
 		idHash = (String)userHash.get("id");
 		pwHash = (String)userHash.get("pass");
-		nameHash = (String)userHash.get("name");
-		regdateHash = (String)userHash.get("regdate");
-		thumbHash = (String)userHash.get("thumb");
+		thumbHash = (String)userHash.get("bookmark");
 		
 		session.setAttribute("id", idHash);
 		session.setAttribute("pass", pwHash);
-		session.setAttribute("name", nameHash);
-		session.setAttribute("regdate", regdateHash);
 		session.setAttribute("thumb", thumbHash);		
 	}
 
@@ -45,7 +41,6 @@
 <%
 	String id = (String)session.getAttribute("id");
 	String pw = (String)session.getAttribute("pass");
-	String name = (String)session.getAttribute("name");
 	String thumb = (String)session.getAttribute("thumb");
 %>
 
@@ -67,7 +62,6 @@
 	function redirectPage(){
 	sessionStorage.setItem("id", "<%=id%>")
 	sessionStorage.setItem("pw", "<%=pw%>")
-	sessionStorage.setItem("name", "<%=name%>")
 	sessionStorage.setItem("thumb", "<%=thumb%>")
 	document.location.href= "index.html"
 	}
