@@ -6,7 +6,7 @@
   <%@ page import="java.util.HashMap" %>
   <%@ page import="java.util.ArrayList, java.util.Arrays" %>
     
-      
+ 
   <jsp:useBean id="udao" class="com.hungry.user.UserDao" />
 
   <%
@@ -14,6 +14,7 @@
   String savePath = root + "img/thumb/";
   int maxSize = 5*1024*1024;
   System.out.println(request);
+  System.out.println(savePath);
 
   try{
           MultipartRequest multi = new MultipartRequest(request, savePath, maxSize, "UTF-8", new DefaultFileRenamePolicy());
@@ -21,7 +22,7 @@
           if(multi.getParameter("id").isEmpty()){
       		System.out.println("wrong");
       		request.setAttribute("signErr", "1");
-      		request.setAttribute("errMsg2", "아아디를 입력해주세요.");
+      		request.setAttribute("errMsg2", savePath);
       		RequestDispatcher rd = request.getRequestDispatcher("NewFront.jsp");
       		rd.forward(request, response);
       	}else if(multi.getParameter("name").isEmpty()){
