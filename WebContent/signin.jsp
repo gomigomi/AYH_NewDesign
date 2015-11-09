@@ -22,7 +22,7 @@
           if(multi.getParameter("id").isEmpty()){
       		System.out.println("wrong");
       		request.setAttribute("signErr", "1");
-      		request.setAttribute("errMsg2", savePath);
+      		request.setAttribute("errMsg2","아이디를 입력해주세요.");
       		RequestDispatcher rd = request.getRequestDispatcher("NewFront.jsp");
       		rd.forward(request, response);
       	}else if(multi.getParameter("name").isEmpty()){
