@@ -60,7 +60,7 @@ function getSectionItem(postingDatas, isHide){
 					'<span class="bac-point" id="'+postingDatas.avg+'">평균평점 '+postingDatas.avg+'</span>'+
 					'<span class="comment-raty-form">'+
 						'<span class="raty" data-score="'+point+'" style="cursor:pointer;"></span>'+
-						'<span class = "add-commentRaty-btn">평가</span>'+
+						'<button class = "add-commentRaty-btn">평가</button>'+
 					'</span>'+
 					'<span class="post-regdate">'+postingDatas.regdate+'</span>'+
 				'</div>'+
@@ -82,7 +82,7 @@ function getSectionItem(postingDatas, isHide){
 		'<div class="comment-cnt">'+
 			'<div class="comment-text-form">'+
 				'<input type="text" name="comment" class="comment" />'+
-				'<div class="add-comment-btn">Add</div>'+
+				'<button class="add-comment-btn">Add</button>'+
 			'</div>'+
 			'<div class = "comment-list">'+
 	
