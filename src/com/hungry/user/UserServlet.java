@@ -82,6 +82,7 @@ public class UserServlet extends HttpServlet{
 				
 			}else if(type.equals("2")){	//Update API
 
+//				String savePath = "/";
 				String savePath = "/Users/gomi/workspace/AYH_NewDesign/WebContent/img/thumb";
 //				String savePath = "/Users/john/AYH_NewDesign/WebContent/img/thumb";
 				int maxSize = 5*1024*1024;
