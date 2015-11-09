@@ -33,19 +33,19 @@ $(function() {
 	$('#left-top').click(function(){
 		$('#login-bot').show();
 		$('#signin-bot').hide();
-		$('#left-top').css("background-color", 'rgba(236,240,246,1)');
-		$('#left-top').css("color", '#F15A24');
-		$('#right-top').css("background-color", '#F15A24');
-		$('#right-top').css("color", 'white');
+		$('#right-top').css("background-color", 'rgba(236,240,246,1)');
+		$('#right-top').css("color", '#F15A24');
+		$('#left-top').css("background-color", '#F15A24');
+		$('#left-top').css("color", 'white');
 	});
 	
 	$('#right-top').click(function(){
 		$('#login-bot').hide();
 		$('#signin-bot').show();
-		$('#left-top').css("background-color", '#F15A24');
-		$('#left-top').css("color", 'white');
-		$('#right-top').css("background-color", 'rgba(236,240,246,1)');
-		$('#right-top').css("color", '#F15A24');
+		$('#right-top').css("background-color", '#F15A24');
+		$('#right-top').css("color", 'white');
+		$('#left-top').css("background-color", 'rgba(236,240,246,1)');
+		$('#left-top').css("color", '#F15A24');
 		
 	});
 	
@@ -53,7 +53,8 @@ $(function() {
 </script>
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="css/front.css">
-<title>front</title>
+<link rel="shortcut icon" href="img/HGR_favicon_orange.ico">
+<title>배고파요?</title>
 </head>
 <body>
 	<div id="wrapper">

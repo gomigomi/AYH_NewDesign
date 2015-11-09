@@ -28,9 +28,9 @@
 	    width: 50%;
 	    padding-top: 2.5%;
 	    padding-bottom: 2.5%;
-	    background-color: rgba(236,240,246,1);
+	    background-color: #F15A24;
 	    text-align: center;
-	    color: #F15A24;
+	    color: white;
 	    border-radius: 10px;
 	    border: 0px solid;
 	}
@@ -40,9 +40,9 @@
 	    width: 50%;
 	    padding-top: 2.5%;
 	    padding-bottom: 2.5%;
-	    background-color: #F15A24;
+	    background-color: rgba(236,240,246,1);
 	    text-align: center;
-	    color: white;
+	    color: #F15A24;
 	    border: 0 solid;
 	    border-radius: 10px;
 	}
