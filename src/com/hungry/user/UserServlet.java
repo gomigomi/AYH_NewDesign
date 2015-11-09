@@ -82,9 +82,15 @@ public class UserServlet extends HttpServlet{
 				
 			}else if(type.equals("2")){	//Update API
 
+<<<<<<< HEAD
 //				String savePath = "/var/lib/tomcat7/ROOT/img/thumb";
 //				String savePath = "/Users/gomi/workspace/AYH_NewDesign/WebContent/img/thumb";
 				String savePath = "/Users/john/AYH_NewDesign/WebContent/img/thumb";
+=======
+//				String savePath = "/";
+				String savePath = "/Users/gomi/workspace/AYH_NewDesign/WebContent/img/thumb";
+//				String savePath = "/Users/john/AYH_NewDesign/WebContent/img/thumb";
+>>>>>>> a612be61881ba164479da10b34efa0ff09bbe43b
 				int maxSize = 5*1024*1024;
 				
 				MultipartRequest multi = new MultipartRequest(request, savePath, maxSize, "UTF-8", new DefaultFileRenamePolicy());

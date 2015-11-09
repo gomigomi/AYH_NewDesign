@@ -21,8 +21,13 @@
 	String thumbHash;
 	
 	if(userHash.isEmpty()){
+<<<<<<< HEAD
 		System.out.println("LOGIN : WRONG ID or PW");
 		request.setAttribute("errMsg", "아이디와 비밀번호를 확인해주세요.");
+=======
+		System.out.println("wrong");
+		request.setAttribute("errMsg", "아이디나 비밀번호가 일치하지 않습니다.");
+>>>>>>> a612be61881ba164479da10b34efa0ff09bbe43b
 		RequestDispatcher rd = request.getRequestDispatcher("NewFront.jsp");
 		rd.forward(request, response);
 	}else{

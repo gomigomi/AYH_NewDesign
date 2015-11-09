@@ -40,8 +40,13 @@ public class imgServlet extends HttpServlet{
 		
 		try{
 //				String pathname = "/";
+<<<<<<< HEAD
 //		        String pathname = "/Users/gomi/workspace/AYH_NewDesign/WebContent/img";
 				String pathname = "/Users/John/AYH_NewDesign/WebContent/img";
+=======
+		        String pathname = "/Users/gomi/workspace/AYH_NewDesign/WebContent/img";
+//				String pathname = "/Users/John/AYH_NewDesign/WebContent/img";
+>>>>>>> a612be61881ba164479da10b34efa0ff09bbe43b
 		        System.out.println(req);
 		        
 		        File f = new File(pathname);
