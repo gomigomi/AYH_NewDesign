@@ -22,7 +22,6 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>HUNGRY?</title>
 <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore.js"></script>

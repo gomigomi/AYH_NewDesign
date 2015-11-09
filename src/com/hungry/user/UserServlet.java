@@ -8,6 +8,7 @@ import java.util.Map;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletRequestWrapper;
 import javax.servlet.http.HttpServletResponse;
 
 import org.json.JSONException;
@@ -82,15 +83,11 @@ public class UserServlet extends HttpServlet{
 				
 			}else if(type.equals("2")){	//Update API
 
-<<<<<<< HEAD
-//				String savePath = "/var/lib/tomcat7/ROOT/img/thumb";
-//				String savePath = "/Users/gomi/workspace/AYH_NewDesign/WebContent/img/thumb";
-				String savePath = "/Users/john/AYH_NewDesign/WebContent/img/thumb";
-=======
+				String root = new HttpServletRequestWrapper(request).getRealPath("/");
 //				String savePath = "/";
-				String savePath = "/Users/gomi/workspace/AYH_NewDesign/WebContent/img/thumb";
+//				String savePath = "/Users/gomi/workspace/AYH_NewDesign/WebContent/img/thumb";
 //				String savePath = "/Users/john/AYH_NewDesign/WebContent/img/thumb";
->>>>>>> a612be61881ba164479da10b34efa0ff09bbe43b
+				String savePath = root+"img/thumb";
 				int maxSize = 5*1024*1024;
 				
 				MultipartRequest multi = new MultipartRequest(request, savePath, maxSize, "UTF-8", new DefaultFileRenamePolicy());
